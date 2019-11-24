@@ -1,0 +1,35 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+% !TEX root = ../dimostrazioni.tex
+
+% Utilizzo il tipo libro impostato per evitare pagine vuote, utili solo per la stampa
+\documentclass[oneside]{book}
+
+% Utilizzo il pacchetto per le traduzioni ed imposto la lingua
+\usepackage{polyglossia}
+\setmainlanguage{italian}
+
+% Imposto il margine delle pagine
+\usepackage[margin=1in]{geometry}
+
+% Importo i pacchetti per le immagini con descrizioni, che torneranno utili per le dimostrazioni conteneti disegni
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+% Importo i pacchetti per la matematica
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+% Imposto i collegamenti
+\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,breaklinks=false,pdfborder={0 0 0},backref=section,colorlinks=false]{hyperref}
+
+% Importo il pacchetto per la personalizzazione del titolo e lo modifico
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione numero \thechapter}{.5em}{\Huge}
+
+% Importo il pacchetto per i sottofile
+\usepackage{subfiles}
+
+% Imposto le informazioni presenti sulla copertina
+\author{Mattia Martelli}
+\date{}
+\title{Dimostrazioni di Analisi matematica 1}
