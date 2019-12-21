@@ -4,7 +4,14 @@
 % Imposto il file come sottofile del documento principale
 \documentclass[../dimostrazioni]{subfiles}
 
-
+\begin{Definizioni necessarie} %Questo vorrebbe essere un abstract prima del testo effettivo
+    \begin{itemize}
+        \item \(x_0\) è un punto stazionario se \(\testit{f}(x_0) = 0\)
+        \item \(x_0\) è un punto di ottimo se è un punto di massimo o di minimo locale
+        \item \(x_M\) è un punto di massimo locale se  \( M = \textit{f}(x_M) \geqslant \textit{f}(x) \forall  x \in A\) dove M è il valore massimo locale
+        \item \(x_M\) è un punto di minimo locale se  \( m = \textit{f}(x_m) \leqslant \textit{f}(x) \forall  x \in A\) dove m è il valore minimo locale
+    \end{itemize}
+\end{Definizioni necessarie}
 
 \begin{document}
 
@@ -19,40 +26,23 @@
             \end{align*}
         
         \begin{enumerate}
-            \item A = [a, b]\\\(x_0\) \in A
-            \item \textit{f} è derivabile in A
+            \item \(A = [a, b]\\x_0 \in A\)
+            \item \textit{f} è derivabile in \(A\)
             \item \(x_0\) è un punto di ottimo
         \end{enumerate}
 
         \subsection{Tesi}
 
-        \textit{f}'(x) = 0
+        \(\textit{f}'(x) = 0\)
 
         \section*{Dimostrazione}
 
             \medskip
 
-            % Nota: sono attaccate per evitare multiple righe vuote
-            Dimostriamo l'enunciato per \(n = 0\):
-            \begin{align*}
-                (1 + x)^0 \, &\geqslant \, 1 + 0 x\\
-                        1 \, &\geqslant \, 1
-            \end{align*}
+            \subsection{Caso 1 - \(x_0\) è un punto di massimo locale}
 
-            Possiamo perciò considerare l'enunciato vero al passo \(n\).
+            
+    
 
-            \medskip
-
-            % Nota: si veda sopra
-            Dimostriamolo per \(n + 1\):
-            \begin{align*}
-                (1 + x)^{n + 1} \, =& \, (1 + x)(1 + x)^n\\
-                                \geqslant& \, (1 + x)(1 + nx) & \text{\emph{Per ipotesi induttiva}}\\
-                                =& \, 1 + nx + x + nx^2\\
-                                =& \, 1 + x (n + 1) + nx^2\\
-                                \geqslant& \, 1 + x (n + 1) & \text{\emph{Per l'enunciato del teorema}}
-            \end{align*}
-
-            Abbiamo quindi dimostrato la disuguaglianza di Bernoulli.
     
 \end{document}
