@@ -4,54 +4,51 @@
 % Imposto il file come sottofile del documento principale
 \documentclass[../dimostrazioni]{subfiles}
 
-
 \begin{document}
 
     \chapter{Teorema di Rolle}
 
         \section*{Enunciato}
 
-        \subsection*{Ipotesi}
+            \subsection*{Ipotesi}
 
-            Sia \(f(x)\) una funzione tale che
-            \begin{align*}
-                f : A = [a, b] &\longrightarrow \mathbb{R}\\
-                x &\longmapsto y = f(x) 
-            \end{align*}
+                Sia \(f(x)\) una funzione tale che
+                \begin{align*}
+                    f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                    x &\longmapsto y = f(x) 
+                \end{align*}
 
-            Supponiamo inoltre che:
+                Supponiamo inoltre che:
 
-            \begin{enumerate}
-                \indentitem \item \(f\) è continua su \(A\) e derivabile su \((a, b)\);
-                \indentitem \item \(f(a) = f(b)\)
-            \end{enumerate}
+                \begin{enumerate}
+                    \indentitem \item \(f\) è continua su \(A\) e derivabile su \((a, b)\);
+                    \indentitem \item \(f(a) = f(b)\).
+                \end{enumerate}
 
-        \subsection*{Tesi}
+            \subsection*{Tesi}
 
-            \[\exists \, x_0 \in (a,b) / f'(x_0) = 0 \]
+                \[\exists \, x_0 \in (a,b) \; | \; f'(x_0) = 0 \]
 
         \section*{Dimostrazione}
 
-            \medskip
+            \subsection*{Caso 1\\\(f(x)\) è una funzione costante}
 
-            \subsection{Caso 1 - \(f(x)\) è una funzione costante}
+            Il teorema è dimostrato, infatti \(\forall \, x \in (a,b) \, \, \, f(x) = 0\).
 
-            Il teorema è dimostrato, infatti \(\forall \, x \in (a,b) \, \, \, f(x) = 0\)
-
-            \subsection{Caso 2 - \(f(x)\) non è una funzione costante}
+            \subsection*{Caso 2\\\(f(x)\) non è una funzione costante}
 
             Data la continuità di \(f(x)\) su \(A\) e essendo \(A\) un intervallo chiuso e limitato,\\ 
             vale il teorema di \textbf{Weierstrass}.
-            
-            \( \exists \, M, m / f(x_m)=m \leqslant f(x) \leqslant f(x_M) = M \, \, \, \forall \, x \in A \)
+            \[ \exists \, M, m / f(x_m)=m \leqslant f(x) \leqslant f(x_M) = M \, \, \, \forall \, x \in A \]
 
             e almeno uno tra \(x_m\) e \(x_M\) è interno ad \( (a,b) \) dato che \( m \neq M \) (\( f \) non è costante).
 
-            Visto che almeno uno dei due punti di ottimo è interno all'intervallo, posso applicare il teorema di \textbf{Fermat}.
-            
-            Da cui ricavo che il punto di ottimo interno è un punto stazionario e quindi:
+            Visto che almeno uno dei due punti di ottimo è interno all'intervallo, posso applicare il \textbf{\hyperref[teoFermat]{teorema di Fermat}}, 
+            da cui ricavo che il punto di ottimo interno è un punto stazionario e quindi:
 
-            \[\exists \, x_0 \in (a,b) / f'(x_0) = 0 \] c.v.d.
+            \[\exists \, x_0 \in (a,b) / f'(x_0) = 0 \]
+            
+            c.v.d.
 
     
 \end{document}

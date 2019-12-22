@@ -4,30 +4,33 @@
 % Imposto il file come sottofile del documento principale
 \documentclass[../dimostrazioni]{subfiles}
 
-\begin{Definizioni necessarie} %Questo vorrebbe essere un abstract prima del testo effettivo
-    \begin{itemize}
-        \item \(x_0\) è un punto stazionario se \( f(x_0) = 0 \)
-        \item \(x_0\) è un punto di ottimo se è un punto di massimo o di minimo locale
-        \item \(x_M\) è un punto di massimo locale se  \( M = \textit{f}(x_M) \geqslant \textit{f}(x) \forall  x \in A\) dove M è il valore massimo locale
-        \item \(x_M\) è un punto di minimo locale se  \( m = \textit{f}(x_m) \leqslant \textit{f}(x) \forall  x \in A\) dove m è il valore minimo locale
-    \end{itemize}
-\end{Definizioni necessarie}
-
 \begin{document}
 
     \chapter{Teorema di Fermat}
+    \label{teoFermat}
+
+        \section*{Ipotesi preliminari}
+
+            Supponiamo che:
+
+            \begin{itemize}
+                \item \(x_0\) è un punto stazionario se \(f(x_0) = 0\);
+                \item \(x_0\) è un punto di ottimo se è un punto di massimo o di minimo locale;
+                \item \(x_M\) è un punto di massimo locale se  \(M = f(x_M) \geqslant f(x) \forall  x \in A\) dove M è il valore massimo locale;
+                \item \(x_M\) è un punto di minimo locale se  \(m = f(x_m) \leqslant f(x) \forall  x \in A\) dove m è il valore minimo locale.
+            \end{itemize}
 
         \section*{Enunciato}
 
-        \subsection*{Ipotesi}
+            \subsection*{Ipotesi}
 
-            Sia \(f(x)\) una funzione tale che
-            \begin{align*}
-                f : A = (a, b) &\longrightarrow \mathbb{R}\\
-                x &\longmapsto y = f(x) 
-            \end{align*}
+                Sia \(f(x)\) una funzione tale che
+                \begin{align*}
+                    f : A = (a, b) &\longrightarrow \mathbb{R}\\
+                    x &\longmapsto y = f(x) 
+                \end{align*}
 
-            Supponiamo inoltre che:
+                Supponiamo inoltre che:
 
             \begin{enumerate}
                 \indentitem \item \(x_0 \in A\);
@@ -35,60 +38,72 @@
                 \indentitem \item \(x_0\) sia un punto di ottimo.
             \end{enumerate}
 
-        \subsection*{Tesi}
+            \subsection*{Tesi}
 
-            \[f'(x) = 0\] ovvero \(x_0\) è un punto stazionario
+                \[f'(x) = 0\] ovvero \(x_0\) è un punto stazionario
 
         \section*{Dimostrazione}
 
             \medskip
 
-            \subsection{Caso 1 - \(x_0\) è un punto di massimo locale}
+            \subsection*{Caso 1\\\(x_0\) è un punto di massimo locale}
 
-            Per l'ipotesi 1 e l'ipotesi 2, quando \(h>0\) possiamo dire che:
-            
-            \( \frac{f(x_0 + h) - f(x_0)}{h}  \leqslant 0\)
+                \smallskip
 
-            quando \(h<0\) invece possiamo dire che:
+                Per l'ipotesi 1 e l'ipotesi 2, quando \(h>0\) possiamo dire che:
+                
+                \[\frac{f(x_0 + h) - f(x_0)}{h}  \leqslant 0\]
 
-            \( \frac{(f(x_0 + h) - f(x_0)}{h}  \geqslant 0\)
+                quando \(h<0\) invece possiamo dire che:
 
-            quindi sempre per l'ipotesi di derivabilità valgono le seguenti affermazioni
-            
-            \(\lim_{x\to 0^+} \frac{f(x_0 + h) - f(x_0)}{h} = L_1 \leqslant 0 \) dove \( L_1 \exists \land L_1 \in \mathbb{R} \)
+                \[\frac{(f(x_0 + h) - f(x_0)}{h}  \geqslant 0\]
 
-            \(\lim_{x\to 0^-} \frac{f(x_0 + h) - f(x_0)}{h} = L_2  \geqslant 0 \) dove \( L_2 \exists \land L_2 \in \mathbb{R} \)
+                quindi sempre per l'ipotesi di derivabilità valgono le seguenti affermazioni
+                
+                \[\lim_{x\to 0^+} \frac{f(x_0 + h) - f(x_0)}{h} = L_1 \leqslant 0 \; \text{dove} \; L_1 \, \exists \land L_1 \in \mathbb{R} \]
 
-            \(L_1 = L_2 = f'(x_0)\)
-            
-            e quindi
-            \(0 \leqslant f'(x_0) \leqslant 0\)
-            
-            da cui
-            \(f'(x_0)=0\) c.v.d.
+                \[\lim_{x\to 0^-} \frac{f(x_0 + h) - f(x_0)}{h} = L_2  \geqslant 0 \; \text{dove} \; L_2 \, \exists \land L_2 \in \mathbb{R} \]
 
-            \subsection{Caso 2 - \(x_0\) è un punto di minimo locale}
+                \[L_1 = L_2 = f'(x_0)\]
+                
+                e quindi
+                
+                \[0 \leqslant f'(x_0) \leqslant 0\]
+                
+                da cui
+                
+                \[f'(x_0)=0\]
+                
+                c.v.d.
 
-            Per l'ipotesi 1 e l'ipotesi 2, quando \(h>0\) possiamo dire che:
-            
-            \( \frac{f(x_0 + h) - f(x_0)}{h}  \geqslant 0\)
+            \subsection*{Caso 2\\\(x_0\) è un punto di minimo locale}
 
-            quando \(h<0\) invece possiamo dire che:
+                \smallskip
 
-            \( \frac{f(x_0 + h) - f(x_0)}{h}  \leqslant 0\)
+                Per l'ipotesi 1 e l'ipotesi 2, quando \(h>0\) possiamo dire che:
+                
+                \[ \frac{f(x_0 + h) - f(x_0)}{h}  \geqslant 0\]
 
-            quindi sempre per l'ipotesi di derivabilità valgono le seguenti affermazioni
-            
-            \(\lim_{x\to 0^+} \frac{f(x_0 + h) - f(x_0)}{h} = L_1 \geqslant 0 \) dove \( L_1 \exists \land L_1 \in \mathbb{R} \)
+                quando \(h<0\) invece possiamo dire che:
 
-            \(\lim_{x\to 0^-} \frac{f(x_0 + h) - f(x_0)}{h} = L_2  \leqslant 0 \) dove \( L_2 \exists \land L_2 \in \mathbb{R} \)
+                \[ \frac{f(x_0 + h) - f(x_0)}{h}  \leqslant 0\]
 
-            \(L_1 = L_2 = f'(x_0)\)
-            
-            e quindi
-            \(0 \leqslant f'(x_0) \leqslant 0\)
-            
-            da cui
-            \(f'(x_0)=0\) c.v.d.
+                quindi sempre per l'ipotesi di derivabilità valgono le seguenti affermazioni
+                
+                \[\lim_{x\to 0^+} \frac{f(x_0 + h) - f(x_0)}{h} = L_1 \geqslant 0 \text{dove} L_1 \exists \land L_1 \in \mathbb{R} \]
+
+                \[\lim_{x\to 0^-} \frac{f(x_0 + h) - f(x_0)}{h} = L_2  \leqslant 0 \text{dove} L_2 \exists \land L_2 \in \mathbb{R} \]
+
+                \[L_1 = L_2 = f'(x_0)\]
+                
+                e quindi
+                
+                \[0 \leqslant f'(x_0) \leqslant 0\]
+                
+                da cui
+                
+                \[f'(x_0)=0\]
+                
+                c.v.d.
 
 \end{document}
