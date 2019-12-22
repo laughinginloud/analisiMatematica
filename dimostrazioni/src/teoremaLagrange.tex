@@ -4,44 +4,39 @@
 % Imposto il file come sottofile del documento principale
 \documentclass[../dimostrazioni]{subfiles}
 
-
 \begin{document}
 
     \chapter{Teorema di Lagrange}
 
         \section*{Enunciato}
 
-        \subsection*{Ipotesi}
+            \subsection*{Ipotesi}
 
-            Sia \(f(x)\) una funzione tale che
-            \begin{align*}
-                f : A = [a, b] &\longrightarrow \mathbb{R}\\
-                x &\longmapsto y = f(x) 
-            \end{align*}
+                Sia \(f(x)\) una funzione tale che
+                \begin{align*}
+                    f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                    x &\longmapsto y = f(x) 
+                \end{align*}
 
-            Supponiamo inoltre che:
+                Supponiamo inoltre che \(f\) sia continua su \(A\) e derivabile su \((a, b)\).
 
-            \begin{enumerate}
-                \indentitem \item \(f\) sia continua su \(A\) e derivabile su \((a, b)\);
-            \end{enumerate}
+            \subsection*{Tesi}
 
-        \subsection*{Tesi}
-
-            \[ \exists \, x_0 \in (a,b) \, / \, f'(x_0) = \frac{f(b)-f(a)}{b-a}=m \]
-            dove \(m\) è il coefficiente angolare della retta passante \(a\) e \(b\).
+                \[ \exists \, x_0 \in (a,b) \; | \; f'(x_0) = \frac{f(b)-f(a)}{b-a}=m \]
+                dove \(m\) è il coefficiente angolare della retta passante \(a\) e \(b\).
 
         \section*{Dimostrazione}
 
-            \medskip
+            %\medskip
 
             Introduco una \textbf{funzione ausiliaria} \(g(x)\) così definita:
 
             \[ g(x) = f(x) - \bigg[f(a) + \frac{f(b) + f(a)}{b - a}(x - a) \bigg] \]
 
-            Notiamo che \(g\) ha la regolarità di \(f\) su A
+            Notiamo che \(g\) ha la regolarità di \(f\) su A:
             \begin{enumerate}
                 \indentitem \item è continua su \( A \);
-                \indentitem \item derivabile su \( (a, b) \);
+                \indentitem \item derivabile su \( (a, b) \).
             \end{enumerate}
 
             Notiamo anche che:
@@ -57,9 +52,9 @@
             
             Da cui \( g(a) = g(b) \).
 
-            Posso quindi applicare il teorema di \textbf{Rolle} su \( A \):
+            Posso quindi applicare il teorema di \textbf{\hyperref[teoRolle]{Rolle}} su \( A \):
             \[
-                \exists \, \, x_0 \in (a,b) \, \, / \, \, g'(x_0) = 0
+                \exists \, \, x_0 \in (a,b) \; | \; g'(x_0) = 0
             \]
             
             Calcolo quindi \( g'(x) \):
