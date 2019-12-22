@@ -34,43 +34,31 @@
 
             \medskip
 
-            \subsection{Caso 1 - \textit}
-            Introduco una \textbf{funzione ausiliaria} \(g(x)\) così definita:
+            \subsection*{Caso 1 - \( f'(x) > 0 \, \, \forall \, x \in A \)}
 
-            \[ g(x) = f(x) - \bigg[f(a) + \frac{f(b) + f(a)}{b - a}(x - a) \bigg] \]
-
-            Notiamo che \(g\) ha la regolarità di \(f\) su A
-            \begin{enumerate}
-                \indentitem \item è continua su \( A \);
-                \indentitem \item derivabile su \( (a, b) \);
-            \end{enumerate}
-
-            Notiamo anche che:
-            \begin{align*}
-                g(a) &= f(a) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(a - a) \bigg]\\
-                     &= f(a) - \bigg[f(a) + 0 \bigg]\\
-                     &= f(a) - f(a) = 0\\
-                     \\
-                g(b) &= f(b) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(b - a) \bigg]\\
-                     &= f(b) - \bigg[f(a) + f(b) - f(a) \bigg]\\
-                     &= f(b) - f(b) = 0
-            \end{align*}
-            
-            Da cui \( g(a) = g(b) \).
-
-            Posso quindi applicare il teorema di \textbf{Rolle} su \( A \):
+            Siano \(x_1, x_2 \in A \, / \, a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
+            Su \( [x_1, x_2] \) applico il teorema di \textbf{\hyperref[teoLagrange]{Lagrange}} a \(f\) quindi:
             \[
-                \exists \, \, x_0 \in (a,b) \, \, / \, \, g'(x_0) = 0
+                \exists \, x_0 \in (x_1, x_2) \, / \, f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
             \]
-            
-            Calcolo quindi \( g'(x) \):
+            essendo \( f'(x_0) > 0 \) e anche \( x_2 - x_1 > 0 \) ne segue che:
             \[
-                g'(x) = f'(x) - \frac{f(b) - f(a)}{b-a}\\
-                \\
-                g'(x_0) = 0\\
-                \\
-                f'(x_0) - \frac{f(b) - f(a)}{b-a} = 0\\
-                f'(x_0) = \frac{f(b) - f(a)}{b-a}
-            \] c.v.d.
+                \forall \, x_1 < x_2 \Rightarrow f(x_2) > f(x_1)
+            \]
+            quindi \(f(x)\) è strettamente monotona crescente. c.v.d.
+
+            \subsection*{Caso 2 - \( f'(x) < 0 \, \, \forall \, x \in A \)}
+
+            Siano \(x_1, x_2 \in A \, / \, a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
+            Su \( [x_1, x_2] \) applico il teorema di \textbf{\hyperref[teoLagrange]{Lagrange}} a \(f\) quindi:
+            \[
+                \exists \, x_0 \in (x_1, x_2) \, / \, f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
+            \]
+            essendo \( f'(x_0) < 0 \) e \( x_2 - x_1 > 0 \) ne segue che:
+            \[
+                \forall \, x_1 < x_2 \Rightarrow f(x_2) < f(x_1)
+            \]
+            quindi \(f(x)\) è strettamente monotona decrescente. c.v.d.
+    
     
 \end{document}
