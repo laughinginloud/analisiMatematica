@@ -20,7 +20,7 @@
                                   &y = g(x) 
                 \end{align*}
 
-                Supponendo inoltre che \(f, g\) continue in A e derivabili in \( (a,b) \)
+                Supponendo inoltre \(f, g\) continue in A e derivabili in \( (a,b) \)
 
             \subsection*{Tesi}
 
@@ -41,34 +41,31 @@
                 \indentitem \item derivabile su \( (a, b) \).
             \end{enumerate}
 
-            Notiamo anche che:
+            Verifico se su \(h\) nell'intervallo \([a,b]\) vale il teorema di \textbf{\hyperref[teoRolle]{Rolle}}:
             \begin{align*}
-                g(a) &= f(a) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(a - a) \bigg]\\
-                     &= f(a) - \bigg[f(a) + 0 \bigg]\\
-                     &= f(a) - f(a) = 0\\
-                     \\
-                g(b) &= f(b) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(b - a) \bigg]\\
-                     &= f(b) - \bigg[f(a) + f(b) - f(a) \bigg]\\
-                     &= f(b) - f(b) = 0
+                h(a)&=\big[f(b) - f(a)\big]g(a) - \big[g(b) - g(a)\big]f(a)\\
+                h(a)&=f(b)g(a) - f(a)g(a) - f(a)g(b) + f(a)g(a)\\
+                h(a)&=f(b)g(a) - f(a)g(b)\\
+                \\
+                h(b)&=\big[f(b) - f(a)\big]g(b) - \big[g(b) - g(a)\big]f(b)\\
+                h(b)&=f(b)g(b) - f(a)g(b) - f(b)g(b) + f(b)g(a)\\
+                h(b)&=f(b)g(a) - f(a)g(b)\\
             \end{align*}
-            
-            Da cui \( g(a) = g(b) \).
+            \(h(a)=h(b)\) quindi posso applicare il teorema di \textbf{\hyperref[teoRolle]{Rolle}}. Da cui \(h\) ha un punto stazionario \(x*\)
 
-            Posso quindi applicare il teorema di \textbf{\hyperref[teoRolle]{Rolle}} su \( A \):
-            \[
-                \exists \, \, x_0 \in (a,b) \; | \; g'(x_0) = 0
-            \]
+            \[    h'(x) = \big[f(b) - f(a)\big]g'(x) - \big[g(b) - g(a)\big]f'(x) \]
             
-            Calcolo quindi \( g'(x) \):
-            \begin{align*}
-                g'(x) &= f'(x) - \frac{f(b) - f(a)}{b-a}\\
-                \\
-                g'(x_0) &= 0 \\
-                \\
-                f'(x_0) - \frac{f(b) - f(a)}{b-a} &= 0\\
-                \\
-                f'(x_0) &= \frac{f(b) - f(a)}{b-a}
-            \end{align*} c.v.d.
+            \[    h'(x*) = 0 \]
+
+            E quindi infine
+
+            \[  h'(x*) = 0 \]
             
-    
+            \[  \big[f(b) - f(a)\big]g'(x*) - \big[g(b) - g(a)\big]f'(x*) = 0 \]
+
+            \[  \big[f(b) - f(a)\big]g'(x*) = \big[g(b) - g(a)\big]f'(x*) \]
+            
+            \[  \frac{ f'(x*) }{ g'(x*) } = \frac{ f(b) - f(a) }{ g(b) - g(a) } \]
+            
+            c.v.d.
 \end{document}
