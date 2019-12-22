@@ -1,0 +1,81 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Cardinalità del continuo}
+
+        \section*{Definizioni necessarie}
+
+            Si ricorda che:
+
+            \begin{itemize}
+                \item Due insiemi hanno la stessa cardinalità quando è possibile creare una corrispondenza biunivoca tra di essi;
+                \item Un insieme infinito può avere la stessa cardinalità di un insieme infinito da lui contenuto;
+            \end{itemize}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+            \( \mathbb{R} \) ha la cardinalità del continuo.
+
+            \subsection*{Tesi}
+
+            \( \mathbb{R}^2 \) ha la cardinalità del continuo.                
+
+        \section*{Dimostrazione}
+
+            Come definito in precedenza per dimostrare che i due insiemi hanno la stessa cardinalità 
+            dobbiamo dimostrare che siano in corrispondenza \textbf{biunivoca}. 
+            Per semplicità restringiamo la dimostrazione all'intervallo \([0, 1]\).
+            
+            \subsection*{Iniettività}
+
+            Dato un punto generico \(P (x,y) \) definiamo che le sue coordinate in questo modo:
+            \[
+                x_p = 0.x_1 x_2 x_3 x_4 \dots \, \, \text{e} \, \, y_p = 0.y_1 y_2 y_3 y_ 4 \dots    
+            \]
+            l'immagine di \(P\) su \( \mathbb{R} \) è \( Q \), così definito:
+            \[
+                Q = 0.x_1 y_1 x_2 y_2 x_3 y_3 x_4 y_ 4 \dots    
+            \]
+            Ipotizziamo ora per assurdo che esista 
+            \[ 
+                P* \neq P \, / \, f(P*) = f(P)\\
+                P* = (0.x*_1 x*_2 x*_3 x*_4 \dots , 0.y*_1 y*_2 y*_3 y*_4 \dots)\\
+            \]
+            allora
+            \[
+                f(P*) = Q = 0.x*_1 y*_1 x*_2 y*_2 x*_3 y*_3 x*_4 y*_4 \dots\\
+                \text{Ma visto che}\\
+                Q = 0.x_1 y_1 x_2 y_2 x_3 y_3 x_4 y_ 4 \dots\\
+                \Rightarrow P = P* \Rightarrow \text{contraddizione}  
+            \]
+            Quindi \(f\) è \textbf{iniettiva}.
+
+            \subsection*{Suriettività}
+
+            Dato:
+            \[
+                Q \in [0,1] = 0.q_1 q_2 q_3 q_4 \dots\\ 
+            \]
+
+            Vale questa affermazione?
+            \[
+                \exists \text{?} \, P° \in [0,1]\text{x}[0,1] \, / \, f(P°) = Q
+            \]
+
+            Sì, \(P°\) è così definito:
+            \[
+                P° = (0.q_1 q_3 q_5 \dots, 0.q_2 q_4 q_6 \dots)    
+            \]
+
+            Da cui si ricava che \(f\) è anche \textbf{suriettiva}.
+
+            Abbiamo quindi trovato una corrispondenza biunivoca tra i due insiemi il che dimostra che hanno la stessa cardinalità.
+            
+\end{document}
