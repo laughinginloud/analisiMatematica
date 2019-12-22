@@ -1,0 +1,74 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema di Cauchy}
+    \label{teoCauchy}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                Date:
+                \begin{align*}
+                    f,g : A = [a, b] \longrightarrow &\mathbb{R}\\
+                    x \longmapsto &y = f(x)\\
+                                  &y = g(x) 
+                \end{align*}
+
+                Supponendo inoltre che \(f, g\) continue in A e derivabili in \( (a,b) \)
+
+            \subsection*{Tesi}
+
+                \[ 
+                    \exists \, x* \in (a,b) \, / \, \frac{ f'(x*) }{ g'(x*) } = \frac{ f(b) - f(a) }{ g(b) - g(a) }
+                \]
+
+        \section*{Dimostrazione}
+
+            Introduco una \textbf{funzione ausiliaria} \(h(x)\) così definita:
+
+            \[ 
+                h(x) = \big[f(b) - f(a)\big]g(x) - \big[g(b) - g(a)\big]f(x)
+            \]
+            Notiamo che \(h\) ha la regolarità di \(f\) e di \(g\) su A:
+            \begin{enumerate}
+                \indentitem \item è continua su \( A \);
+                \indentitem \item derivabile su \( (a, b) \).
+            \end{enumerate}
+
+            Notiamo anche che:
+            \begin{align*}
+                g(a) &= f(a) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(a - a) \bigg]\\
+                     &= f(a) - \bigg[f(a) + 0 \bigg]\\
+                     &= f(a) - f(a) = 0\\
+                     \\
+                g(b) &= f(b) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(b - a) \bigg]\\
+                     &= f(b) - \bigg[f(a) + f(b) - f(a) \bigg]\\
+                     &= f(b) - f(b) = 0
+            \end{align*}
+            
+            Da cui \( g(a) = g(b) \).
+
+            Posso quindi applicare il teorema di \textbf{\hyperref[teoRolle]{Rolle}} su \( A \):
+            \[
+                \exists \, \, x_0 \in (a,b) \; | \; g'(x_0) = 0
+            \]
+            
+            Calcolo quindi \( g'(x) \):
+            \begin{align*}
+                g'(x) &= f'(x) - \frac{f(b) - f(a)}{b-a}\\
+                \\
+                g'(x_0) &= 0 \\
+                \\
+                f'(x_0) - \frac{f(b) - f(a)}{b-a} &= 0\\
+                \\
+                f'(x_0) &= \frac{f(b) - f(a)}{b-a}
+            \end{align*} c.v.d.
+            
+    
+\end{document}
