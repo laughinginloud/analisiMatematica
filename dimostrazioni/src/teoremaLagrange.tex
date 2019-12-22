@@ -1,0 +1,75 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+
+\begin{document}
+
+    \chapter{Teorema di Lagrange}
+
+        \section*{Enunciato}
+
+        \subsection*{Ipotesi}
+
+            Sia \(f(x)\) una funzione tale che
+            \begin{align*}
+                f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                x &\longmapsto y = f(x) 
+            \end{align*}
+
+            Supponiamo inoltre che:
+
+            \begin{enumerate}
+                \indentitem \item \(f\) sia continua su \(A\) e derivabile su \((a, b)\);
+            \end{enumerate}
+
+        \subsection*{Tesi}
+
+            \[ \exists \, x_0 \in (a,b) \, / \, f'(x_0) = \frac{f(b)-f(a)}{b-a}=m \]
+            dove \(m\) è il coefficiente angolare della retta passante \(a\) e \(b\).
+
+        \section*{Dimostrazione}
+
+            \medskip
+
+            Introduco una \textbf{funzione ausiliaria} \(g(x)\) così definita:
+
+            \[ g(x) = f(x) - \bigg[f(a) + \frac{f(b) + f(a)}{b - a}(x - a) \bigg] \]
+
+            Notiamo che \(g\) ha la regolarità di \(f\) su A
+            \begin{enumerate}
+                \indentitem \item è continua su \( A \);
+                \indentitem \item derivabile su \( (a, b) \);
+            \end{enumerate}
+
+            Notiamo anche che:
+            \begin{align*}
+                g(a) &= f(a) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(a - a) \bigg]\\
+                     &= f(a) - \bigg[f(a) + 0 \bigg]\\
+                     &= f(a) - f(a) = 0\\
+                     \\
+                g(b) &= f(b) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(b - a) \bigg]\\
+                     &= f(b) - \bigg[f(a) + f(b) - f(a) \bigg]\\
+                     &= f(b) - f(b) = 0
+            \end{align*}
+            
+            Da cui \( g(a) = g(b) \).
+
+            Posso quindi applicare il teorema di \textbf{Rolle} su \( A \):
+            \[
+                \exists \, \, x_0 \in (a,b) \, \, / \, \, g'(x_0) = 0
+            \]
+            
+            Calcolo quindi \( g'(x) \):
+            \[
+                g'(x) = f'(x) - \frac{f(b) - f(a)}{b-a}\\
+                \\
+                g'(x_0) = 0\\
+                \\
+                f'(x_0) - \frac{f(b) - f(a)}{b-a} = 0\\
+                f'(x_0) = \frac{f(b) - f(a)}{b-a}
+            \] c.v.d.
+    
+\end{document}
