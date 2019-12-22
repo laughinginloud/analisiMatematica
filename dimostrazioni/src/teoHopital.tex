@@ -1,0 +1,76 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema de l'Hopital}
+    \label{teoHopital}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                Date:
+                \begin{align*}
+                    f,g : A = [a, b] \longrightarrow &\mathbb{R}\\
+                    x \longmapsto &y = f(x)\\
+                                  &y = g(x) 
+                \end{align*}
+
+                Supponendo inoltre: 
+
+                \begin{enumerate}
+                    \indentitem \item \(f, g\) continue in A e derivabili in \( (a,b) \);
+                    \indentitem \item \(f, g\) infinitesime in \(x_0 \in (a,b)\).
+                \end{enumerate}
+
+            \subsection*{Tesi}
+
+                \[ 
+                    l = \lim_{x \to x_0} \frac{f'(x)}{g'(x)} \Rightarrow l = \lim_{x \to x_0} \frac{f(x)}{g(x)}
+                \]
+
+        \section*{Dimostrazione}
+
+            Introduco una \textbf{funzione ausiliaria} \(h(x)\) così definita:
+
+            \[ 
+                h(x) = \big[f(b) - f(a)\big]g(x) - \big[g(b) - g(a)\big]f(x)
+            \]
+            Notiamo che \(h\) ha la regolarità di \(f\) e di \(g\) su A:
+            \begin{enumerate}
+                \indentitem \item è continua su \( A \);
+                \indentitem \item derivabile su \( (a, b) \).
+            \end{enumerate}
+
+            Verifico se su \(h\) nell'intervallo \([a,b]\) vale il teorema di \textbf{\hyperref[teoRolle]{Rolle}}:
+            \begin{align*}
+                h(a)&=\big[f(b) - f(a)\big]g(a) - \big[g(b) - g(a)\big]f(a)\\
+                h(a)&=f(b)g(a) - f(a)g(a) - f(a)g(b) + f(a)g(a)\\
+                h(a)&=f(b)g(a) - f(a)g(b)\\
+                \\
+                h(b)&=\big[f(b) - f(a)\big]g(b) - \big[g(b) - g(a)\big]f(b)\\
+                h(b)&=f(b)g(b) - f(a)g(b) - f(b)g(b) + f(b)g(a)\\
+                h(b)&=f(b)g(a) - f(a)g(b)\\
+            \end{align*}
+            \(h(a)=h(b)\) quindi posso applicare il teorema di \textbf{\hyperref[teoRolle]{Rolle}}. Da cui \(h\) ha un punto stazionario \(x*\)
+
+            \[    h'(x) = \big[f(b) - f(a)\big]g'(x) - \big[g(b) - g(a)\big]f'(x) \]
+            
+            \[    h'(x*) = 0 \]
+
+            E quindi infine
+
+            \[  h'(x*) = 0 \]
+            
+            \[  \big[f(b) - f(a)\big]g'(x*) - \big[g(b) - g(a)\big]f'(x*) = 0 \]
+
+            \[  \big[f(b) - f(a)\big]g'(x*) = \big[g(b) - g(a)\big]f'(x*) \]
+            
+            \[  \frac{ f'(x*) }{ g'(x*) } = \frac{ f(b) - f(a) }{ g(b) - g(a) } \]
+            
+            c.v.d.
+\end{document}
