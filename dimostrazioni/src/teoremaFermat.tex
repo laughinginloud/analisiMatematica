@@ -23,7 +23,7 @@
 
             Sia \(f(x)\) una funzione tale che
             \begin{align*}
-                f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                f : A = (a, b) &\longrightarrow \mathbb{R}\\
                 x &\longmapsto y = f(x) 
             \end{align*}
 
@@ -37,7 +37,7 @@
 
         \subsection*{Tesi}
 
-            \[f'(x) = 0\]
+            \[f'(x) = 0\] ovvero \(x_0\) è un punto stazionario
 
         \section*{Dimostrazione}
 
@@ -45,8 +45,26 @@
 
             \subsection{Caso 1 - \(x_0\) è un punto di massimo locale}
 
+            Per l'ipotesi 1 e l'ipotesi 2, quando \(h>0\) possiamo dire che:
             
-    
+            \( \frac{f(x_0 + h) - f(x_0)}{h}  \leqslant 0\)
 
-    
+            quando \(h<0\) invece possiamo dire che:
+
+            \( \frac{(f(x_0 + h) - f(x_0)}{h}  \geqslant 0\)
+
+            quindi sempre per l'ipotesi di derivabilità valgono le seguenti affermazioni
+            
+            \(\lim_{x\to 0^+} \frac{f(x_0 + h) - f(x_0)}{h} = L_1 \leqslant 0 \) dove \( L_1 \exists \land L_1 \in \mathbb{R} \)
+
+            \(\lim_{x\to 0^-} \frac{f(x_0 + h) - f(x_0)}{h} = L_2  \geqslant 0 \) dove \( L_2 \exists \land L_2 \in \mathbb{R} \)
+
+            \(L_1 = L_2 = f'(x_0)\)
+            
+            e quindi
+            \(0 \leqslant f'(x_0) \leqslant 0\)
+            
+            da cui
+            \(f'(x_0)=0\) c.v.d.
+
 \end{document}
