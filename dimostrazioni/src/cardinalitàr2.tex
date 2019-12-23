@@ -8,7 +8,7 @@
 
     % Il comando serve a mettere il testo che andrà nella struttura del documento
     % Non è possibile usare Unicode, quindi è stato scelto "del continuo" al posto di R^2
-    \chapter{Cardinalità \texorpdfstring{di \(\mathbb{R}^2\)}{del continuo}}
+    \chapter{Cardinalità \texorpdfstring{di \(\mathbb{R}^n\)}{del continuo}}
 
         \section*{Definizioni necessarie}
 
@@ -27,7 +27,7 @@
 
             \subsection*{Tesi}
 
-            \( \mathbb{R}^2 \) ha la cardinalità del continuo.                
+            \( \mathbb{R}^n \) ha la cardinalità del continuo.                
 
         \section*{Dimostrazione}
 
@@ -37,47 +37,49 @@
             
             \subsection*{Iniettività}
 
-            Dato un punto generico \(P (x,y) \) definiamo che le sue coordinate in questo modo:
-            
-            \[  x_p = 0.x_1 x_2 x_3 x_4 \dots \, \, \text{e} \, \, y_p = 0.y_1 y_2 y_3 y_ 4 \dots \]
-            
-            l'immagine di \(P\) su \( \mathbb{R} \) è \( Q \), così definito:
-            
-            \[   Q = 0.x_1 y_1 x_2 y_2 x_3 y_3 x_4 y_ 4 \dots    \]
-            
-            Ipotizziamo ora per assurdo che esista 
-            
-            \[    P* \neq P \, / \, f(P*) = f(P) \]
+                Dato un punto generico \(P (x_P,y_P) \) definiamo che le sue coordinate in questo modo:
+                \[  x_p = 0.x_1 \, x_2 \, x_3 \, x_4 \dots \, \, \text{e} \, \, y_p = 0.y_1 \, y_2 \, y_3 \, y_ 4 \dots \]
 
-            \[    P* = (0.x*_1 x*_2 x*_3 x*_4 \dots , 0.y*_1 y*_2 y*_3 y*_4 \dots) \]
-            
-            allora
-            
-            \[    f(P*) = Q = 0.x*_1 y*_1 x*_2 y*_2 x*_3 y*_3 x*_4 y*_4 \dots \]
-            
-            Ma visto che
-            
-            \[    Q = 0.x_1 y_1 x_2 y_2 x_3 y_3 x_4 y_ 4 \dots \]
-            
-            \[    \Rightarrow P = P* \Rightarrow \text{contraddizione}   \]
-            
-            Quindi \(f\) è \textbf{iniettiva}.
+                L'immagine di \(P\) su \( \mathbb{R} \) è \( Q \), così definita:
+                \[   Q = 0.x_1 \, y_1 \, x_2 \, y_2 \, x_3 \, y_3 \, x_4 \, y_ 4 \dots    \]
+
+                Ipotizziamo ora per assurdo che esista 
+
+                \[    P^* \neq P \, | \, f(P^*) = f(P) \]
+
+                \[    P^* = (0.x^*_1 \, x^*_2 \, x^*_3 \, x^*_4 \dots , 0.y^*_1 \, y^*_2 \, y^*_3 \, y^*_4 \dots) \]
+
+                allora
+
+                \[    f(P*) = Q = 0.x^*_1 \, y^*_1 \, x^*_2 \, y^*_2 \, x^*_3 \, y^*_3 \, x^*_4 \, y^*_4 \dots \]
+
+                Ma visto che
+
+                \[ Q = 0.x_1 \, y_1 \, x_2 \, y_2 \, x_3 \, y_3 \, x_4 \, y_ 4 \dots \]
+
+                ne deriva che
+
+                \[P = P^*\]
+
+                il che è assurdo. Quindi \(f\) è \textbf{iniettiva}.
 
             \subsection*{Suriettività}
 
-            Dato:
-            \[    Q \in [0,1] = 0.q_1 q_2 q_3 q_4 \dots    \]
+                Dato
+                \[    Q \in [0,1] = 0.q_1 \, q_2 \, q_3 \, q_4 \dots    \]
 
-            Vale questa affermazione?
-            
-            \[    \exists \text{?} \, P° \in [0,1]\text{x}[0,1] \, / \, f(P°) = Q    \]
+                Vale questa affermazione?
 
-            Sì, \(P°\) è così definito:
-            
-            \[    P° = (0.q_1 q_3 q_5 \dots, 0.q_2 q_4 q_6 \dots)    \]
+                \[    \exists \text{?} \, P° \in [0,1] \times [0,1] \, | \, f(P°) = Q    \]
 
-            Da cui si ricava che \(f\) è anche \textbf{suriettiva}.
+                Sì, \(P°\) è così definito:
 
-            Abbiamo quindi trovato una corrispondenza biunivoca tra i due insiemi il che dimostra che hanno la stessa cardinalità.
+                \[    P° = (0.q_1 \, q_3 \, q_5 \dots, 0.q_2 \, q_4 \, q_6 \dots)    \]
+
+                Da cui si ricava che \(f\) è anche \textbf{suriettiva}.
+
+                \bigskip
+
+                Abbiamo quindi trovato una corrispondenza biunivoca tra i due insiemi, il che dimostra che hanno la stessa cardinalità.
             
 \end{document}
