@@ -19,37 +19,33 @@
                 x &\longmapsto y = f(x) 
             \end{align*}
 
-            Supponiamo inoltre che:
-
-            \begin{enumerate}
-                \indentitem \item \(f\) sia derivabile su \((a, b)\);
-            \end{enumerate}
+            Supponiamo inoltre che \(f\) sia derivabile su \((a, b)\).
 
         \subsection*{Tesi}
 
-            \[ f'(x) > 0 \, \, \forall \, x \in A \Rightarrow f \] è monotona strettamente crescente su A. 
-            \[ f'(x) < 0 \, \, \forall \, x \in A \Rightarrow f \] è monotona strettamente decrescente su A.
+            \[ f'(x) > 0 \quad \forall \, x \in A \Rightarrow f \] è monotona strettamente crescente su A. 
+            \[ f'(x) < 0 \quad \forall \, x \in A \Rightarrow f \] è monotona strettamente decrescente su A.
 
         \section*{Dimostrazione}
 
             \medskip
 
-            \subsection*{Caso 1 - \( f'(x) > 0 \, \, \forall \, x \in A \)}
+            \subsection*{Caso 1 - \( f'(x) > 0 \quad \forall \, x \in A \)}
 
-            Siano \(x_1, x_2 \in A \, / \, a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
+            Siano \(x_1, x_2 \in A \, | \, a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
             Su \( [x_1, x_2] \) applico il \textbf{\hyperref[teoLagrange]{teorema di Lagrange}} a \(f\) quindi:
             \[
-                \exists \, x_0 \in (x_1, x_2) \, / \, f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
+                \exists \, x_0 \in (x_1, x_2) \, | \, f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
             \]
             essendo \( f'(x_0) > 0 \) e anche \( x_2 - x_1 > 0 \) ne segue che:
             \[
                 \forall \, x_1 < x_2 \Rightarrow f(x_2) > f(x_1)
             \]
-            quindi \(f(x)\) è strettamente monotona crescente. c.v.d.
+            quindi \(f(x)\) è monotona strettamente crescente, c.v.d.
 
-            \subsection*{Caso 2 - \( f'(x) < 0 \, \, \forall \, x \in A \)}
+            \subsection*{Caso 2 - \( f'(x) < 0 \quad \forall \, x \in A \)}
 
-            Siano \(x_1, x_2 \in A \, / \, a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
+            Siano \(x_1, x_2 \in A \, | \, a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
             Su \( [x_1, x_2] \) applico il \textbf{\hyperref[teoLagrange]{teorema di Lagrange}} a \(f\) quindi:
             \[
                 \exists \, x_0 \in (x_1, x_2) \, / \, f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
@@ -58,7 +54,7 @@
             \[
                 \forall \, x_1 < x_2 \Rightarrow f(x_2) < f(x_1)
             \]
-            quindi \(f(x)\) è strettamente monotona decrescente. c.v.d.
+            quindi \(f(x)\) è monotona strettamente decrescente, c.v.d.
     
     
 \end{document}
