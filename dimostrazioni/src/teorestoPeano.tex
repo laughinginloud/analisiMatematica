@@ -34,7 +34,7 @@
 
             \subsection*{Tesi}
 
-                \[ F(n): f(x) - T _n ^ f (x) = \omicron ((x-x_0)^n) \]
+                \[ F(n): f(x) - T _n ^ f (x) = o ((x-x_0)^n) \]
 
         \section*{Dimostrazione}
 
@@ -49,9 +49,9 @@
         
         \[  f \in C^1(A)  \]
 
-        \[  f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg] \stackrel{?}{=}  \omicron ((x-x_0))  \]
+        \[  f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg] \stackrel{?}{=}  o ((x-x_0))  \]
 
-        Per la definizione di \(\omicron\)-piccolo una funzione (\(f(x)\)) è \(\omicron\)-piccolo di un altra (\(g(x)\)) quando il \( \lim_{x \to x_0} \frac{f(x)}{g(x)} \rightarrow 0\) 
+        Per la definizione di \(o\)-piccolo una funzione (\(f(x)\)) è \(o\)-piccolo di un altra (\(g(x)\)) quando il \( \lim_{x \to x_0} \frac{f(x)}{g(x)} \rightarrow 0\) 
         
         \[    \lim_{x \to x_0} \frac{f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg]}{(x-x_0)} \stackrel{?}{\rightarrow} 0 \]
             
@@ -67,7 +67,7 @@
         
         \[  \forall \, g \in C\,^{n-1} (A) \]
 
-        \[  g(x) - T _n ^ g (x) = \omicron ((x-x_0)^{n-1}) \]
+        \[  g(x) - T _n ^ g (x) = o ((x-x_0)^{n-1}) \]
 
         Che possiamo riscrivere come:
 
@@ -75,7 +75,7 @@
 
         \subsection*{Verifica per \(F(n)\)}
 
-        Per verificare la tesi, mi devo anche qui rifare alla definizione di \(\omicron\)-piccolo:
+        Per verificare la tesi, mi devo anche qui rifare alla definizione di \(o\)-piccolo:
         
         \[ B_\epsilon \, (0)\]
 
