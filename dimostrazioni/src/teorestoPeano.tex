@@ -1,0 +1,112 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema del resto secondo Peano}
+    \label{teoPeano}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                Sia \(f(x)\) una funzione tale che
+                \begin{align*}
+                    f : A = (a, b) &\longrightarrow \mathbb{R}\\
+                    x &\longmapsto y = f(x) 
+                \end{align*}
+
+                Supponiamo inoltre che:
+
+                \begin{enumerate}
+                    \indentitem \item \(f \in C\,^n(A) \);
+                    \indentitem \item \(x_0 \in A\).
+                \end{enumerate}
+
+            \subsection*{Tesi}
+
+                \[F(n): f(x) - T _n ^ f (x) = \omicron ((x-x_0)^n) \]
+
+        \section*{Dimostrazione}
+
+        Per dimostrare l'enunciato, procediamo con una dimostrazione per induzione.
+
+        \medskip
+
+        % Nota: sono attaccate per evitare multiple righe vuote
+        \subsection*{Passo Base: \(F(1)\)}
+
+        Dimostriamo l'enunciato per \(n = 1\):
+        
+        \[  f \in C^1(A)  \]
+
+        \[  f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg] \stackrel{?}{=}  \omicron ((x-x_0))  \]
+
+        Per la definizione di \(\omicron\)-piccolo una funzione (\(f(x)\)) è \(\omicron\)-piccolo di un altra (\(g(x)\)) quando il \( \lim_{x \to x_0} \frac{f(x)}{g(x)} \rightarrow 0\) 
+        
+        \[    \lim_{x \to x_0} \frac{f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg]}{(x-x_0)} \stackrel{?}{\rightarrow} 0 \]
+            
+        \[    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} - f'(x_0) \stackrel{?}{\rightarrow} 0 \]
+
+        \[    f'(x_0) - f'(x_0) \rightarrow 0 \]
+
+        Quindi \(F(1)\) è vera. 
+
+        \subsection*{Ipotesi induttiva: \(F(n-1)\)}
+
+        Assumiamo per ipotesi induttiva vera la seguente affermazione:
+        
+        \[  \forall \, g \in C\,^{n-1} (A) \]
+
+        \[  g(x) - T _n ^ g (x) = \omicron ((x-x_0)^{n-1}) \]
+
+        Che possiamo riscrivere come:
+
+        \[  \lim_{x \to x_0} \frac{g(x) - T _n ^ g (x)}{(x-x_0)^{n-1}} \rightarrow 0 \]
+
+        \subsection*{Verifica per \(F(n)\)}
+
+        Per verificare la tesi, mi devo anche qui rifare alla definizione di \(\omicron\)-piccolo:
+        
+        \[ B_\epsilon \, (0)\]
+
+        \[  \lim_{x \to x_0} \frac{f(x)-T _n ^ f (x)}{(x-x_0)^n} \stackrel{?}{\rightarrow} 0\]
+
+        Questa è però una forma di indeterminazione \(\bigg[\frac{0}{0}\bigg]\) per risolverla, le applico il \textbf{\hyperref[teoHopital]{teorema de l'Hopital}}
+        
+        \[  \lim_{x \to x_0} \frac{\Big[f(x)-T _n ^ f (x)\Big]'}{\Big[(x-x_0)^n\Big]'}    \]
+
+        \[  \lim_{x \to x_0} \frac{f'(x)-\Big[T _n ^ f (x)\Big]'}{n(x-x_0)^{n-1}}    \]
+
+        Calcolo \(\Big[T _n ^ f (x)\Big]'\) a parte:
+
+        \begin{align*}
+            \Big[T _n ^ f (x)\Big]' &= f'(x_0) + \frac{f''(x_0)}{2!}2(x-x_0) + \frac{f'''(x_0)}{3!}3(x-x_0)^2 + \dots + \frac{f^n(x_0)}{n!}n(x-x_0)^n \\
+                                    &= f'(x_0) + f''(x_0)(x-x_0) + \frac{f'''(x_0)}{2!}(x-x_0)^2 + \dots + \frac{f^n(x_0)}{(n-1)!}(x-x_0)^{n-1} \\
+                                    &= T_{n-1} ^{f'} (x)
+        \end{align*}
+
+        Infatti se \(f \in C\,^n (A) \Rightarrow f' \in C\,^{n-1} \).
+
+        Quindi:
+
+        \[  \lim_{x \to x_0} \frac{f'(x)-T_{n-1} ^{f'} (x)}{n(x-x_0)^{n-1}}    \]
+
+        Notiamo che \(f' \in C\,^{n-1}\) e che \(g \in C\,^{n-1}\) poniamo quindi \(g = f'\). Da cui abbiamo:
+
+        \[  \lim_{x \to x_0} \frac{g(x)-T_{n-1} ^{g} (x)}{n(x-x_0)^{n-1}}    \]
+
+        Per ipotesi di induzione sappiamo che:
+
+        \[  \lim_{x \to x_0} \frac{g(x) - T _n ^ g (x)}{(x-x_0)^{n-1}} \rightarrow 0 \]
+
+        quindi anche:
+
+        \[  \lim_{x \to x_0} \frac{g(x)-T_{n-1} ^{g} (x)}{n(x-x_0)^{n-1}}  \rightarrow 0  \]
+
+        c.v.d.
+
+        \end{document}
