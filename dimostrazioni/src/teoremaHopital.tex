@@ -6,7 +6,7 @@
 
 \begin{document}
 
-    \chapter{Teorema de l'Hospital}
+    \chapter{Teorema di de l'Hôpital}
     \label{teoHopital}
 
         \section*{Enunciato}
@@ -15,8 +15,8 @@
 
                 Date:
                 \begin{align*}
-                    f,g : A = [a, b] \longrightarrow &\mathbb{R}\\
-                    x \longmapsto &y = f(x)\\
+                    f,g : A = [a, b] \longrightarrow \, &\mathbb{R}\\
+                    x \longmapsto \, &y = f(x)\\
                                   &y = g(x) 
                 \end{align*}
 
@@ -30,16 +30,16 @@
             \subsection*{Tesi}
 
                 \[ 
-                    l = \lim_{x \to x_0} \frac{f'(x)}{g'(x)} \Rightarrow l = \lim_{x \to x_0} \frac{f(x)}{g(x)}
+                    \text{Se } l = \lim_{x \to x_0} \frac{f'(x)}{g'(x)} \text{, allora } l = \lim_{x \to x_0} \frac{f(x)}{g(x)}
                 \]
 
         \section*{Dimostrazione}
 
             La dimostrazione avviene direttamente utilizzando il \textbf{\hyperref[teoCauchy]{teorema di Cauchy}}:
 
-            \[ \exists \, \, \theta \in (a,b) \land \theta \in (x_0, x) \]
+            \[ \exists \; \theta \in (a,b) \Rightarrow \theta \in (x_0, x) \]
 
-            Aggiungo \(f(x_0)\) che ricordiamo essere infinitesimo per ipotesi, poi considerando l'intervallo \((x_0, x)\) :
+            Aggiungo \(f(x_0)\) che ricordiamo essere infinitesimo per ipotesi, poi considerando l'intervallo \((x_0, x)\):
 
             \[  \frac{f(x)}{g(x)} = \frac{f(x) - f(x_0)}{g(x) - g(x_0)} = \frac{f'(\theta)}{g'(\theta)} \]
 
