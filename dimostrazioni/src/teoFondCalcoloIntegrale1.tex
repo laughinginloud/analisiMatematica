@@ -1,0 +1,54 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Primo Teorema Fondamentale del Calcolo Integrale}
+    \label{teoFondCalcoloIntegrale1}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                Sia \(f(t)\) una funzione tale che
+                \begin{align*}
+                    f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                    t &\longmapsto y = f(t) 
+                \end{align*}
+
+                Supponiamo inoltre che:
+
+                \begin{enumerate}
+                    \indentitem \item \(G\) sia primitiva di \(f\) su \((a, b)\);
+                    \indentitem \item \(f(t)\) sia Riemann-integrabile su \((a, b)\)
+                \end{enumerate}
+
+            \subsection*{Tesi}
+
+                \[\lim_{n\to +\infty} {S_n} = \lim_{n\to +\infty} {\sum_{i=1}^{n} f(c_i)({t_i} - t_{i-1})} = G(b) - G(a) \]
+
+        \section*{Dimostrazione}
+
+                Posti \(a\) = \(t_0\) e \(b\) = \(t_n\)
+                \begin{align*}
+                    G(b) - G(a) \, =& \, G(t_0) - G(t_n) \\
+                    =& \, G(t_n) - G(t_{n-1}) + G(t_{n-1}) + ... - G(t_i) + G(t_i) + ... - G(t_1) + G(t_1) - G(t_0) \\
+                    =& \, \sum_{i=1}^n (G(t_i) - G(t_{i-1}))
+                \end{align*}
+
+                A \(G\) possiamo applicare il \textbf{\hyperref[teoLagrange]{teorema di Lagrange}} su \([t_{i-1}, t_i]\)
+                \begin{align*}
+                    \exists  \theta_i \in (t_{i-1}, t_i) \mid G'(\theta_i) =& \frac{G(t_i) - G(t_{i-1})}{t_i - t_{i-1}} \\
+                    =& \sum_{i=1}^{n} G'(\theta_i)(t_i - t_{i-1}) \\
+                    =& \sum_{i=1}^{n} f(\theta_i)(t_i - t_{i-1}) \longrightarrow S
+                \end{align*}
+
+                Con \(S\) output cumulativo. Si tratta quindi di una somma di Riemann.
+
+                
+                c.v.d.
+    
+\end{document}
