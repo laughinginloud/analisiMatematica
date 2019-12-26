@@ -80,10 +80,38 @@
 
             \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f\,^{n+1}(\theta)}{(n+1)!}    \]
 
-            Notiamo che \(  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)}    \) quindi utilizzando il teorema di Cauchy:
+            Notiamo che \(  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)}    \) quindi utilizzando il \textbf{\hyperref[teoCauchy]{teorema di Cauchy}}:
 
-            
+            \begin{align*}
+                \frac{g(x)}{w(x)} &= \frac{g(x) - g(x_0)}{w(x) - w(x_0)}\\
+                \\
+                \exists \, x_1 \in (x_0, x) \qquad &= \frac{g'(x_1)}{w'(x_1)} = \frac{g'(x_1) - g'(x_0)}{w'(x_1) - w'(x_0)}\\
+                \\
+                \exists \, x_2 \in (x_0, x_1) \qquad &= \frac{g''(x_2)}{w''(x_2)} = \frac{g''(x_2) - g''(x_0)}{w''(x_2) - w''(x_0)}\\
+                \\
+                \exists \, x_3 \in (x_0, x_2) \qquad &= \frac{g'''(x_3)}{w'''(x_3)} = \dots\\
+                \\
+                \text{Iterando n volte}\\
+                \\
+                \exists \, \theta \in (x_0, x_n) \qquad &= \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)}
+            \end{align*}
 
+            Notiamo anche che possiamo fare questo perché da come abbiamo dimostrato prima calcolandolo,\\ 
+            \(g(x_0)\,,\, g'(x_0)\,,\, \dots\,,\, g\,^{(n)} (x_0) \) e \( w(x_0)\,,\, w'(x_0)\,,\, \dots\,,\, w\,^{(n)} (x_0)\) sono infinitesimi.
 
+            Quindi le derivate \(n+1\)-esime dal precedente calcolo di \(g(x) \text{e} w(x)\) sono:
 
+            \[  \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} = \frac{f\,^{n+1}(\theta)}{(n+1)!} \]
+
+            Quindi per come abbiamo definito \(g(x) \text{e} w(x)\):
+
+            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)} = \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} = \frac{f\,^{n+1}(\theta)}{(n+1)!}   \]
+
+            Da cui:
+
+            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f\,^{n+1}(\theta)}{(n+1)!}   \]
+
+            \[  f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
+
+            c.v.d.
         \end{document}
