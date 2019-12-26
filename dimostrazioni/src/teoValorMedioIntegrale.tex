@@ -1,0 +1,66 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema Valor Medio Integrale}
+    \label{teoValorMedioIntegrale}
+
+    \section*{Enunciato}
+
+        \subsection*{Ipotesi}
+
+            Sia \(f(x)\) una funzione limitata tale che
+            \begin{align*}
+                f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                t &\longmapsto y = f(t) 
+            \end{align*}
+
+            Supponiamo inoltre che:
+
+                \begin{enumerate}
+                    \indentitem \item \(m\) = inf \(f\) su \([a, b]\);
+                    \indentitem \item \(M\) = sup \(f\) su \([a, b]\)
+                \end{enumerate}  
+
+        \subsection*{Definizione}
+
+            \[ \frac{1}{b-a} \int_{a}^{b} f(t)dt \]
+            purché \(f\) sia Riemann-integrabile.
+
+    \section*{Proprietà 1}
+
+        \[ m \leqslant VMI \leqslant M \]
+
+        \subsection*{Dimostrazione}
+    
+            \[m \leqslant f(t) \leqslant M  \qquad \forall t \in [a, b] \]
+
+            Integrale definito
+
+            \[\int_{a}^{b} m dt \leqslant \int_{a}^{b} f(t) dt \leqslant \int_{a}^{b} M dt\]
+
+            Per la monotonia:
+            \begin{alignat*}{2}
+                m(b-a) &\leqslant \quad \: \int_{a}^{b} f(t) dt &&\leqslant M(b-a) \\
+                m &\leqslant \frac{1}{b-a} \int_{a}^{b} f(t) dt &&\leqslant M
+            \end{alignat*}
+
+    \section*{Proprietà 2}
+
+        Se \(f \in C^0 ([a,b]) \) allora:
+
+
+        \[\exists \theta\in [a, b] \mid f(\theta) = VMI \]
+
+        \subsection*{Dimostrazione}
+    
+            Valendo Weierstrass e Darboux:
+
+            \[m \leqslant VMI \leqslant M \]
+        
+
+\end{document}
