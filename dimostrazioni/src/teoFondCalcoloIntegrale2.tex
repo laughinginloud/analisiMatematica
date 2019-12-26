@@ -1,0 +1,82 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Secondo Teorema Fondamentale del Calcolo Integrale}
+    \label{teoFondCalcoloIntegrale2}
+
+    Ha due formulazioni:
+
+    \section*{Prima Forma}
+
+        Data una funzione limitata e Riemann-integrabile:
+        \begin{align*}
+            f : A = [a, b] &\longrightarrow \mathbb{R}\\
+            t &\longmapsto y = f(t) 
+        \end{align*}
+
+        È detta \textbf{funzione integrale} la funzione \(G\):
+        \begin{align*}
+            G(x) = \int_{a}^{x} f(t) dt \qquad   &{G : [a, b] \longmapsto \mathbb{R}} \\
+            &{x \longmapsto G(x) = \int_{a}^{x} f(t) dt}
+        \end{align*}
+
+        \(G\) è una funzione \textbf{continua}.
+            
+            \subsection*{Dimostrazione}
+
+                Voglio dimostrare che 
+
+                \[\forall x_0 \in [a, b] \qquad G(x_0) = \lim_{x \to  x_0} G(x) \]
+                
+                Per comodità consideriamo il limite da destra e \(a < x_0 < x < b \)
+                \begin{align*}
+                    \lim_{x \to {x_0}^{+}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
+                    =& \lim_{x \to x_0} \left[ \int_{a}^{x_0} + \int_{x_0}^{x} \right] = \\
+                    =& \lim_{x \to x_0} \left[ G(x_0) + \int_{x_0}^{x} f(t) dt \right] = \\
+                    =& G(x_0)
+                \end{align*}
+
+                \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; ed \; x \]
+
+                \[m(x-x_0) \, \leqslant \int_{x_0}^{x} f(t) dt \, \leqslant M(x_0-x) \]
+
+                L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
+
+
+
+
+    \section*{Seconda Forma}
+
+        Data una funzione continua:
+        \begin{align*}
+            f : A = [a, b] &\longrightarrow \mathbb{R}\\
+            t &\longmapsto y = f(t) 
+        \end{align*}
+
+        È detta \textbf{funzione integrale} la funzione \(G\):
+        \begin{align*}
+            G(x) = \int_{a}^{x} f(t) dt \qquad   &{G : [a, b] \longmapsto \mathbb{R}} \\
+            &{x \longmapsto G(x) = \int_{a}^{x} f(t) dt}
+        \end{align*}
+
+        \(G\) è una funzione \textbf{derivabile}.
+
+        \[G \in C^{1}([a, b]) \quad e \quad G'(x) = f(x) \qquad \forall x \in [a,b] \]
+        
+            \subsection*{Dimostrazione}
+
+                Sia \(x_0 \in (a,b) \), vogliamo dimostrare che \(G\) è derivabile in \(x_0\)
+
+                \begin{align*}
+                    \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x-0} f(t)dt \right] \\
+                    =& \frac{1}{h} \int_{x_0}^{x_0+h}f(t) dt & \text{VMI dif su} [x_0, {x_0} +h]\\
+                    =& f(\theta) \longmapsto f(x_0)  & \text{per la seconda proprietà del VMI}& \\
+                    &                                &  con \; h \rightarrow 0 \; e \; \theta \rightarrow x_0&
+                \end{align*}
+
+\end{document}
