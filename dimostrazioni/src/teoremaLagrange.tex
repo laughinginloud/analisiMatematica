@@ -30,7 +30,7 @@
 
             Introduco una \textbf{funzione ausiliaria} \(g(x)\) così definita:
 
-            \[ g(x) = f(x) - \bigg[f(a) + \frac{f(b) + f(a)}{b - a}(x - a) \bigg] \]
+            \[ g(x) = f(x) - \left[f(a) + \frac{f(b) + f(a)}{b - a}(x - a) \right] \]
 
             Notiamo che \(g\) ha la regolarità di \(f\) su A:
             \begin{enumerate}
@@ -40,18 +40,18 @@
 
             Notiamo anche che:
             \begin{align*}
-                g(a) &= f(a) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(a - a) \bigg]\\
-                     &= f(a) - \bigg[f(a) + 0 \bigg]\\
+                g(a) &= f(a) - \left[f(a) + \frac{f(b) - f(a)}{b - a}(a - a) \right]\\
+                     &= f(a) - \left[f(a) + 0 \right]\\
                      &= f(a) - f(a) = 0\\
                      \\
-                g(b) &= f(b) - \bigg[f(a) + \frac{f(b) - f(a)}{b - a}(b - a) \bigg]\\
-                     &= f(b) - \bigg[f(a) + f(b) - f(a) \bigg]\\
+                g(b) &= f(b) - \left[f(a) + \frac{f(b) - f(a)}{b - a}(b - a) \right]\\
+                     &= f(b) - \left[f(a) + f(b) - f(a) \right]\\
                      &= f(b) - f(b) = 0
             \end{align*}
             
             Da cui \( g(a) = g(b) \).
 
-            Posso quindi applicare il teorema di \textbf{\hyperref[teoRolle]{Rolle}} su \( A \):
+            Posso quindi applicare il \textbf{\hyperref[teoRolle]{teorema di Rolle}} su \( A \):
             \[
                 \exists \, \, x_0 \in (a,b) \; | \; g'(x_0) = 0
             \]
