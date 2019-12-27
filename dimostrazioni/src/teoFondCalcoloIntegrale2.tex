@@ -44,15 +44,14 @@
                     \begin{align*}
                         \lim_{x \to {x_0}^{+}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
                         =& \lim_{x \to x_0} \left[ \int_{a}^{x_0} + \int_{x_0}^{x} \right] = \\
-                        =& \lim_{x \to x_0} \left[ G(x_0) + \int_{x_0}^{x} f(t) dt \right] = \\
-                        =& G(x_0)
+                        =& \lim_{x \to x_0} \left[ G(x_0) + \int_{x_0}^{x} f(t) dt \right]
                     \end{align*}
 
-                    Se \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) è \emph{infinitesimo} (tende a 0) allora:
+                    Se \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) fosse \emph{infinitesimo} allora:
 
                     \[  \lim_{x \to {x_0}^{+}}G(x) = G(x_0) \]
 
-                    che dimostra la continuità di \(G(x)\). Quindi passiamo a dimostrare che \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) è \emph{infinitesimo}:
+                    che dimostrerebbe la continuità di \(G(x)\). Passiamo quindi a dimostrare che \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) è \emph{infinitesimo}:
 
                     \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; ed \; x \]
 
@@ -67,14 +66,14 @@
                     \begin{align*}
                         \lim_{x \to {x_0}^{-}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
                         =& \lim_{x \to {x_0}^{-}} \left[ \int_{a}^{x_0}f(t) dt - \int_{x}^{x_0}f(t) dt \right] = \\
-                        =& \lim_{x \to {x_0}^{-}} \left[ G(x_0) - \int_{x}^{x_0} f(t) dt \right] =
+                        =& \lim_{x \to {x_0}^{-}} \left[ G(x_0) - \int_{x}^{x_0} f(t) dt \right]
                     \end{align*}
 
-                    Se \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) è \emph{infinitesimo} (tende a 0) allora:
+                    Se \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) fosse \emph{infinitesimo} allora:
 
                     \[  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) \]
 
-                    che dimostra la continuità di \(G(x)\). Quindi passiamo a dimostrare che \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) è \emph{infinitesimo}:
+                    che dimostrerebbe la continuità di \(G(x)\). Passiamo quindi a dimostrare che \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) è \emph{infinitesimo}:
 
                     \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; ed \; x_0 \]
 
