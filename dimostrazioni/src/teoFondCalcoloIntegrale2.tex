@@ -13,27 +13,34 @@
 
     \section*{Prima Forma}
 
-        Data una funzione limitata e Riemann-integrabile:
-        \begin{align*}
-            f : A = [a, b] &\longrightarrow \mathbb{R}\\
-            t &\longmapsto y = f(t) 
-        \end{align*}
+        \subsection*{Enunciato}
 
-        È detta \textbf{funzione integrale} la funzione \(G\):
-        \begin{align*}
-            G(x) = \int_{a}^{x} f(t) dt \qquad   &{G : [a, b] \longmapsto \mathbb{R}} \\
-            &{x \longmapsto G(x) = \int_{a}^{x} f(t) dt}
-        \end{align*}
+            \subsubsection*{Ipotesi}
+        
+                Data una funzione limitata e Riemann-integrabile:
+                    \begin{align*}
+                        f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                        t &\longmapsto y = f(t) 
+                    \end{align*}
 
-        \(G\) è una funzione \textbf{continua}.
+                    È detta \textbf{funzione integrale} la funzione \(G\):
+                    \begin{align*}
+                        G(x) = \int_{a}^{x} f(t) dt \qquad   &{G : [a, b] \longmapsto \mathbb{R}} \\
+                        &{x \longmapsto G(x) = \int_{a}^{x} f(t) dt}
+                    \end{align*}
+
+            \subsubsection*{Tesi}
+
+                \(G\) è una funzione \textbf{continua}.
             
-            \subsection*{Dimostrazione}
+        \subsection*{Dimostrazione}
 
-                Voglio dimostrare che 
+            Voglio dimostrare che 
 
-                \[\forall x_0 \in [a, b] \qquad G(x_0) = \lim_{x \to  x_0} G(x) \]
-                
-                Per comodità consideriamo il limite da destra e \(a < x_0 < x < b \)
+            \[\forall x_0 \in [a, b] \qquad G(x_0) = \lim_{x \to  x_0} G(x) \]
+            
+            \subsubsection*{Caso 1 - \(a < x_0 < x < b \)}
+                Consideriamo quindi il limite da destra:
                 \begin{align*}
                     \lim_{x \to {x_0}^{+}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
                     =& \lim_{x \to x_0} \left[ \int_{a}^{x_0} + \int_{x_0}^{x} \right] = \\
@@ -41,16 +48,43 @@
                     =& G(x_0)
                 \end{align*}
 
+                Se \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) è \emph{infinitesimo} (tende a 0) allora:
+
+                \[  \lim_{x \to {x_0}^{+}}G(x) = G(x_0) \]
+
+                che dimostra la continuità di \(G(x)\). Quindi passiamo a dimostrare che \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) è \emph{infinitesimo}:
+
                 \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; ed \; x \]
 
-                \[m(x-x_0) \, \leqslant \int_{x_0}^{x} f(t) dt \, \leqslant M(x_0-x) \]
+                \[m(x-x_0) \, \leqslant \int_{x_0}^{x} f(t) dt \, \leqslant M(x-x_0) \]
 
-                L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
+                L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0. Questo dimostra la continuità di \(G(x)\).
 
+                c.v.d.
+                
+            \subsubsection*{Caso 2 - \(a < x < x_0 < b \)}
+                Consideriamo quindi il limite da sinistra:
+                \begin{align*}
+                    \lim_{x \to {x_0}^{-}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
+                    =& \lim_{x \to {x_0}^{-}} \left[ \int_{a}^{x_0}f(t) dt - \int_{x}^{x_0}f(t) dt \right] = \\
+                    =& \lim_{x \to {x_0}^{-}} \left[ G(x_0) - \int_{x}^{x_0} f(t) dt \right] =
+                \end{align*}
 
+                Se \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) è \emph{infinitesimo} (tende a 0) allora:
 
+                \[  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) \]
 
-    \section*{Seconda Forma}
+                che dimostra la continuità di \(G(x)\). Quindi passiamo a dimostrare che \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) è \emph{infinitesimo}:
+
+                \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; ed \; x_0 \]
+
+                \[m(x_0-x) \, \leqslant \int_{x}^{x_0} f(t) dt \, \leqslant M(x_0-x) \]
+
+                L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0. Questo dimostra la continuità di \(G(x)\).
+
+                c.v.d.
+            
+        \section*{Seconda Forma}
 
         Data una funzione continua:
         \begin{align*}
