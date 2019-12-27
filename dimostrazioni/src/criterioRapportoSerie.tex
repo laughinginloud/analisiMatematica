@@ -1,0 +1,52 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Criterio del Rapporto per la Convergenza delle Serie a termini positivi.}
+    \label{criterioRapportoSerie}
+
+        \section*{Enunciato}
+
+            Sia \Sigma \(a_n\) una serie a termini positivi \(a_n\) > 0 \(\forall n\)
+            \begin{align*}
+                Se \; \frac{a_{n+1}}{a_n} &\longrightarrow l \\
+                &n  \rightarrow +\infty
+            \end{align*}
+            
+            \begin{cases}
+                se \; l > 1 & diverge \\
+                se \; l = 1 & il criterio non si applica \\
+                se \; 0 \leqslant l \leqslant 1 & converge 
+            \end{cases}
+
+        \section*{Dimostrazione}
+
+            Dimostramo il caso per \(l < 1\). 
+            \[b_n = \frac{a_{n+1}}{a_n} & \text{e so che} \lim_{n \to +\infty}b_n = l < 1 \] 
+            \[\forall B_\varepsilon (l) \, \exists n > M \qquad b_n \in B_\varepsilon (l) \]
+            Scegliamo \(\varepsilon\) in modo che \(l + \varepsilon < 1 \) da \(M\) in poi.
+            \begin{align*}
+                \frac{a_{n+1}}{a_n} &= b_n < l + \varepsilon \\
+                a_{n+1} &< a_n(l + \varepsilon) && \text{disuguaglianza ricorsiva che vale \textbf{definitivamente}} \\
+                a_{M+2} &< a{M+1} (l + \varepsilon) \\
+                a_{M+3} &< a{M+2} (l + \varepsilon) < a_{M+1}(l + \varepsilon)^{2}\\
+                a_{M+4} &< a{M+3} (l + \varepsilon) < a_{M+1}(l + \varepsilon)^{3}
+                \qquad \dots \\
+                a_{M+n+1}< a_{M+1}(l + \epsilon)^{n}
+            \end{align*}
+            Ho \textbf{maggiorato} definitivamente la serie di partenza con una serie
+            \[ \sum_{n=\dots}^{+\infty} a_{M+1}(l + \varepsilon)^{n}\] 
+            Applico il criterio del confronto con la geometrica con ragione
+            \[-1 < q = l + \varepsilon < 1 \]
+            che \emph{converge}, quindi anche la serie di partenza \(\sum_{}^{+\infty} a_n \) \textbf{converge}. \\
+            c.v.d. 
+
+
+
+
+                        
+\end{document}
