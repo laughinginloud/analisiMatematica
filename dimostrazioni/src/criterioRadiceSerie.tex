@@ -1,0 +1,62 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Criterio della Radice per la Convergenza delle Serie a termini positivi.}
+    \label{criterioRadiceSerie}
+
+        \section*{Enunciato}
+
+            Sia \(\sum_{n\dots}^{+\infty}\) \(a_n\) una serie a termini positivi \(a_n\) > 0 \(\forall n\). Se:
+             \[\sqrt[n]{a_n} \longrightarrow l \qquad  per \; n  \rightarrow +\infty \]
+                
+            
+            Allora:
+            \[
+                \left\{
+                    \begin{aligned}
+                        &se \; l > 1 & \text{diverge} \\
+                        &se \; l = 1 & \text{il criterio non si applica} \\
+                        &se \; 0 \leqslant l < 1 & \text{converge}
+                    \end{aligned}
+                \right.
+            \]
+            
+        \section*{Dimostrazione}
+            
+            \subsection*{Caso 1:  \(0 \leqslant l < 1\)} 
+                    
+                Introduco una \textbf{successione ausiliaria}
+                \[b_n = \sqrt[n]{a_n} \]  
+                \[\lim_{n \to +\infty} b_n = l \qquad \text{e so che} l < 1\]
+                Per la definizione di limite:
+                \[\forall B_\varepsilon (l) \; \exists M \mid \forall n > M \quad b_n \in B_\varepsilon (l) \]
+                Scelgo \(\varepsilon\) in modo che \(\varepsilon < 1 -l \)
+                \begin{align*}
+                    l - \varepsilon < b_n &< l + \varepsilon \; (<1) \\
+                    \sqrt[n]{a_n} &< l + \varepsilon \; (<1) \\
+                    a_n &< (l+\varepsilon)^{n}  
+                \end{align*}
+                                     
+                Applico il teorema del confronto tra \(\Sigma a_n\) e:
+                \begin{align*}
+                    && \text{geometrica di ragione:} \\
+                    \sum_{n=\dots}^{+\infty} (l+\varepsilon)^{n} && q = l+ \varepsilon \\
+                    && -1 < q < 1
+                \end{align*}
+
+                Essendo quest'ultima convergente, possiamo concludere che anche la serie di partenza \textbf{converge}.
+
+
+
+            \subsection*{Caso 2: \(l > 1\)}
+
+
+
+
+                        
+\end{document}
