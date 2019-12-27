@@ -113,7 +113,7 @@
                                 \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x_0} f(t)dt \right] \\
                                                             =& \frac{1}{h} \int_{x_0}^{x_0+h}f(t) dt & \text{VMI dif su} [x_0, {x_0} +h]\\
                                 \exists \, \theta \in (x_0, x_0+h) | =& f(\theta) \longmapsto f(x_0)          & \text{per la seconda proprietà del VMI}& \\
-                                &                            &  con \; h \rightarrow 0&
+                                &                            &  con \; h \rightarrow 0^{+}&
                             \end{align*}
                             
                             Dimostrando che non solo \(G(x)\) è derivabile su \((a,b)\) data l'arbitrarietà di \(x_0\), 
@@ -126,7 +126,7 @@
                                                             =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x_0+h} f(t)dt -\int_{x_0+h}^{x_0} f(t)dt \right] \\
                                                             =& \frac{1}{-h} \int_{x_0+h}^{x_0}f(t) dt & \text{VMI dif su} [x_0 + h, x_0]\\
                                 \exists \, \theta \in (x_0+h, x_0) | =& f(\theta) \longmapsto f(x_0)          & \text{per la seconda proprietà del VMI}& \\
-                                &                            &  con \; h \rightarrow 0&
+                                &                            &  con \; h \rightarrow 0^{-}&
                             \end{align*}
                             
                             Dimostrando che non solo \(G(x)\) è derivabile su \((a,b)\) data l'arbitrarietà di \(x_0\), 
