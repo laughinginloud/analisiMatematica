@@ -49,11 +49,11 @@
         
         \[  f \in C^1(A)  \]
 
-        \[  f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg] \stackrel{?}{=}  o ((x-x_0))  \]
+        \[  f(x) - \left[ f(x_0) + f'(x_0)(x-x_0) \right] \stackrel{?}{=}  o ((x-x_0))  \]
 
         Per la definizione di \(o\)-piccolo una funzione (\(f(x)\)) è \(o\)-piccolo di un altra (\(g(x)\)) quando il \( \lim_{x \to x_0} \frac{f(x)}{g(x)} \rightarrow 0\) 
         
-        \[    \lim_{x \to x_0} \frac{f(x) - \bigg[ f(x_0) + f'(x_0)(x-x_0) \bigg]}{(x-x_0)} \stackrel{?}{\rightarrow} 0 \]
+        \[    \lim_{x \to x_0} \frac{f(x) - \left[ f(x_0) + f'(x_0)(x-x_0) \right]}{(x-x_0)} \stackrel{?}{\rightarrow} 0 \]
             
         \[    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} - f'(x_0) \stackrel{?}{\rightarrow} 0 \]
 
@@ -81,16 +81,16 @@
 
         \[  \lim_{x \to x_0} \frac{f(x)-T _n ^ f (x)}{(x-x_0)^n} \stackrel{?}{\rightarrow} 0\]
 
-        Questa è però una forma di indeterminazione \(\bigg[\frac{0}{0}\bigg]\) per risolverla, le applico il \textbf{\hyperref[teoHopital]{teorema de l'Hospital}}
+        Questa è però una forma di indeterminazione \(\left[\frac{0}{0}\right]\) per risolverla, le applico il \textbf{\hyperref[teoHopital]{teorema de l'Hospital}}
         
-        \[  \lim_{x \to x_0} \frac{\Big[f(x)-T _n ^ f (x)\Big]'}{\Big[(x-x_0)^n\Big]'}    \]
+        \[  \lim_{x \to x_0} \frac{\left[f(x)-T _n ^ f (x)\right]'}{\left[(x-x_0)^n\right]'}    \]
 
-        \[  \lim_{x \to x_0} \frac{f'(x)-\Big[T _n ^ f (x)\Big]'}{n(x-x_0)^{n-1}}    \]
+        \[  \lim_{x \to x_0} \frac{f'(x)-\left[T _n ^ f (x)\right]'}{n(x-x_0)^{n-1}}    \]
 
-        Calcolo \(\Big[T _n ^ f (x)\Big]'\) a parte:
+        Calcolo \(\left[T _n ^ f (x)\right]'\) a parte:
 
         \begin{align*}
-            \Big[T _n ^ f (x)\Big]' &= f'(x_0) + \frac{f''(x_0)}{2!}2(x-x_0) + \frac{f'''(x_0)}{3!}3(x-x_0)^2 + \dots + \frac{f^n(x_0)}{n!}n(x-x_0)^n \\
+            \left[T _n ^ f (x)\right]' &= f'(x_0) + \frac{f''(x_0)}{2!}2(x-x_0) + \frac{f'''(x_0)}{3!}3(x-x_0)^2 + \dots + \frac{f^n(x_0)}{n!}n(x-x_0)^n \\
                                     &= f'(x_0) + f''(x_0)(x-x_0) + \frac{f'''(x_0)}{2!}(x-x_0)^2 + \dots + \frac{f^n(x_0)}{(n-1)!}(x-x_0)^{n-1} \\
                                     &= T_{n-1} ^{f'} (x)
         \end{align*}
