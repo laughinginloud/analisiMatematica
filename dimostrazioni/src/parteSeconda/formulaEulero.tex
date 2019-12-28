@@ -45,17 +45,17 @@
 
             Ridefinendo le funzioni \( e^x, \sin x, \cos x \) nei complessi è possibile verificare la \textbf{formula di Eulero}:
 
-                \[  e\,^{i\theta} = \cos \theta + i \sin \theta \]
+                \[  e^{i\theta} = \cos \theta + i \sin \theta \]
 
         \section*{Dimostrazione}
 
             \subsection*{Parte 1 - \(e^z\)}    
 
                 Consideriamo la seguente serie di funzioni:
-                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \times x\,^k \qquad x \in \mathbb{R}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \times x^k \qquad x \in \mathbb{R}  \]
 
                 Questo è lo sviluppo di MacLaurin di \(e^x\) esteso all'infinito. Portiamo ora la serie nei complessi:
-                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \times z\,^k \qquad x \in \mathbb{C}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \times z^k \qquad x \in \mathbb{C}  \]
 
                 Verifichiamo se:
                 \begin{itemize}
@@ -65,7 +65,7 @@
             
                 Sappiamo che se converge assolutamente ne seguirà la convergenza semplice. Quindi passiamo a dimostrare che:
 
-                \[  \sum_{k=\dots}^{+\infty} \left| \frac{1}{k!} \times z\,^k \right| = \sum_{k=\dots}^{+\infty} A_k \]
+                \[  \sum_{k=\dots}^{+\infty} \left| \frac{1}{k!} \times z^k \right| = \sum_{k=\dots}^{+\infty} A_k \]
 
                 Applico il \textbf{\hyperref[criterioRapportoSerie]{criterio del rapporto}}:
                 \begin{align*}
@@ -74,7 +74,7 @@
                 \end{align*}
 
                 Quindi \(\sum_{k=\dots}^{+\infty} A_k\) converge puntualmente (\(\forall \, z^* \in \mathbb{C}\)) 
-                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{1}{k!} \times z\,^k \) converge assolutamente e semplicemente puntualmente.
+                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{1}{k!} \times z^k \) converge assolutamente e semplicemente puntualmente.
 
                 Questa serie corrisponde quindi a una funzione di variabile complessa \(f(z)\).
 
@@ -92,10 +92,10 @@
             \subsection*{Parte 2 - \(\sin z\)}
 
                 Consideriamo la seguente serie di funzioni:
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times x\,^{2k+1} \qquad x \in \mathbb{R}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times x^{2k+1} \qquad x \in \mathbb{R}  \]
 
                 Questo è lo sviluppo di MacLaurin di \(\sin x\) esteso a \(+ \infty\). Portiamo ora la serie nei complessi:
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1} \qquad x \in \mathbb{C}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z^{2k+1} \qquad x \in \mathbb{C}  \]
 
                 Verifichiamo se:
                 \begin{itemize}
@@ -105,7 +105,7 @@
             
                 Sappiamo che se converge assolutamente ne seguirà la convergenza semplice. Quindi passiamo a dimostrare che:
 
-                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1} \right| = \sum_{k=\dots}^{+\infty} B_k \]
+                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k+1)!} \times z^{2k+1} \right| = \sum_{k=\dots}^{+\infty} B_k \]
 
                 Applico il \textbf{\hyperref[criterioRapportoSerie]{criterio del rapporto}}:
                 \begin{align*}
@@ -114,15 +114,15 @@
                 \end{align*}
 
                 Quindi \(\sum_{k=\dots}^{+\infty} B_k\) converge puntualmente (\(\forall \, z^* \in \mathbb{C}\)) 
-                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1}\) converge assolutamente e semplicemente puntualmente.
+                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z^{2k+1}\) converge assolutamente e semplicemente puntualmente.
 
                 Questa serie corrisponde quindi a una funzione di variabile complessa \(f(z)\).
 
                 Definiamo così la funzione:
-                \[  \sin z \stackrel{df}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1}    \]
+                \[  \sin z \stackrel{df}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z^{2k+1}    \]
 
                 Notiamo anche che se \(z = x + 0 \times i\) abbiamo:
-                \[  \sin x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times x\,^{2k+1} \]
+                \[  \sin x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times x^{2k+1} \]
 
                 Che altro non è che lo sviluppo di Mac Laurin di \(\sin x\) esteso a \(+\infty\). 
                 Abbiamo così definito la funzione seno nei complessi.
@@ -130,10 +130,10 @@
             \subsection*{Parte 3 - \(\cos z\)}
 
                 Consideriamo la seguente serie di funzioni:
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times x\,^{2k} \qquad x \in \mathbb{R}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times x^{2k} \qquad x \in \mathbb{R}  \]
 
                 Questo è lo sviluppo di MacLaurin di \(\cos x\) esteso a \(+ \infty\). Portiamo ora la serie nei complessi:
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k} \qquad x \in \mathbb{C}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times z^{2k} \qquad x \in \mathbb{C}  \]
 
                 \newpage
 
@@ -145,7 +145,7 @@
             
                 Sappiamo che se converge assolutamente ne seguirà la convergenza semplice. Quindi passiamo a dimostrare che:
 
-                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k)!} \times z\,^{2k} \right| = \sum_{k=\dots}^{+\infty} C_k \]
+                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k)!} \times z^{2k} \right| = \sum_{k=\dots}^{+\infty} C_k \]
 
                 Applico \textbf{\hyperref[criterioRapportoSerie]{criterio del rapporto}}:
                 \begin{align*}
@@ -154,17 +154,17 @@
                 \end{align*}
 
                 Quindi \(\sum_{k=\dots}^{+\infty} C_k\) converge puntualmente (\(\forall \, z^* \in \mathbb{C}\)) 
-                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k}\) converge assolutamente e semplicemente puntualmente.
+                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times z^{2k}\) converge assolutamente e semplicemente puntualmente.
 
                 Questa serie corrisponde quindi a una funzione di variabile complessa \(f(z)\).
 
                 Definiamo così la funzione:
 
-                \[  \cos z \stackrel{df}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k}    \]
+                \[  \cos z \stackrel{df}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times z^{2k}    \]
 
                 Notiamo anche che se \(z = x + 0 \times i\) abbiamo:
 
-                \[  \cos x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times x\,^{2k} \]
+                \[  \cos x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times x^{2k} \]
 
                 Che altro non è che lo sviluppo di MacLaurin di \(\cos x\) esteso a \(+\infty\). 
                 Abbiamo così definito la funzione seno nei complessi.
@@ -172,9 +172,9 @@
             \subsection*{Parte 4 - \textbf{La formula di Eulero}}
 
                 Abbiamo ora definito le funzioni \(e^z\), \(\sin z\), \(\cos z\) in \(\mathbb{C}\) nel modo seguente:
-                \[  e\,^z  =  \sum_{k=0}^{+\infty} \frac{1}{k!} \times z\,^k    \]
-                \[  \sin z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1} \]
-                \[  \cos z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k}    \]
+                \[  e^z  =  \sum_{k=0}^{+\infty} \frac{1}{k!} \times z^k    \]
+                \[  \sin z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z^{2k+1} \]
+                \[  \cos z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times z^{2k}    \]
 
                 Prendiamo ora \( z = i\theta \) (parte reale nulla) avremo:
                 \begin{align*}

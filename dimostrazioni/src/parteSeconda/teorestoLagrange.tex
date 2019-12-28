@@ -28,13 +28,13 @@
                 Supponiamo inoltre che:
 
                 \begin{enumerate}
-                    \indentitem \item \(f \in C\,^{n+1} (A) \);
+                    \indentitem \item \(f \in C^{n+1} (A) \);
                     \indentitem \item \(x_0 \in A\).
                 \end{enumerate}
 
             \subsection*{Tesi}
 
-                \[  \exists \, \theta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
+                \[  \exists \, \theta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
 
         \section*{Dimostrazione}
 
@@ -42,43 +42,43 @@
 
             Considero due \textbf{funzioni ausiliarie \(g(x), w(x)\)} così definite:
 
-            \[  g(x) = f(x) - T_n (x) \qquad g(x) \in C\,^{n+1} (A)  \]
+            \[  g(x) = f(x) - T_n (x) \qquad g(x) \in C^{n+1} (A)  \]
 
-            \[  w(x) = (x - x_0)^{n+1} \qquad w(x) \in C\,^{\infty} (A)  \]
+            \[  w(x) = (x - x_0)^{n+1} \qquad w(x) \in C^{\infty} (A)  \]
 
             \newpage
 
-            Calcolo \( g(x_0)\, , \, g'(x_0)\, ,\, \dots\, , \, g \,^{(n+1)}(x_0)  \):
+            Calcolo \( g(x_0)\, , \, g'(x_0)\, ,\, \dots\, , \, g ^{(n+1)}(x_0)  \):
             
             \begin{align*}
-                g(x_0) &= f(x_0) - \bigg[\frac{f(x_0)}{0!}1 + \frac{f'(x_0)}{1!}(x_0-x_0) + \frac{f''(x_0)}{2!}(x_0-x_0)^2 + \dots + \frac{f\,^{(n)}(x_0)}{n!}(x_0-x_0)^n \bigg] = 0\\
-                g'(x_0) &= f'(x_0) - \bigg[\frac{f'(x_0)}{1!}1 + \frac{f''(x_0)}{2!}2(x_0-x_0) + \dots + \frac{f\,^{(n)}(x_0)}{n!}n(x_0-x_0)^{n-1} \bigg] = 0\\
+                g(x_0) &= f(x_0) - \bigg[\frac{f(x_0)}{0!}1 + \frac{f'(x_0)}{1!}(x_0-x_0) + \frac{f''(x_0)}{2!}(x_0-x_0)^2 + \dots + \frac{f^{(n)}(x_0)}{n!}(x_0-x_0)^n \bigg] = 0\\
+                g'(x_0) &= f'(x_0) - \bigg[\frac{f'(x_0)}{1!}1 + \frac{f''(x_0)}{2!}2(x_0-x_0) + \dots + \frac{f^{(n)}(x_0)}{n!}n(x_0-x_0)^{n-1} \bigg] = 0\\
                 g''(x_0) &= 0\\
                 &\dots\\
-                g\,^{(n)} (x_0) &= 0\\
-                g\,^{(n+1)} (x_0) &= f\,^{(n+1)}(x_0) - 0 = f\,^{(n+1)}(x_0)
+                g^{(n)} (x_0) &= 0\\
+                g^{(n+1)} (x_0) &= f^{(n+1)}(x_0) - 0 = f^{(n+1)}(x_0)
             \end{align*}
 
             \bigskip
             
-            Calcolo \( w(x_0)\, , \, w'(x_0)\, ,\, \dots\, , \, w \,^{(n+1)}(x_0)  \):
+            Calcolo \( w(x_0)\, , \, w'(x_0)\, ,\, \dots\, , \, w ^{(n+1)}(x_0)  \):
 
             \begin{align*}
                 w(x_0) &= (x_0 - x_0)^{n+1} = 0\\
                 w'(x_0) &= (n+1)(x_0 - x_0)^{n} = 0\\
                 w'(x_0) &= (n+1)(n)(x_0 - x_0)^{n-1} = 0\\
                 & \dots\\
-                w\,^{(n)} (x_0) &= \big[(n+1)!\big](x_0 - x_0) = 0\\
-                w\,^{(n+1)} (x_0) &= \big[(n+1)!\big] 1 = (n+1)!
+                w^{(n)} (x_0) &= \big[(n+1)!\big](x_0 - x_0) = 0\\
+                w^{(n+1)} (x_0) &= \big[(n+1)!\big] 1 = (n+1)!
             \end{align*}
 
             \bigskip
 
             Toniamo ora su ciò che dobbiamo dimostrare:
 
-            \[  \exists \, \theta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
+            \[  \exists \, \theta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
 
-            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f\,^{n+1}(\theta)}{(n+1)!}    \]
+            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f^{n+1}(\theta)}{(n+1)!}    \]
 
             Notiamo che \(  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)}    \) quindi utilizzando il \textbf{\hyperref[teoCauchy]{teorema di Cauchy}}:
 
@@ -88,27 +88,27 @@
                 \exists \, x_2 \in (x_0, x_1) \qquad &= \frac{g''(x_2)}{w''(x_2)} = \frac{g''(x_2) - g''(x_0)}{w''(x_2) - w''(x_0)}\\
                 \exists \, x_3 \in (x_0, x_2) \qquad &= \frac{g'''(x_3)}{w'''(x_3)} = \, \dots\\
                 %\text{Iterando n volte}\\
-                \exists \, \theta \in (x_0, x_n) \qquad &= \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} \qquad \text{\emph{Iterando n volte}}
+                \exists \, \theta \in (x_0, x_n) \qquad &= \frac{g^{(n+1)}(\theta)}{w^{(n+1)}(\theta)} \qquad \text{\emph{Iterando n volte}}
             \end{align*}
 
             Notiamo anche che possiamo fare questo perché da come abbiamo dimostrato prima calcolandolo,\\
-            \(g(x_0)\,,\, g'(x_0)\,,\, \dots\,,\, g\,^{(n)} (x_0) \) e \( w(x_0)\,,\, w'(x_0)\,,\, \dots\,,\, w\,^{(n)} (x_0)\) sono infinitesimi.\\
+            \(g(x_0)\,,\, g'(x_0)\,,\, \dots\,,\, g^{(n)} (x_0) \) e \( w(x_0)\,,\, w'(x_0)\,,\, \dots\,,\, w^{(n)} (x_0)\) sono infinitesimi.\\
 
             \newpage
             
             Quindi le derivate (\(n+1\))-esime dal precedente calcolo di \(g(x) \text{e} w(x)\) sono:
 
-            \[  \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} = \frac{f\,^{n+1}(\theta)}{(n+1)!} \]
+            \[  \frac{g^{(n+1)}(\theta)}{w^{(n+1)}(\theta)} = \frac{f^{n+1}(\theta)}{(n+1)!} \]
 
             Quindi per come abbiamo definito \(g(x) \; \text{e} \; w(x)\):
 
-            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)} = \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} = \frac{f\,^{n+1}(\theta)}{(n+1)!}   \]
+            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)} = \frac{g^{(n+1)}(\theta)}{w^{(n+1)}(\theta)} = \frac{f^{n+1}(\theta)}{(n+1)!}   \]
 
             Da cui:
 
             \begin{align*}
-                \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} &= \frac{f\,^{n+1}(\theta)}{(n+1)!}\\
-                f(x) - T _n ^ f (x) &= \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1}
+                \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} &= \frac{f^{n+1}(\theta)}{(n+1)!}\\
+                f(x) - T _n ^ f (x) &= \frac{f^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1}
             \end{align*}
 
             c.v.d.
