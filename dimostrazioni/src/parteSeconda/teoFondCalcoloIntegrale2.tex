@@ -6,15 +6,15 @@
 
 \begin{document}
 
-    \chapter{Secondo Teorema Fondamentale del Calcolo Integrale}
+    \chapter{Secondo teorema fondamentale del calcolo integrale}
     \label{teoFondCalcoloIntegrale2}
 
         \section*{Definizioni necessarie}
 
             Si ricorda che è detta \textbf{funzione integrale} la funzione \(G\):
             \begin{align*}
-                G(x) = \int_{a}^{x} f(t) dt \qquad   &{G : [a, b] \longmapsto \mathbb{R}} \\
-                &{x \longmapsto G(x) = \int_{a}^{x} f(t) dt}
+                G : [a, b] &\longrightarrow \mathbb{R} \\
+                x &\longmapsto G(x) = \int_{a}^{x} \! f(t) \, \mathrm{d}t
             \end{align*}
 
         \section*{Prima Forma}
@@ -23,7 +23,7 @@
 
                 \subsubsection*{Ipotesi}
         
-                    Data una funzione \textbf{limitata e Riemann-integrabile}:
+                    Data una funzione \textbf{limitata} e \textbf{Riemann-integrabile}:
                         \begin{align*}
                             f : A = [a, b] &\longrightarrow \mathbb{R}\\
                             t &\longmapsto y = f(t) 
@@ -37,54 +37,55 @@
 
                 Voglio dimostrare che 
 
-                \[\forall x_0 \in [a, b] \qquad G(x_0) = \lim_{x \to  x_0} G(x) \]
+                \[\forall \, x_0 \in [a, b] \qquad G(x_0) = \lim_{x \to  x_0} G(x) \]
             
                 \subsubsection*{Caso 1 - \(a < x_0 < x < b \)}
+
                     Consideriamo quindi il limite da destra:
                     \begin{align*}
-                        \lim_{x \to {x_0}^{+}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
-                        =& \lim_{x \to x_0} \left[ \int_{a}^{x_0} + \int_{x_0}^{x} \right] = \\
-                        =& \lim_{x \to x_0} \left[ G(x_0) + \int_{x_0}^{x} f(t) dt \right]
+                        \lim_{x \to x_0^+} G(x) =& \lim_{x \to x_0^+} \int_a^x \! f(t) \, \mathrm{d}t = \\
+                        =& \lim_{x \to x_0^+} \left[ \int_a^{x_0} \! f(t) \, \mathrm{d}t + \int_{x_0}^x \! f(t) \, \mathrm{d}t \right] = \\
+                        =& \lim_{x \to x_0^+} \left[ G(x_0) + \int_{x_0}^x \! f(t) \, \mathrm{d}t \right]
                     \end{align*}
 
-                    Se \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) fosse \emph{infinitesimo} allora:
+                    Se \( \lim_{x \to x_0^+} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) fosse \emph{infinitesimo} allora:
 
                     \[  \lim_{x \to {x_0}^{+}}G(x) = G(x_0) \]
 
-                    Passiamo quindi a dimostrare che \( \lim_{x \to {x_0}^{+}} \int_{x_0}^{x} f(t) dt \) è \emph{infinitesimo}:
+                    Passiamo quindi a dimostrare che \( \lim_{x \to {x_0}^{+}} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
 
-                    \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; ed \; x \]
+                    \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; \text{ed} \; x \]
 
-                    \[m(x-x_0) \, \leqslant \int_{x_0}^{x} f(t) dt \, \leqslant M(x-x_0) \]
+                    \[m(x-x_0) \, \leqslant \int_{x_0}^x \! f(t) \, \mathrm{d}t \, \leqslant M(x-x_0) \]
 
                     L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
 
-                
                 \subsubsection*{Caso 2 - \(a < x < x_0 < b \)}
+
                     Consideriamo quindi il limite da sinistra:
                     \begin{align*}
-                        \lim_{x \to {x_0}^{-}}G(x) =& \lim_{x to x_0}{\int_{a}^{x}f(t) dt} = \\
-                        =& \lim_{x \to {x_0}^{-}} \left[ \int_{a}^{x_0}f(t) dt - \int_{x}^{x_0}f(t) dt \right] = \\
-                        =& \lim_{x \to {x_0}^{-}} \left[ G(x_0) - \int_{x}^{x_0} f(t) dt \right]
+                        \lim_{x \to x_0^-} G(x) =& \lim_{x \to x_0^-} \int_a^x \! f(t) \, \mathrm{d}t = \\
+                        =& \lim_{x \to x_0^-} \left[ \int_a^{x_0} \! f(t) \, \mathrm{d}t + \int_{x_0}^x \! f(t) \, \mathrm{d}t \right] = \\
+                        =& \lim_{x \to x_0^-} \left[ G(x_0) + \int_{x_0}^x \! f(t) \, \mathrm{d}t \right]
                     \end{align*}
 
-                    Se \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) fosse \emph{infinitesimo} allora:
+                    Se \( \lim_{x \to x_0^-} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) fosse \emph{infinitesimo} allora:
 
-                    \[  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) \]
+                    \[  \lim_{x \to x_0^-}G(x) = G(x_0) \]
 
-                    Passiamo quindi a dimostrare che \( \lim_{x \to {x_0}^{-}} \int_{x}^{x_0} f(t) dt \) è \emph{infinitesimo}:
+                    Passiamo quindi a dimostrare che \( \lim_{x \to x_0^-} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
 
-                    \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; ed \; x_0 \]
+                    \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; \text{ed} \; x_0 \]
 
-                    \[m(x_0-x) \, \leqslant \int_{x}^{x_0} f(t) dt \, \leqslant M(x_0-x) \]
+                    \[m(x_0-x) \, \leqslant \int_{x_0}^x \! f(t) \, \mathrm{d}t \, \leqslant M(x_0-x) \]
 
                     L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
 
-                Nel \textit{Caso 1} abbiamo dimostrato che \(  \lim_{x \to {x_0}^{+}}G(x) = G(x_0) \) e \textit{Caso 2} che \(  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) \) quindi abbiamo:
+                Nel \textit{caso 1} abbiamo dimostrato che \(  \lim_{x \to {x_0}^{+}}G(x) = G(x_0) \) e \textit{caso 2} che \(  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) \) quindi abbiamo:
 
-                \[  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) = \lim_{x \to {x_0}^{+}}G(x) \qquad \forall x_0 \in [a, b] \]
+                \[  \lim_{x \to {x_0}^{-}}G(x) = G(x_0) = \lim_{x \to {x_0}^{+}}G(x) \qquad \forall \, x_0 \in [a, b] \]
 
-                Che dimostra la continuità di \(G(x)\). c.v.d.
+                Che dimostra la continuità di \(G(x)\), c.v.d.
             
             \section*{Seconda Forma}
 
@@ -102,12 +103,11 @@
                     
                         \(G\) è una funzione \textbf{derivabile}.
 
-                        \[G \in C^{1}([a, b]) \quad e \quad G'(x) = f(x) \qquad \forall x \in [a,b] \]
+                        \[G \in C^{1}([a, b]) \quad \text{e} \quad G'(x) = f(x) \qquad \forall \, x \in [a,b] \]
         
                     \subsection*{Dimostrazione}
 
-                        Sia \(x_0 \in (a,b) \), vogliamo dimostrare che \(G\) è derivabile in \(x_0\)
-
+                        Sia \(x_0 \in (a,b) \), vogliamo dimostrare che \(G\) è derivabile in \(x_0\).
 
                         \subsubsection*{Caso 1 - \(h>0\)}
 
@@ -124,13 +124,14 @@
                         \subsubsection*{Caso 2 - \(h<0\)}
 
                             \begin{align*}
-                                \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x_0} f(t)dt \right] \\
-                                                            =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x_0+h} f(t)dt -\int_{x_0+h}^{x_0} f(t)dt \right] \\
-                                                            =& \frac{1}{-h} \int_{x_0+h}^{x_0}f(t) dt & \text{VMI dif su} [x_0 + h, x_0]\\
-                                \exists \, \theta \in (x_0+h, x_0) | =& f(\theta) \longmapsto f(x_0)          & \text{per la seconda proprietà del VMI}& \\
-                                &                            &  con \; h \rightarrow 0^{-}&
+                                \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_a^{x_0+h} \! f(t) \, \mathrm{d}t - \int_a^{x_0} \! f(t) \, \mathrm{d}t \right] \\
+                                                            =& \frac{1}{h} \left[ \int_a^{x_0+h} \! f(t) \, \mathrm{d}t - \int_a^{x_0+h} \! f(t) \, \mathrm{d}t - \int_{x_0+h}^{x_0} \! f(t) \, \mathrm{d}t \right] \\
+                                                            =& \frac{1}{-h} \int_{x_0+h}^{x_0} \! f(t) \, \mathrm{d}t & \text{VMI di \(f\) su} \, [x_0 + h, x_0]\\
+                                \exists \, \theta \in (x_0+h, x_0) \mid \quad =& f(\theta) \longrightarrow f(x_0)          & \text{per la seconda proprietà del VMI}& \\
+                                &                            &  \text{con} \; h \rightarrow 0^-&
                             \end{align*}
                             
                             Dimostrando che non solo \(G(x)\) è derivabile su \((a,b)\) data l'arbitrarietà di \(x_0\), 
-                            ma anche che la derivata di \(G(x)\) è \(f(x)\). c.v.d.            
+                            ma anche che la derivata di \(G(x)\) è \(f(x)\), c.v.d.          
+
 \end{document}
