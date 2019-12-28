@@ -9,46 +9,24 @@
     \chapter{Criterio del confronto per la convergenza di una serie a termini positivi.}
     \label{serieconfronto}
 
-        \section*{Definizioni necessarie}
-
-            \begin{itemize}
-                \item Data la successione:
-                        \begin{align*}
-                            a_n : \mathbb{N} &\longrightarrow \mathbb{R}\\
-                            n &\longmapsto a_n 
-                        \end{align*}
-    
-                        Si dice \textbf{serie}:
-
-                        \[  \sum_{n=0}^{+\infty} a_n\]
-
-                \item La successione \(a_n\) è detta \emph{argomento} della serie.
-                \item La \textbf{successione delle somme parziali} è così definita:
-                      
-                        \[  S_N = \sum_{n=0}^{N} a_n\]
-                    
-                \item Il  \emph{carattere (o la natura)} della \textbf{serie} è il \emph{carattere (o la natura)} della sua \textbf{successione delle somme parziali}
-            \end{itemize}
-           
-
         \section*{Enunciato}
 
             \subsection*{Ipotesi}
 
-                Siano:
+                Siano
 
-                \[  \sum_{n=\dots}^{+\infty} a_n \; \text{e} \;  \sum_{n=\dots}^{+\infty} b_n   \]
+                \[  \sum_{n=\dots}^{+\infty} a_n \quad \text{e} \quad  \sum_{n=\dots}^{+\infty} b_n   \]
 
                 tali che:
                 \begin{enumerate}
-                    \indentitem \item \[\exists \, M_1 | \, \forall \, n \geqslant M_1\,,\, a_n > 0 \land b_n > 0  \]
-                    \indentitem \item \[\exists \, M_2 | \, \forall \, n \geqslant M_2\,,\, a_n \leqslant b_n \]
+                    \indentitem \item \(\exists \, M_1 \mid \forall \, n \geqslant M_1\,,\, a_n > 0 \land b_n > 0  \);
+                    \indentitem \item \(\exists \, M_2 \mid \forall \, n \geqslant M_2\,,\, a_n \leqslant b_n \).
                 \end{enumerate}
                 
             \subsection*{Tesi}
                 \begin{enumerate}
-                    \indentitem \item Se \(\sum_{n=\dots}^{+\infty} a_n \; \text{diverge} \; \Rightarrow \; \text{anche} \; \sum_{n=\dots}^{+\infty} b_n \; \text{diverge} \)
-                    \indentitem \item Se \(\sum_{n=\dots}^{+\infty} b_n \; \text{converge} \; \Rightarrow \; \text{anche} \; \sum_{n=\dots}^{+\infty} a_n \; \text{converge} \)
+                    \indentitem \item Se \(\sum_{n=\dots}^{+\infty} a_n \; \text{diverge, allora anche} \; \sum_{n=\dots}^{+\infty} b_n \; \text{diverge} \);
+                    \indentitem \item Se \(\sum_{n=\dots}^{+\infty} b_n \; \text{converge, allora anche} \; \sum_{n=\dots}^{+\infty} a_n \; \text{converge} \).
                 \end{enumerate}
                 
 
@@ -60,23 +38,18 @@
                 Se \(\sum_{n=\dots}^{+\infty} a_n\) diverge significa che \(\lim_{N \to +\infty} A_N = +\infty\) 
                 quindi per definizione di limite:
 
-                \[\forall \, B_r(+\infty) \, \exists \, R \mid\forall \, N > R  \quad A_N > R\]
+                \[\forall \, B_r(+\infty) \, \exists \, R \mid \forall \, N > R  \quad A_N > R\]
 
                 Ricordiamo che:
-
                 \[ a_n \leqslant b_n \qquad (\forall \, n > M_1) \]
 
                 Con le sommatorie:
-
                 \[ \sum_{n = max(M_1,M_2)}^{+\infty} a_n \leqslant \sum_{n = max(M_1,M_2)}^{+\infty} b_n\]
-
                 \[  A_N \leqslant B_N   \]
 
                 Da cui:
-
                 \[  \lim_{N \to +\infty} B_N = +\infty  \]
-
-                \[  B_N > R \Rightarrow \; \text{Quindi} \; \sum^{+\infty} b_n \text{diverge a} +\infty \]
+                \[  B_N > R \Rightarrow \; \text{Quindi} \; \sum b_n \text{diverge a} +\infty \]
 
                 c.v.d.
 
@@ -87,14 +60,11 @@
                 \[  \forall \, B_r(L)\, \exists \, M_3 \mid \forall \, n>M_3 \quad B_N \in B_r(L) \quad  L-r \leqslant B_N \leqslant L + r   \]
                 
                 \(A_N \leqslant B_N\) inoltre \(A_N, B_N\) sono monotone, infatti:
-
                 \[  A_{N+1} = A_N + a_{N+1}\; \text{e} \; a_{N+1} > 0 \quad \text{perciò} \quad A_{N+1} > A_N\]
 
                 \(A_N\) è strettamente crescente e limitata (dal valore di \(L\)).
-
                 \[  A_N \leqslant B_N \leqslant L \]
 
-                quindi per il teorema fondamentale delle successioni monotone \(A_N\) converge. c.v.d.
-
+                quindi per il teorema fondamentale delle successioni monotone \(A_N\) converge, c.v.d.
 
 \end{document}
