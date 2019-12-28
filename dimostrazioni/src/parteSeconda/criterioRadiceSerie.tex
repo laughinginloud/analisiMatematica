@@ -11,10 +11,10 @@
 
         \section*{Enunciato}
 
-            Sia \(\sum_{n\dots}^{+\infty}\) \(a_n\) una serie a termini positivi \(a_n\) > 0 \(\forall n\). Se:
+            Sia \(\sum a_n\) una serie a termini positivi \(a_n > 0 \; \forall \, n\). Se
              \[\sqrt[n]{a_n} \rightarrow l \qquad \text{per} \; n  \rightarrow +\infty \]
             
-            Allora:
+            Allora
             \[
                 l \;
                 \begin{cases}
@@ -30,12 +30,12 @@
                     
                 Introduco una \textbf{successione ausiliaria}
                 \[b_n = \sqrt[n]{a_n} \]  
-                \[\lim_{n \to +\infty} b_n = l \qquad \text{e so che} \, l < 1\]
+                \[\lim_{n \to +\infty} b_n = l \qquad \text{e so che} \; l < 1\]
 
-                Per la definizione di limite:
+                Per la definizione di limite
                 \[\forall \, B_\varepsilon (l) \; \exists \, M \mid \forall \, n > M \quad b_n \in B_\varepsilon (l) \]
 
-                Scelgo \(\varepsilon\) in modo che \(\varepsilon < 1 -l \)
+                Scegliamo \(\varepsilon\) in modo che \(\varepsilon < 1 - l\) da \(M\) in poi. Dunque,
                 \begin{align*}
                     l - \varepsilon < b_n &< l + \varepsilon \qquad (<1) \\
                     \sqrt[n]{a_n} &< l + \varepsilon \qquad (<1) \\
@@ -48,5 +48,20 @@
 
             \subsection*{Caso 2 - \(l > 1\)}
 
-                %TODO
+                Definiamo una successione ausiliaria \(b_n\) come
+                \[ b_n = \sqrt[n]{a_n} \]
+
+                Sappiamo inoltre che
+                \[ \lim_{n \to +\infty}b_n = l > 1 \]
+
+                Da ciò possiamo dedurre che
+                \[\forall \, n \quad \sqrt[n]{a_n} = 1 + k\]
+                con \(k > 0\).
+
+                Questo ci permette di dividere la serie di partenza in una somma di due serie distinte:
+                \[\sum a_n = \sum 1 + \sum k\]
+
+                Ma, poiché \(\sum 1\) diverge a \(+ \infty\) e \(\sum k > 0\), perciò sicuramente non diverge a \(- \infty\),
+                sicuramente la serie risultante dalla loro somma, ovvero la serie di partenza, diverge a \(+ \infty\), c.v.d.
+
 \end{document}
