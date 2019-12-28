@@ -33,9 +33,8 @@
                       
                         \[  S_N (x) = \sum_{n=0}^{N} f_k(x) \]
                     
-                \item Il  \emph{carattere (o la natura)} della \textbf{serie di funzioni} è il \emph{carattere (o la natura)} della sua \textbf{successione delle somme parziali}
+                \item Il \emph{carattere} (o la \emph{natura}) della \textbf{serie di funzioni} è il \emph{carattere} (o la \emph{natura}) della sua \textbf{successione delle somme parziali}.
                 \item Se:
-                
                         \[  \forall \, x^* \in [a, b] \qquad \lim_{N \to +\infty} S_N (x^*) = L(x^*)    \]
 
                         La serie di funzioni converge puntualmente in tutto \(A = [a, b]\).
@@ -44,52 +43,48 @@
 
         \section*{Enunciato}
 
-            Ridefinendo le funzioni \( e^x, \sin x, \cos x \) nei complessi è possibile verificare la \textbf{Formula di Eulero}:
+            Ridefinendo le funzioni \( e^x, \sin x, \cos x \) nei complessi è possibile verificare la \textbf{formula di Eulero}:
 
                 \[  e\,^{i\theta} = \cos \theta + i \sin \theta \]
 
         \section*{Dimostrazione}
 
-            \subsection*{Parte 1 - \(e\,^z\)}    
+            \subsection*{Parte 1 - \(e^z\)}    
 
                 Consideriamo la seguente serie di funzioni:
-            
-                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \cdot x\,^k \qquad x \in \mathbb{R}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \times x\,^k \qquad x \in \mathbb{R}  \]
 
-                Questo è lo sviluppo di Mac Laurin di \(e\,^x\) esteso all'infinito. Portiamo ora la serie nei complessi:
-
-                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \cdot z\,^k \qquad x \in \mathbb{C}  \]
+                Questo è lo sviluppo di MacLaurin di \(e^x\) esteso all'infinito. Portiamo ora la serie nei complessi:
+                \[  \sum_{k=\dots}^{+\infty} \frac{1}{k!} \times z\,^k \qquad x \in \mathbb{C}  \]
 
                 Verifichiamo se:
                 \begin{itemize}
-                    \item converge puntualmente in \(z^* \qquad \forall \, z^*  \in \mathbb{C}\)
-                    \item converge assolutamente puntualmente in \(z^* \qquad \forall \, z^*  \in \mathbb{C}\)
+                    \item converge puntualmente in \(z^* \qquad \forall \, z^*  \in \mathbb{C}\);
+                    \item converge assolutamente puntualmente in \(z^* \qquad \forall \, z^*  \in \mathbb{C}\).
                 \end{itemize}
             
                 Sappiamo che se converge assolutamente ne seguirà la convergenza semplice. Quindi passiamo a dimostrare che:
 
-                \[  \sum_{k=\dots}^{+\infty} \left| \frac{1}{k!} \cdot z\,^k \right| = \sum_{k=\dots}^{+\infty} A_k \]
+                \[  \sum_{k=\dots}^{+\infty} \left| \frac{1}{k!} \times z\,^k \right| = \sum_{k=\dots}^{+\infty} A_k \]
 
                 Applico il \textbf{\hyperref[criterioRapportoSerie]{criterio del rapporto}}:
                 \begin{align*}
-                    \lim_{k \to +\infty} \frac{A_{k+1}}{A_k} &= \lim_{k \to +\infty} \frac{\left|(z^*)^{k+1}\right|}{(k+1)k!} \cdot \frac{k!}{\left|(z^*)^k\right|} \\
+                    \lim_{k \to +\infty} \frac{A_{k+1}}{A_k} &= \lim_{k \to +\infty} \frac{\left|(z^*)^{k+1}\right|}{(k+1)k!} \times \frac{k!}{\left|(z^*)^k\right|} \\
                     &= \lim_{k \to +\infty} \frac{z^*}{k+1} = 0
                 \end{align*}
 
                 Quindi \(\sum_{k=\dots}^{+\infty} A_k\) converge puntualmente (\(\forall \, z^* \in \mathbb{C}\)) 
-                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{1}{k!} \cdot z\,^k \) converge assolutamente e semplicemente puntualmente.
+                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{1}{k!} \times z\,^k \) converge assolutamente e semplicemente puntualmente.
 
                 Questa serie corrisponde quindi a una funzione di variabile complessa \(f(z)\).
 
                 Definiamo così la funzione:
+                \[  e^z \, \stackrel{df}{=} \, \sum_{k=0}^{+\infty} \frac{1}{k!} \times z^k    \]
 
-                \[  e\,^z \, \stackrel{def.}{=} \, \sum_{k=0}^{+\infty} \frac{1}{k!} \cdot z\,^k    \]
+                Notiamo anche che se \(z = x + 0 \times i\) abbiamo:
+                \[  e^x = \sum_{k=0}^{+\infty} \frac{1}{k!} \times x^k \]
 
-                Notiamo anche che se \(z = x + 0 \cdot i\) abbiamo:
-
-                \[  e\,^x = \sum_{k=0}^{+\infty} \frac{1}{k!} \cdot x\,^k \]
-
-                Che altro non è che lo sviluppo di Mac Laurin di \(e\,^x\) esteso a \(+\infty\). 
+                Che altro non è che lo sviluppo di MacLaurin di \(e^x\) esteso a \(+\infty\). 
                 Abbiamo così definito la funzione esponenziale nei complessi.
 
             Lo stesso tipo di procedimento può essere fatto per altre funzioni elementari.
@@ -97,12 +92,10 @@
             \subsection*{Parte 2 - \(\sin z\)}
 
                 Consideriamo la seguente serie di funzioni:
-            
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot x\,^{2k+1} \qquad x \in \mathbb{R}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times x\,^{2k+1} \qquad x \in \mathbb{R}  \]
 
-                Questo è lo sviluppo di Mac Laurin di \(\sin x\) esteso all'infinito. Portiamo ora la serie nei complessi:
-
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot z\,^{2k+1} \qquad x \in \mathbb{C}  \]
+                Questo è lo sviluppo di MacLaurin di \(\sin x\) esteso a \(+ \infty\). Portiamo ora la serie nei complessi:
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1} \qquad x \in \mathbb{C}  \]
 
                 Verifichiamo se:
                 \begin{itemize}
@@ -112,26 +105,24 @@
             
                 Sappiamo che se converge assolutamente ne seguirà la convergenza semplice. Quindi passiamo a dimostrare che:
 
-                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k+1)!} \cdot z\,^{2k+1} \right| = \sum_{k=\dots}^{+\infty} B_k \]
+                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1} \right| = \sum_{k=\dots}^{+\infty} B_k \]
 
                 Applico il \textbf{\hyperref[criterioRapportoSerie]{criterio del rapporto}}:
                 \begin{align*}
-                    \lim_{k \to +\infty} \frac{B_{k+1}}{B_k} &= \lim_{k \to +\infty} \frac{\left| (-1)^{k+1} \cdot (z^*)^{2(k+1)+1}\right|}{\left[2(k+1)+1\right]!} \cdot \frac{\left(2k+1\right)!}{\left| (-1)^k \cdot (z^*)^{2k+1}\right|} \\
+                    \lim_{k \to +\infty} \frac{B_{k+1}}{B_k} &= \lim_{k \to +\infty} \frac{\left| (-1)^{k+1} \times (z^*)^{2(k+1)+1}\right|}{\left[2(k+1)+1\right]!} \times \frac{\left(2k+1\right)!}{\left| (-1)^k \times (z^*)^{2k+1}\right|} \\
                     &= \lim_{k \to +\infty} \frac{(z^*)^2}{(2k+3)(2k+2)} = 0
                 \end{align*}
 
                 Quindi \(\sum_{k=\dots}^{+\infty} B_k\) converge puntualmente (\(\forall \, z^* \in \mathbb{C}\)) 
-                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot z\,^{2k+1}\) converge assolutamente e semplicemente puntualmente.
+                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1}\) converge assolutamente e semplicemente puntualmente.
 
                 Questa serie corrisponde quindi a una funzione di variabile complessa \(f(z)\).
 
                 Definiamo così la funzione:
+                \[  \sin z \stackrel{df}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1}    \]
 
-                \[  \sin z \stackrel{def.}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot z\,^{2k+1}    \]
-
-                Notiamo anche che se \(z = x + 0 \cdot i\) abbiamo:
-
-                \[  \sin x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot x\,^{2k+1} \]
+                Notiamo anche che se \(z = x + 0 \times i\) abbiamo:
+                \[  \sin x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times x\,^{2k+1} \]
 
                 Che altro non è che lo sviluppo di Mac Laurin di \(\sin x\) esteso a \(+\infty\). 
                 Abbiamo così definito la funzione seno nei complessi.
@@ -139,12 +130,12 @@
             \subsection*{Parte 3 - \(\cos z\)}
 
                 Consideriamo la seguente serie di funzioni:
-            
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot x\,^{2k} \qquad x \in \mathbb{R}  \]
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times x\,^{2k} \qquad x \in \mathbb{R}  \]
 
-                Questo è lo sviluppo di Mac Laurin di \(\cos x\) esteso all'infinito. Portiamo ora la serie nei complessi:
+                Questo è lo sviluppo di MacLaurin di \(\cos x\) esteso a \(+ \infty\). Portiamo ora la serie nei complessi:
+                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k} \qquad x \in \mathbb{C}  \]
 
-                \[  \sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot z\,^{2k} \qquad x \in \mathbb{C}  \]
+                \newpage
 
                 Verifichiamo se:
                 \begin{itemize}
@@ -154,55 +145,50 @@
             
                 Sappiamo che se converge assolutamente ne seguirà la convergenza semplice. Quindi passiamo a dimostrare che:
 
-                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k)!} \cdot z\,^{2k} \right| = \sum_{k=\dots}^{+\infty} C_k \]
+                \[  \sum_{k=\dots}^{+\infty} \left| \frac{(-1)^k}{(2k)!} \times z\,^{2k} \right| = \sum_{k=\dots}^{+\infty} C_k \]
 
                 Applico \textbf{\hyperref[criterioRapportoSerie]{criterio del rapporto}}:
                 \begin{align*}
-                    \lim_{k \to +\infty} \frac{C_{k+1}}{C_k} &= \lim_{k \to +\infty} \frac{\left| (-1)^{k+1} \cdot (z^*)^{2(k+1)}\right|}{\left[2(k+1)\right]!} \cdot \frac{\left(2k\right)!}{\left| (-1)^k \cdot (z^*)^{2k}\right|} \\
+                    \lim_{k \to +\infty} \frac{C_{k+1}}{C_k} &= \lim_{k \to +\infty} \frac{\left| (-1)^{k+1} \times (z^*)^{2(k+1)}\right|}{\left[2(k+1)\right]!} \times \frac{\left(2k\right)!}{\left| (-1)^k \times (z^*)^{2k}\right|} \\
                     &= \lim_{k \to +\infty} \frac{(z^*)^2}{(2k+2)(2k+1)} = 0
                 \end{align*}
 
                 Quindi \(\sum_{k=\dots}^{+\infty} C_k\) converge puntualmente (\(\forall \, z^* \in \mathbb{C}\)) 
-                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot z\,^{2k}\) converge assolutamente e semplicemente puntualmente.
+                e la serie  \(\sum_{k=\dots}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k}\) converge assolutamente e semplicemente puntualmente.
 
                 Questa serie corrisponde quindi a una funzione di variabile complessa \(f(z)\).
 
                 Definiamo così la funzione:
 
-                \[  \cos z \stackrel{def.}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot z\,^{2k}    \]
+                \[  \cos z \stackrel{df}{=} \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k}    \]
 
-                Notiamo anche che se \(z = x + 0 \cdot i\) abbiamo:
+                Notiamo anche che se \(z = x + 0 \times i\) abbiamo:
 
-                \[  \cos x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot x\,^{2k} \]
+                \[  \cos x = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times x\,^{2k} \]
 
-                Che altro non è che lo sviluppo di Mac Laurin di \(\cos x\) esteso a \(+\infty\). 
+                Che altro non è che lo sviluppo di MacLaurin di \(\cos x\) esteso a \(+\infty\). 
                 Abbiamo così definito la funzione seno nei complessi.
 
             \subsection*{Parte 4 - \textbf{La formula di Eulero}}
 
-                Abbiamo ora definito le funzioni \(e\,^z \,,\, \sin z \, ,\, \cos z\) in \(\mathbb{C}\) nel modo seguente:
-
-                \[  e\,^z  =  \sum_{k=0}^{+\infty} \frac{1}{k!} \cdot z\,^k    \]
-
-                \[  \sin z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot z\,^{2k+1} \]
-
-                \[  \cos z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot z\,^{2k}    \]
+                Abbiamo ora definito le funzioni \(e^z\), \(\sin z\), \(\cos z\) in \(\mathbb{C}\) nel modo seguente:
+                \[  e\,^z  =  \sum_{k=0}^{+\infty} \frac{1}{k!} \times z\,^k    \]
+                \[  \sin z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times z\,^{2k+1} \]
+                \[  \cos z = \sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times z\,^{2k}    \]
 
                 Prendiamo ora \( z = i\theta \) (parte reale nulla) avremo:
                 \begin{align*}
-                    e\,^{i\theta}  &=  \sum_{k=0}^{+\infty} \frac{1}{k!} \cdot (i\theta)\,^k \\
-                    &= \frac{1}{0!} \cdot (i\theta)^0 + \frac{1}{1!} \cdot (i\theta)^1 + \frac{1}{2!} \cdot (i\theta)^2 +  \frac{1}{3!} \cdot (i\theta)^3 + \dots  \qquad (i^2 = -1)\\
+                    e^{i\theta}  &=  \sum_{k=0}^{+\infty} \frac{1}{k!} \times (i\theta)^k \\
+                    &= \frac{1}{0!} \times (i\theta)^0 + \frac{1}{1!} \times (i\theta)^1 + \frac{1}{2!} \times (i\theta)^2 +  \frac{1}{3!} \times (i\theta)^3 + \dots  \qquad (i^2 = -1)\\
                     &= 1 + i\theta - \frac{1}{2}\theta^2 - \frac{1}{3!}\theta^3i + \frac{1}{4!}\theta^4 + \frac{1}{5!}\theta^5i + \dots
                 \end{align*}
                 
                 La convergenza assouluta autorizza ad usare le proprietà elementari della somma. 
                 Commuto quindi tutti i termini con la \(i\) in fondo e gli altri li porto avanti. Ottengo così:
-
-                \[  e\,^{i\theta} =\sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \cdot \theta\,^{2k} + i\left(\sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \cdot \theta\,^{2k+1}  \right)\]
+                \[  e^{i\theta} =\sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k)!} \times \theta^{2k} + i\left(\sum_{k=0}^{+\infty} \frac{(-1)^k}{(2k+1)!} \times \theta^{2k+1}  \right)\]
 
                 Da cui:
-
-                \[ e\,^{i\theta} = \cos \theta + i \sin \theta \]
+                \[ e^{i\theta} = \cos \theta + i \sin \theta \]
 
                 c.v.d.
 \end{document}
