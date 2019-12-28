@@ -9,61 +9,45 @@
     % Creo l'indice
     \tableofcontents
 
+    % Imposto lo stile interno delle ancore
     \renewcommand*{\theHchapter}{chX.\the\value{chapter}}
 
     \part{}
 
-        % Importo il capitolo sulla disuguaglianza di Bernoulli
         \subfile{src/partePrima/disuguaglianzaBernoulli}
 
     \part{}
 
-        % Importo il capitolo sul teorema di Fermat
         \subfile{src/parteSeconda/teoremaFermat}
 
-        % Importo il capitolo sul teorema di Rolle
         \subfile{src/parteSeconda/teoremaRolle}
 
-        % Importo il capitolo sul teorema di Lagrange
         \subfile{src/parteSeconda/teoremaLagrange}
 
-        % Importo il capitolo sul test di monotonia
         \subfile{src/parteSeconda/testMonotonia}
 
-        % Importo il capitolo sul teo di Cauchy
         \subfile{src/parteSeconda/teoremaCauchy}
 
-        % Importo il capitolo sul teo de l'Hopital
         \subfile{src/parteSeconda/teoremaHopital}
 
-        % Importo il capitolo sul teo resto secondo Peano
         \subfile{src/parteSeconda/teorestoPeano}
 
-        % Importo il capitolo sul teo resto secondo Lagrange
         \subfile{src/parteSeconda/teorestoLagrange}
 
-        % Importo il capitolo sul primo teo fondamentale calcolo integrale 
         \subfile{src/parteSeconda/teoFondCalcoloIntegrale1}
 
-        % Importo il capitolo sul teo del valor medio integrale 
         \subfile{src/parteSeconda/teoValorMedioIntegrale}
 
-        % Importo il capitolo sul secondo teo fondamentale calcolo integrale 
         \subfile{src/parteSeconda/teoFondCalcoloIntegrale2}
 
-        % Importo il capitolo sulla condizione necessaria per la convergenza di una serie
         \subfile{src/parteSeconda/CNconvserie.tex}
 
-        % Importo il capitolo sul criterio del rapporto
         \subfile{src/parteSeconda/criterioRapportoSerie.tex}
 
-        % Importo il capitolo sul criterio del confronto
         \subfile{src/parteSeconda/serieconfronto.tex}
 
-        % Importo il capitolo sul criterio della radice
         \subfile{src/parteSeconda/criterioRadiceSerie.tex}
 
-        % Importo il capitolo sulla giustificazione della formula di Eulero con l’esponenziale complesso
         \subfile{src/parteSeconda/formulaEulero.tex}
 
     \renewcommand*{\theHchapter}{chY.\the\value{chapter}}
@@ -71,11 +55,11 @@
     \part*{Dimostrazioni aggiuntive}
     \addcontentsline{toc}{part}{Dimostrazioni aggiuntive}
 
+        % Reinizializzo il contatore del capitolo, cambio lo stile della numerazione, modifico lo stile interno delle ancore
         \setcounter{chapter}{0}
         \renewcommand\thechapter{A\arabic{chapter}}
         \titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione aggiuntiva numero \arabic{chapter}}{.5em}{\Huge}
 
-        % Importo il capitolo sulla cardinalità di R^n
         \subfile{src/parteExtra/cardinalitàRn}
     
 \end{document}
