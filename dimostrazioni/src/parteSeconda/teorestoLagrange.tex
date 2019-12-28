@@ -11,7 +11,7 @@
 
         \section*{Definizioni necessarie}
 
-            Si ricorda che il \textbf{Polinomio di Taylor (\(T _n ^ f (x) \))} è così definito:
+            Si ricorda che il \textbf{polinomio di Taylor (\(T _n ^ f (x) \))} è così definito:
 
             \[ \sum_{k = 0}^{n} \frac{f^{(k)} (x_0)}{k!}(x-x_0)^k\]
 
@@ -34,7 +34,7 @@
 
             \subsection*{Tesi}
 
-                \[  \exists \, \theta \in (x_0, x) \, | \, f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
+                \[  \exists \, \theta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
 
         \section*{Dimostrazione}
 
@@ -44,39 +44,39 @@
 
             \[  g(x) = f(x) - T_n (x) \qquad g(x) \in C\,^{n+1} (A)  \]
 
-            \[  w(x) = (x - x_0)^{n+1} \qquad w(x) \in C\,^{\infty} (A)  \] 
+            \[  w(x) = (x - x_0)^{n+1} \qquad w(x) \in C\,^{\infty} (A)  \]
+
+            \newpage
 
             Calcolo \( g(x_0)\, , \, g'(x_0)\, ,\, \dots\, , \, g \,^{(n+1)}(x_0)  \):
             
-            \[  g(x_0) = f(x_0) - \bigg[\frac{f(x_0)}{0!}1 + \frac{f'(x_0)}{1!}(x_0-x_0) + \frac{f''(x_0)}{2!}(x_0-x_0)^2 + \dots + \frac{f\,^{(n)}(x_0)}{n!}(x_0-x_0)^n \bigg] = 0\]
+            \begin{align*}
+                g(x_0) &= f(x_0) - \bigg[\frac{f(x_0)}{0!}1 + \frac{f'(x_0)}{1!}(x_0-x_0) + \frac{f''(x_0)}{2!}(x_0-x_0)^2 + \dots + \frac{f\,^{(n)}(x_0)}{n!}(x_0-x_0)^n \bigg] = 0\\
+                g'(x_0) &= f'(x_0) - \bigg[\frac{f'(x_0)}{1!}1 + \frac{f''(x_0)}{2!}2(x_0-x_0) + \dots + \frac{f\,^{(n)}(x_0)}{n!}n(x_0-x_0)^{n-1} \bigg] = 0\\
+                g''(x_0) &= 0\\
+                &\dots\\
+                g\,^{(n)} (x_0) &= 0\\
+                g\,^{(n+1)} (x_0) &= f\,^{(n+1)}(x_0) - 0 = f\,^{(n+1)}(x_0)
+            \end{align*}
 
-            \[  g'(x_0) = f'(x_0) - \bigg[\frac{f'(x_0)}{1!}1 + \frac{f''(x_0)}{2!}2(x_0-x_0) + \dots + \frac{f\,^{(n)}(x_0)}{n!}n(x_0-x_0)^{n-1} \bigg] = 0 \]
-    
-            \[  g''(x_0) = 0    \]
-            
-            \[  \dots \]
-
-            \[  g\,^{(n)} (x_0) = 0   \]
-
-            \[  g\,^{(n+1)} (x_0) = f\,^{(n+1)}(x_0) - 0 = f\,^{(n+1)}(x_0)   \]
+            \bigskip
             
             Calcolo \( w(x_0)\, , \, w'(x_0)\, ,\, \dots\, , \, w \,^{(n+1)}(x_0)  \):
 
-            \[  w(x_0) = (x_0 - x_0)^{n+1} = 0  \]
+            \begin{align*}
+                w(x_0) &= (x_0 - x_0)^{n+1} = 0\\
+                w'(x_0) &= (n+1)(x_0 - x_0)^{n} = 0\\
+                w'(x_0) &= (n+1)(n)(x_0 - x_0)^{n-1} = 0\\
+                & \dots\\
+                w\,^{(n)} (x_0) &= \big[(n+1)!\big](x_0 - x_0) = 0\\
+                w\,^{(n+1)} (x_0) &= \big[(n+1)!\big] 1 = (n+1)!
+            \end{align*}
 
-            \[  w'(x_0) = (n+1)(x_0 - x_0)^{n} = 0  \]
-
-            \[  w'(x_0) = (n+1)(n)(x_0 - x_0)^{n-1} = 0  \]
-
-            \[  \dots \]
-
-            \[  w\,^{(n)} (x_0) = \big[(n+1)!\big](x_0 - x_0) = 0   \]
-
-            \[  w\,^{(n+1)} (x_0) = \big[(n+1)!\big] 1 = (n+1)!   \]
+            \bigskip
 
             Toniamo ora su ciò che dobbiamo dimostrare:
 
-            \[  \exists \, \theta \in (x_0, x) \, | \, f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
+            \[  \exists \, \theta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
 
             \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f\,^{n+1}(\theta)}{(n+1)!}    \]
 
@@ -84,21 +84,18 @@
 
             \begin{align*}
                 \frac{g(x)}{w(x)} &= \frac{g(x) - g(x_0)}{w(x) - w(x_0)}\\
-                \\
                 \exists \, x_1 \in (x_0, x) \qquad &= \frac{g'(x_1)}{w'(x_1)} = \frac{g'(x_1) - g'(x_0)}{w'(x_1) - w'(x_0)}\\
-                \\
                 \exists \, x_2 \in (x_0, x_1) \qquad &= \frac{g''(x_2)}{w''(x_2)} = \frac{g''(x_2) - g''(x_0)}{w''(x_2) - w''(x_0)}\\
-                \\
-                \exists \, x_3 \in (x_0, x_2) \qquad &= \frac{g'''(x_3)}{w'''(x_3)} = \dots\\
-                \\
-                \text{Iterando n volte}\\
-                \\
-                \exists \, \theta \in (x_0, x_n) \qquad &= \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)}
+                \exists \, x_3 \in (x_0, x_2) \qquad &= \frac{g'''(x_3)}{w'''(x_3)} = \, \dots\\
+                %\text{Iterando n volte}\\
+                \exists \, \theta \in (x_0, x_n) \qquad &= \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} \qquad \text{\emph{Iterando n volte}}
             \end{align*}
 
-            Notiamo anche che possiamo fare questo perché da come abbiamo dimostrato prima calcolandolo, \\ 
+            Notiamo anche che possiamo fare questo perché da come abbiamo dimostrato prima calcolandolo,\\
             \(g(x_0)\,,\, g'(x_0)\,,\, \dots\,,\, g\,^{(n)} (x_0) \) e \( w(x_0)\,,\, w'(x_0)\,,\, \dots\,,\, w\,^{(n)} (x_0)\) sono infinitesimi.\\
 
+            \newpage
+            
             Quindi le derivate (\(n+1\))-esime dal precedente calcolo di \(g(x) \text{e} w(x)\) sono:
 
             \[  \frac{g\,^{(n+1)}(\theta)}{w\,^{(n+1)}(\theta)} = \frac{f\,^{n+1}(\theta)}{(n+1)!} \]
@@ -109,9 +106,10 @@
 
             Da cui:
 
-            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f\,^{n+1}(\theta)}{(n+1)!}   \]
-
-            \[  f(x) - T _n ^ f (x) = \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1} \]
+            \begin{align*}
+                \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} &= \frac{f\,^{n+1}(\theta)}{(n+1)!}\\
+                f(x) - T _n ^ f (x) &= \frac{f\,^{n+1}(\theta)}{(n+1)!}(x-x_0)^{n+1}
+            \end{align*}
 
             c.v.d.
         \end{document}
