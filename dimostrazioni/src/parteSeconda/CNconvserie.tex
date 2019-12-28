@@ -22,12 +22,12 @@
 
                         \[  \sum_{n=0}^{+\infty} a_n\]
 
-                \item La successione \(a_n\) è detta \textit{argomento} della serie.
+                \item La successione \(a_n\) è detta \emph{argomento} della serie;
                 \item La \textbf{successione delle somme parziali} è così definita:
                       
                         \[  S_N = \sum_{n=0}^{N} a_n\]
                     
-                \item Il  \textit{carattere (o la natura)} della \textbf{serie} è il \textit{carattere (o la natura)} della sua \textbf{successione delle somme parziali}
+                \item Il \emph{carattere} (o la \emph{natura}) della \textbf{serie} è il \emph{carattere} (o la \emph{natura}) della sua \textbf{successione delle somme parziali}.
             \end{itemize}
            
 
@@ -35,7 +35,7 @@
 
             \subsection*{Ipotesi}
 
-                \[  \sum_{n=0}^{+\infty} a_n \qquad \text{converge} \]
+                \[  \sum_{n=0}^{+\infty} a_n \quad \text{converge} \]
                 
             \subsection*{Tesi}
 
@@ -61,10 +61,10 @@
                 \]
 
             Noto che anche:
-
-            \[  \lim_{N \to +\infty} S_{N+1} = L \]
-
-            \[  \lim_{N \to +\infty} S_{N} = L \]
+            \begin{align*}
+                \lim_{N \to +\infty} S_{N+1} &= L\\
+                \lim_{N \to +\infty} S_{N} &= L
+            \end{align*}
             
             Essendo i due limiti finiti posso fare il limite della loro differenza:
 
@@ -74,9 +74,9 @@
 
             \[  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = \lim_{N \to +\infty} \left(S_N + a_{N+1} - S_N \right) = \lim_{N \to +\infty} a_{N+1} \]
 
-            Da quanto sopra sappiamo che \(  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) \rightarrow 0  \) quindi:
+            Da quanto detto sopra sappiamo che \(  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = 0  \) quindi:
 
-            \[  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = \lim_{N \to +\infty} a_{N+1} \rightarrow 0 \]
+            \[  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = \lim_{N \to +\infty} a_{N+1} = 0 \]
 
             c.v.d.
 \end{document}
