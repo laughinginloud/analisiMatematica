@@ -50,8 +50,6 @@
 
         \subfile{src/parteSeconda/formulaEulero.tex}
 
-    \renewcommand*{\theHchapter}{chY.\the\value{chapter}}
-
     \part*{Dimostrazioni aggiuntive}
     \addcontentsline{toc}{part}{Dimostrazioni aggiuntive}
 
@@ -59,6 +57,7 @@
         \setcounter{chapter}{0}
         \renewcommand\thechapter{A\arabic{chapter}}
         \titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione aggiuntiva numero \arabic{chapter}}{.5em}{\Huge}
+        \renewcommand*{\theHchapter}{chY.\the\value{chapter}}
 
         \subfile{src/parteExtra/cardinalitàRn}
     
