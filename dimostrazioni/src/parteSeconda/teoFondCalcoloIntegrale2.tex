@@ -66,18 +66,18 @@
                     \begin{align*}
                         \lim_{x \to x_0^-} G(x) =& \lim_{x \to x_0^-} \int_a^x \! f(t) \, \mathrm{d}t\\
                         =& \lim_{x \to x_0^-} \left[ \int_a^{x_0} \! f(t) \, \mathrm{d}t - \int_x^{x_0} \! f(t) \, \mathrm{d}t \right]\\
-                        =& \lim_{x \to x_0^-} \left[ G(x_0) - \int_{x_0}^x \! f(t) \, \mathrm{d}t \right]
+                        =& \lim_{x \to x_0^-} \left[ G(x_0) - \int_x^{x_0} \! f(t) \, \mathrm{d}t \right]
                     \end{align*}
 
-                    Se \( \lim_{x \to x_0^-} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) fosse \emph{infinitesimo} allora:
+                    Se \( \lim_{x \to x_0^-} - \int_x^{x_0} \! f(t) \, \mathrm{d}t \) fosse \emph{infinitesimo} allora:
 
                     \[  \lim_{x \to x_0^-}G(x) = G(x_0) \]
 
-                    Passiamo quindi a dimostrare che \( \lim_{x \to x_0^-} \int_x^{x_0} \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
+                    Passiamo quindi a dimostrare che \( \lim_{x \to x_0^-} - \int_x^{x_0} \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
 
                     \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; \text{ed} \; x_0 \]
 
-                    \[m(x_0-x) \, \leqslant \int_x^{x_0} \! f(t) \, \mathrm{d}t \, \leqslant M(x_0-x) \]
+                    \[m(x_0-x) \, \leqslant - \int_x^{x_0} \! f(t) \, \mathrm{d}t \, \leqslant M(x_0-x) \]
 
                     L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
 
