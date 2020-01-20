@@ -3,6 +3,9 @@
 
 % Aggiunto un comando per l'indentazione degli elementi di un elenco
 \newcommand{\indentitem}{\setlength\itemindent{25pt}}
+\newcommand{\insieme}[1]{\overline{\rm \underline{#1}}}
+\newcommand{\insiemeparti}[1]{\mathcal{P}\left(\insieme{#1}\right)}
+\newcommand{\card}[1]{\left| #1 \right|}
 
 % Evito che PGF vada in modalità legacy
 \pgfplotsset{compat=1.16}

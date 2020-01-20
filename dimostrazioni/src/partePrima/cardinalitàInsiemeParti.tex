@@ -1,0 +1,33 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Cardinalità dell'insieme delle parti}
+
+        \section*{Enunciato}
+
+            Dato un insieme \(\insieme{X}\), l'insieme delle parti \(\insiemeparti{X}\) ha cardinalità pari a \(2^n\), dove \(n\) è il numero di elementi dell'insieme.
+
+        \section*{Dimostrazione}
+
+            Prendiamo un generico insieme \(\insieme{X}\). Questo ha sicuramente come sottoinsiemi \(\emptyset\) e se stesso.\\
+            Chiediamoci ora: quanti sottoinsiemi di un elemento possiede? \(\mathrm{C}_{n, 1} = \binom{n}{1}\)\\
+            Quanti sottoinsiemi di due elementi possiede? \(\mathrm{C}_{n, 2} = \binom{n}{2}\)\\
+            \dots\\
+            Quanti sottoinsiemi di \(n - 1\) elementi possiede? \(\mathrm{C}_{n, n - 1} = \binom{n}{n - 1}\)
+
+            A questo punto possiamo dire che
+            \[
+                \card{\insiemeparti{X}} = 1 + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n - 1} + 1
+            \]
+            che corrisponde a
+            \[
+                \card{\insiemeparti{X}} = \sum_{k = 0}^n \, \binom{n}{k} = {(1 + 1)}^n = 2^n
+            \]
+            secondo la regola del binomio di Newton. c.v.d.
+    
+\end{document}
