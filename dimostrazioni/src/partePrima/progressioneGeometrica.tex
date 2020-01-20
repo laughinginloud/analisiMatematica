@@ -1,0 +1,47 @@
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Progressione geometrica}
+
+        \section*{Enunciato}       
+
+            \[F(n): \sum_{k=0}^{n}q^k \, = \, \frac{1-q^{n+1}}{1-q} \qquad \qquad q \neq 1 \]
+
+        \section*{Dimostrazione}
+
+            Per dimostrare l'enunciato, procediamo con una dimostrazione per induzione.
+
+            \medskip
+
+            % Nota: sono attaccate per evitare multiple righe vuote
+            Dimostriamo l'enunciato per \(n = 1\):
+            
+            \[\sum_{k=0}^{1}q^k \, = \, q^0 + q^1 \, = \, 1 + q\]
+            
+            Allo stesso modo
+
+            \[\frac{1-q^{1+1}}{1-q} \, = \, \frac{1-q^2}{1-q} \, = \, \frac{(1-q)(1+q)}{1-q} \, = \, 1+q\]
+
+            Che corrisponde al risultato della sommatoria
+
+            Possiamo perciò considerare l'enunciato vero al passo \(n\).
+
+            \medskip
+
+            % Nota: si veda sopra
+            Dimostriamolo per \(n + 1\):
+            \begin{align*}
+                \sum_{k=0}^{n+1}q^k \,=& \, \sum_{k=0}^{n}q^k + q^{n+1} \\
+                                =& \, \frac{1-q^{n+1}}{1-q} + q^{n+1} & \text{\emph{Per ipotesi induttiva}} \\
+                                =& \, \frac{1-q^{n+1} + q^{n+1} - q^{n+1+1}}{1-q} \\
+                                =& \, \frac{1-q^{n+2}}{1-q} \\
+            \end{align*}
+
+            Allo stesso modo
+
+            \[\frac{1-q^{(n+1)+1}}{1-q} \, = \, \frac{1-q^{n+2}}{1-q} \]
+
+            Abbiamo quindi dimostrato la progressione geometrica.
+    
+\end{document}
