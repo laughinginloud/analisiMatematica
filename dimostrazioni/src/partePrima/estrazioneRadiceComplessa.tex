@@ -1,0 +1,43 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Estrazione di radice complessa}
+
+        Dati due numeri, \(z, z^* \in \mathbb{C}\), definiti come \(\sqrt[n]{z^*} = z\) vogliamo estrarre la radice
+        di \(z^*\), quindi calcolare \(z^* = z^n\).
+
+        Partiamo definendo i numeri:
+        \begin{align*}
+            z &= \rho (\cos \vartheta + i \sin \vartheta)\\
+            z^* &= \rho^* (\cos \vartheta^* + i \sin \vartheta^*)
+        \end{align*}
+
+        Dall'uguaglianza \(z^* = z^n\) possiamo quindi ricavare
+        \[
+            \rho^* (\cos \vartheta^* + i \sin \vartheta^*) = \rho^n (\cos n\vartheta + i \sin n\vartheta)
+        \]
+        Questa uguaglianza è valida a meno di multipli di \(2\pi\).
+
+        Possiamo quindi ricavare il sistema
+        \[
+            \left\{
+                \begin{aligned}
+                    \rho^* &= \rho^n\\
+                    \vartheta_k &= k \times 2\pi = n\vartheta
+                \end{aligned}
+            \right.
+            \qquad \text{\emph{da cui si ricava}} \qquad
+            \left\{
+                \begin{aligned}
+                    \rho &= \sqrt[n]{\rho^*}\\
+                    \vartheta &= \frac{\vartheta^*}{n} + k \frac{2\pi}{n}
+                \end{aligned}
+            \right.
+        \]
+
+\end{document}
