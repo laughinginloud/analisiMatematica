@@ -1,6 +1,9 @@
 % Importo la struttura del documento
 \input{src/struttura.tex}
 
+% Importo i comandi personalizzati
+\input{src/comandi.tex}
+
 \begin{document}
 
     % Creo la copertina
@@ -10,7 +13,7 @@
     \tableofcontents
 
     % Imposto lo stile interno delle ancore
-    \renewcommand*{\theHchapter}{chX.\the\value{chapter}}
+    \renewcommand*{\theHchapter}{ch.\the\value{chapter}}
 
     \part{}
 
@@ -46,13 +49,13 @@
 
         \subfile{src/parteSeconda/CNconvserie.tex}
 
-        \subfile{src/parteSeconda/criterioRapportoSerie.tex}
+        \subfile{src/parteSeconda/criterioRapportoSerie}
 
-        \subfile{src/parteSeconda/serieconfronto.tex}
+        \subfile{src/parteSeconda/serieconfronto}
 
-        \subfile{src/parteSeconda/criterioRadiceSerie.tex}
+        \subfile{src/parteSeconda/criterioRadiceSerie}
 
-        \subfile{src/parteSeconda/formulaEulero.tex}
+        \subfile{src/parteSeconda/formulaEulero}
 
     \part*{Dimostrazioni aggiuntive}
     \addcontentsline{toc}{part}{Dimostrazioni aggiuntive}
@@ -61,7 +64,7 @@
         \setcounter{chapter}{0}
         \renewcommand\thechapter{A\arabic{chapter}}
         \titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione aggiuntiva numero \arabic{chapter}}{.5em}{\Huge}
-        \renewcommand*{\theHchapter}{chY.\the\value{chapter}}
+        \renewcommand*{\theHchapter}{chA.\the\value{chapter}}
 
         \subfile{src/parteExtra/cardinalitàRn}
     
