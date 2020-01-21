@@ -1,0 +1,85 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema fondamentale delle successioni monotone}
+
+        Si dimostrano diversi casi:
+        \begin{enumerate}
+            \indentitem \item una successione monotona e limitata \emph{converge};
+            \indentitem \item una successione monotona e illimitata
+                \begin{itemize}
+                    \item \emph{diverge positivamente}, se crescente
+                    \item \emph{diverge negativamente}, se decrescente;
+                \end{itemize}
+        \end{enumerate}            
+
+
+        \section*{Primo caso}
+            
+            \subsection*{Enunciato}
+                
+                \subsubsection*{Ipotesi}
+                         
+                Fisso per comodità \(a_n\) monotona crescente
+
+                \begin{enumerate}
+                    \indentitem \item \(a_n \leqslant a_{n+1}\) (ipotesi di monotonia);
+                    \indentitem \item \(a_n\ \in B_r(0)) con r > 0 \) (ipotesi di limitatezza);
+                \end{enumerate}
+                
+                \subsubsection*{Tesi}
+                    \[\lim_{n \to +\infty} a_n = L\]
+            
+            \subsection*{Dimostrazione}
+                Essendo \(a_n\) limitata avrà un maggiorante in \(r\) e quindi avrà il \(\sup\).
+                Dimostro che \(L = \sup{a_n}\)
+
+                Definiamo un intorno \(\epsilon\) di \(\sup\) come \(B_\epsilon (S)\), allora
+                \(\forall \epsilon \geqslant 0 \qquad S-\epsilon\) non è più sup (né maggiorante), quindi
+
+                \[
+                    \exists a_n^* \mid S-\epsilon < a_n^* \leqslant S \\
+                    \forall n > n^* \qquad S-\epsilon < a_n^* \leqslant a_n \leqslant S \\
+                    a_n \in B_\epsilon(S) 
+                \]                
+                
+        \section*{Secondo caso}
+            \subsection*{Enunciato}
+            Consideriamo il caso della crescenza
+                
+            \subsubsection*{Ipotesi}
+                 
+            Fisso per comodità \(a_n\) monotona crescente
+
+            \begin{enumerate}
+               \indentitem \item \(a_n \leqslant a_{n+1}\) (ipotesi di monotonia);
+               \indentitem \item \(\nexist B_r(0) > {a_n} \forall n \) (ipotesi di illimitatezza);
+            \end{enumerate}
+        
+            \subsubsection*{Tesi}
+                \[\lim_{n \to +\infty} a_n = +\infty\]
+    
+        \subsection*{Dimostrazione}
+            Essendo \(a_n\) illimitata 
+
+            \[\forall B_r(0) a_n^* \geqslant r \]
+
+            e per la monotonia
+
+            \[\forall n > n^* \quad a_n^* \leqslant a_n\]
+
+            quindi, definitivamente
+
+            \[a_n \in B_r(+\infty)\]
+
+            e per la definizione di limite 
+
+            \[lim_{n \to +\infty} a_n = +\infty\]
+
+
+\end{document}
