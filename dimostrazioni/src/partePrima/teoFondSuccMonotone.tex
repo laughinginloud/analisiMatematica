@@ -13,8 +13,8 @@
             \indentitem \item una successione monotona e limitata \emph{converge};
             \indentitem \item una successione monotona e illimitata
                 \begin{itemize}
-                    \item \emph{diverge positivamente}, se crescente
-                    \item \emph{diverge negativamente}, se decrescente;
+                    \indentitem \item \emph{diverge positivamente}, se crescente;
+                    \indentitem \item \emph{diverge negativamente}, se decrescente.
                 \end{itemize}
         \end{enumerate}            
 
@@ -29,7 +29,7 @@
 
                 \begin{enumerate}
                     \indentitem \item \(a_n \leqslant a_{n+1}\) (ipotesi di monotonia);
-                    \indentitem \item \(a_n\ \in B_r(0)) con r > 0 \) (ipotesi di limitatezza);
+                    \indentitem \item \(a_n\ \in B_r(0))\) con \(r > 0 \) (ipotesi di limitatezza).
                 \end{enumerate}
                 
                 \subsubsection*{Tesi}
@@ -39,18 +39,21 @@
                 Essendo \(a_n\) limitata avrà un maggiorante in \(r\) e quindi avrà il \(\sup\).
                 Dimostro che \(L = \sup{a_n}\)
 
-                Definiamo un intorno \(\epsilon\) di \(\sup\) come \(B_\epsilon (S)\), allora
-                \(\forall \epsilon \geqslant 0 \qquad S-\epsilon\) non è più sup (né maggiorante), quindi
-
-                \[
-                    \exists a_n^* \mid S-\epsilon < a_n^* \leqslant S \\
-                    \forall n > n^* \qquad S-\epsilon < a_n^* \leqslant a_n \leqslant S \\
-                    a_n \in B_\epsilon(S) 
-                \]                
+                Definiamo un intorno \(\varepsilon\) di \(\sup\) come \(B_\varepsilon (S)\), allora
+                \(\forall \varepsilon \geqslant 0, \, S-\varepsilon\) non è più né sup né maggiorante, quindi
+                \begin{gather*}
+                    \exists \, a_n^* \mid S-\varepsilon < a_n^* \leqslant S \\
+                    \forall n > n^*, \, S-\varepsilon < a_n^* \leqslant a_n \leqslant S \\
+                    a_n \in B_\varepsilon(S) 
+                \end{gather*}
                 
+        \newpage
+
         \section*{Secondo caso}
+
             \subsection*{Enunciato}
-            Consideriamo il caso della crescenza
+
+            Consideriamo il caso della crescenza.
                 
             \subsubsection*{Ipotesi}
                  
@@ -58,7 +61,7 @@
 
             \begin{enumerate}
                \indentitem \item \(a_n \leqslant a_{n+1}\) (ipotesi di monotonia);
-               \indentitem \item \(\nexist B_r(0) > {a_n} \forall n \) (ipotesi di illimitatezza);
+               \indentitem \item \(\nexists \, B_r(0) > {a_n} \forall n \) (ipotesi di illimitatezza).
             \end{enumerate}
         
             \subsubsection*{Tesi}
@@ -66,20 +69,12 @@
     
         \subsection*{Dimostrazione}
             Essendo \(a_n\) illimitata 
-
-            \[\forall B_r(0) a_n^* \geqslant r \]
-
+            \[\forall B_r(0), \, a_n^* \geqslant r \]
             e per la monotonia
-
-            \[\forall n > n^* \quad a_n^* \leqslant a_n\]
-
+            \[\forall n > n^*, \, a_n^* \leqslant a_n\]
             quindi, definitivamente
-
             \[a_n \in B_r(+\infty)\]
-
             e per la definizione di limite 
-
-            \[lim_{n \to +\infty} a_n = +\infty\]
-
+            \[\lim_{n \to +\infty} a_n = +\infty\]
 
 \end{document}
