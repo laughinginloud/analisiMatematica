@@ -1,0 +1,113 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema di Bolzano}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                Sia \(f(x)\) una funzione tale che
+                \begin{align*}
+                    f : A \subseteq \mathbb{R} &\longrightarrow \mathbb{R}\\
+                    x &\longmapsto y = f(x) 
+                \end{align*}
+
+                Supponiamo inoltre che:
+
+                \begin{enumerate}
+                    \indentitem \item \(A = [a, b]\) è un intervallo compatto;
+                    \indentitem \item \(f\) è continua su \(A\);
+                    \indentitem \item \(f(a) f(b) < 0\).
+                \end{enumerate}
+
+            \subsection*{Tesi}
+            
+                \[\exists \, x^* \in (a,b) \; | \; f'(x^*) = 0 \]
+
+        \section*{Dimostrazione}
+
+            Per fissare le idee,
+            \begin{align*}
+                f(a) &> 0\\
+                f(b) &< 0
+            \end{align*}
+
+            Procediamo per bisezione: definiamo \(x_1\) uguale al punto medio, ovvero
+            \[
+                x_1 = \frac{a_0 + b_0}{2}
+            \]
+
+            A questo punto, valutiamo \(f(x_1)\):
+            \[
+                f(x_1) =
+                \left\{
+                \begin{aligned}
+                    &\text{se } f(x_1) = 0 && \text{\emph{ho trovato lo zero}}\\
+                    &\text{se } f(x_1) > 0 && a_1 = x_1 \land b_1 = b_0 \quad \text{\emph{(studio l'intervallo destro)}}\\
+                    &\text{se } f(x_1) < 0 && a_1 = a_0 \land b_1 = x_1 \quad \text{\emph{(studio l'intervallo sinistro)}}
+                \end{aligned}
+                \right.
+            \]
+
+            Possiamo quindi proseguire fino a \(x_k\), che sarà definito come
+            \[
+                x_k = \frac{a_{k - 1} + b_{k - 1}}{2}
+            \]
+            da cui
+            \[
+                f(x_k) =
+                \left\{
+                \begin{aligned}
+                    &\text{se } f(x_k) = 0 && \text{\emph{ho trovato lo zero}}\\
+                    &\text{se } f(x_k) > 0 && a_k = x_k \land b_k = b_{k - 1} \quad \text{\emph{(studio l'intervallo destro)}}\\
+                    &\text{se } f(x_k) < 0 && a_k = a_{k - 1} \land b_k = x_k \quad \text{\emph{(studio l'intervallo sinistro)}}
+                \end{aligned}
+                \right.
+            \]
+
+            Abbiamo dunque due succesioni:
+            \begin{gather*}
+                a_k \text{\emph{ monotona crescente}}\\
+                b_k \text{\emph{ monotona decrescente}}
+            \end{gather*}
+            entrambe limitate, in quanto stanno in \([a, b]\), e convergenti, per il \hyperref[teoFondSuccMono]{teorema fondamentale
+            delle successioni monotone}.
+            Quindi,
+            \[
+                \left.
+                \begin{aligned}
+                    a_k &\to L\\
+                    b_k &\to M
+                \end{aligned}
+                \right.
+                \quad \text{\emph{ma }} L = M \text{\emph{ dato che }} \mathrm{dist}(a_k, b_k) = \frac{b - a}{2^k} \xrightarrow[k \to +\infty]{} 0
+            \]
+
+            Prendiamo quindi \(x^* = L = M\) e mostriamo che \(f(x^*) = 0\):
+            \[
+                \left.
+                \begin{aligned}
+                    f(a_k) \text{\emph{ converge ad un valore }} \geqslant 0\\
+                    f(b_k) \text{\emph{ converge ad un valore }} \leqslant 0
+                \end{aligned}
+                \right\}
+                \text{\emph{ per il \hyperref[teoPermSegno]{teorema della permanenza del segno}}}
+            \]
+
+            Uso la continuità di \(f\): \(x \to x_0\), allora \(f(x) \to f(x_0)\). Dunque,
+            \[
+                \left.
+                \begin{aligned}
+                    f(a_k) \to f(x^*) \geqslant 0&\\
+                    f(b_k) \to f(x^*) \leqslant 0&
+                \end{aligned}
+                \right\} \, f(x^*) = 0
+            \]
+        
+\end{document}
