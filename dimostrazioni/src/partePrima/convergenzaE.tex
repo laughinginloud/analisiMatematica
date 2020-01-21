@@ -1,0 +1,116 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../dimostrazioni.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Convergenza della successione che definisce \(e\)}
+
+        \section*{Definizione}
+
+            La successione che definisce il numero \(e\) è
+            \[
+                a_n = {\left(1 + \frac{1}{n}\right)}^n
+            \]
+
+            Questa è \textbf{monotona crescente} e \textbf{limitata}, quindi converge per il
+            \hyperref[teoFondSuccMono]{teorema fondamentale delle successioni monotone}.
+
+        \section*{Verifica della monotonia crescente}
+
+            Secondo la definizione, \(\forall n, \, a_n \leqslant a_{n + 1}\). Dunque
+            \[
+                \frac{a_n}{a_{n - 1}} \geqslant 1
+            \]
+
+            Verifichiamo la disequazione:
+
+            \medskip
+            \begin{minipage}[t]{.6\textwidth}
+                \vspace{-\baselineskip}
+                
+                \begin{align*}
+                    \frac{a_n}{a_{n - 1}} &= \frac{{\left(1 + \frac{1}{n}\right)}^n}{{\left(1 + \frac{1}{n - 1}\right)}^{n - 1}}\\
+                    &= \frac{{\left(1 + \frac{1}{n}\right)}^n}{{\left(\frac{n}{n - 1}\right)}^{n - 1}}\\
+                    &= {\left(1 + \frac{1}{n}\right)}^n {\left(\frac{n - 1}{n}\right)}^{n - 1}\\
+                    &= {\left(1 + \frac{1}{n}\right)}^n {\left(1 - \frac{1}{n}\right)}^n {\left(1 - \frac{1}{n}\right)}^{- 1}\\
+                    &= {\left(1 - \frac{1}{n^2}\right)}^n {\left(1 - \frac{1}{n}\right)}^{- 1}\\
+                    &\geqslant \left(1 - \frac{1}{n}\right) {\left(1 - \frac{1}{n}\right)}^{-1} = 1
+                \end{align*}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{.4\textwidth}
+                \vspace{-\baselineskip}
+                \vspace{7ex}
+
+                \begin{framed}
+                    Nell'ultimo passaggio, per passare ad una disguaglianza, è stata usata la
+                    \hyperref[disBernoulli]{disguaglianza di Bernoulli}.
+                    In particolare,
+                    \[
+                        x = -\frac{1}{n^2}
+                    \]
+                    dunque,
+                    \[
+                        {\left(1 - \frac{1}{n^2}\right)}^n \geqslant 1 + n \left(- \frac{1}{n^2}\right)
+                    \]
+                \end{framed}
+            \end{minipage}
+
+        \section*{Verifica della limitatezza}
+
+            Innanzitutto, introduciamo una successione ausiliaria \(\{b_n\}\) definita come
+            \[
+                b_n = {\left(1 + \frac{1}{n}\right)}^{n + 1} = {\left(1 + \frac{1}{n}\right)}^n \left(1 + \frac{1}{n}\right) = a_n \underbrace{\left(1 + \frac{1}{n}\right)}_{> 1}
+            \]
+            
+            Quindi, \(\forall n, \, a_n < b_n\). Dimostriamo quindi che \(\{b_n\}\) decresce, da cui segue che \(\{a_n\}\) è limitata.
+            La disequazione da verificare è dunque
+            \[
+                \frac{b_n}{b_{n - 1}} \leqslant 1
+            \]
+
+            Verifichiamola:
+
+            \medskip
+            \begin{minipage}[t]{.55\textwidth}
+                \vspace{-\baselineskip}
+                
+                \begin{align*}
+                    \frac{b_n}{b_{n - 1}} &= \frac{{\left(1 + \frac{1}{n}\right)}^{n + 1}}{{\left(1 + \frac{1}{n - 1}\right)}^n}\\
+                    &= \frac{{\left(1 + \frac{1}{n}\right)}^{n + 1}}{{\left(\frac{n}{n - 1}\right)}^n}\\
+                    &= {\left(1 + \frac{1}{n}\right)}^{n + 1} {\left(\frac{n - 1}{n}\right)}^n\\
+                    &= {\left(1 + \frac{1}{n}\right)}^{n + 1} {\left(1 - \frac{1}{n}\right)}^n\\
+                    &= {\left(1 - \frac{1}{n^2}\right)}^n \left(1 + \frac{1}{n}\right)\\
+                    &= {\left(\frac{n^2 - 1}{n^2}\right)}^n \left(1 + \frac{1}{n}\right)\\
+                    &= \frac{1 + \frac{1}{n}}{{\left(\frac{n^2}{n^2 - 1}\right)}^n}\\
+                    &= \frac{1 + \frac{1}{n}}{{\left(1 + \frac{1}{n^2 - 1}\right)}^n}\\
+                    &\leqslant \frac{1 + \frac{1}{n}}{1 + \frac{1}{n}} = 1
+                \end{align*}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{.45\textwidth}
+                \vspace{-\baselineskip}
+                \vspace{15ex}
+
+                \begin{framed}
+                    Come nella verifica precedente, è stata usata la
+                    \hyperref[disBernoulli]{disguaglianza di Bernoulli}.
+                    In particolare,
+                    \[
+                        x = \frac{1}{n^2 - 1}
+                    \]
+                    dunque,
+                    \[
+                        {\left(1 + \frac{1}{n^2 - 1}\right)}^n \geqslant 1 + n \left(\frac{1}{n^2 - 1}\right) > 1 + \frac{n}{n^2}
+                    \]
+                    da cui
+                    \[
+                        {\left(1 + \frac{1}{n^2 - 1}\right)}^{-n} \leqslant {\left(1 + \frac{1}{n}\right)}^{-1}
+                    \]
+                \end{framed}
+            \end{minipage}
+        
+\end{document}
