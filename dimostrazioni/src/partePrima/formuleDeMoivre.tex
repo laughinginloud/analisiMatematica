@@ -11,22 +11,22 @@
             \[z_2 \, = \, \rho_2(\cos(\theta_2) + i\sin(\theta_2)) \]
 
             Il loro prodotto sarà uguale a
-            \begin{align}
+            \begin{align*}
                 z_1z_2 =& [\rho_1\cos\theta_1+i\sin\theta_1\rho_2\cos\theta_2+i\sin\theta_2] \\
                        =& \rho_1\rho_2 [\cos\theta_1\cos\theta_2 + \cos\theta_1i\sin\theta_2 + i\sin\theta_1\cos\theta_2 - \sin\theta_1\sin\theta_2] \\
                        =& \rho_1\rho_2 [(\cos\theta_1\cos\theta_2 - \sin\theta_1\sin\theta_2) + (\cos\theta_1 i\sin\theta_2 + i\sin\theta_1\cos\theta_2)] \\
                        =& \rho_1\rho_2 (\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2))
-            \end{align}
+            \end{align*}
 
         \section*{Quoziente di due numeri complessi}
 
-            \begin{align}
+            \begin{align*}
                 \frac{z_1}{z_2} =& \frac{\rho_1\cos\theta_1+i\sin\theta_1}{\rho_2\cos\theta_2+i\sin\theta_2} \\
                                 =& \frac{\rho_1}{\rho_2} \frac{\cos\theta_1+i\sin\theta_1}{\cos\theta_2+i\sin\theta_2} \frac{\cos\theta_1-i\sin\theta_1}{\cos\theta_2-i\sin\theta_2}\\
                                 =& \frac{\rho_1}{\rho_2} \frac{\cos\theta_1\cos\theta_2 - \cos\theta_1 i\sin\theta_2 + i\sin\theta_1\cos\theta_2 + \sin\theta_1\sin\theta_2)}{\cos^2\theta_2 - i\sin\theta_2\cos\theta_2 + i\sin\theta_2\cos\theta_2 + \sin^2\theta_2} \\
                                 =& \frac{\rho_1}{\rho_2} \frac{[\cos(\theta_1 - \theta_2) + i\sin(\theta_1 - \theta_2)]}{\cos^2\theta_2 + \sin^2\theta_2} \\
                                 =& \frac{\rho_1}{\rho_2} [\cos(\theta_1 - \theta_2) + i\sin(\theta_1 - \theta_2)]
-            \end{align}
+            \end{align*}
 
         \section*{Potenza di numero complesso}
 
@@ -35,12 +35,12 @@
             \medskip
 
             Dimostriamo l'enunciato per \(n = 2\):
-            \begin{align}
+            \begin{align*}
                 z^2 \, = \, zz \, =& \, \rho\rho [\cos(\theta + \theta) + i\sin(\theta+\theta)] \\
                                   =& \, \rho^2(\cos2\theta)+ i\sin2\theta)
-            \end{align}
+            \end{align*}
 
-            Che è quindi uguale a
+            Che è quindi, in generale, uguale a
 
             \[\rho^n (\cos n\theta +i\sin n\theta)\]
 
@@ -49,12 +49,12 @@
             \medskip
 
             Dimostriamolo per \(n + 2\):
-            \begin{align}
+            \begin{align*}
                 z^{n+2} \, = \, z^n z^2 \, =& \, \rho^n \rho^2 [(\cos n\theta + i\sin n\theta)(\cos 2\theta + i\sin 2\theta)] \\
                                            =& \, \rho^n \rho^2 [\cos n\theta\cos2\theta + \cos n\theta i\sin2\theta + i\sin n\theta \cos2\theta - \sin n\theta \sin2\theta] \\
                                            =& \, \rho^{n+2} (\cos(n\theta + 2\theta) + i\sin(n\theta + 2\theta)) \\
                                            =& \, \rho^{n+2} (\cos(n+2)\theta + i\sin(n+2)\theta)
-            \end{align}
+            \end{align*}
             
 
 \end{document}
