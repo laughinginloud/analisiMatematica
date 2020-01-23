@@ -15,7 +15,11 @@
     % Imposto lo stile interno delle ancore
     \renewcommand*{\theHchapter}{ch.\the\value{chapter}}
 
-    \part{}
+    %\part{}
+    \cleardoublepage{}
+    \phantomsection{}
+    \addcontentsline{toc}{part}{Parte I}
+    \part*{Parte I}
 
         \subfile{src/partePrima/progressioneGeometrica}
         \subfile{src/partePrima/formuleDeMorgan}
@@ -37,7 +41,11 @@
         \subfile{src/partePrima/derivateElementari}
         \subfile{src/partePrima/derivabilitàContinuità}
 
-    \part{}
+    %\part{}
+    \cleardoublepage{}
+    \phantomsection{}
+    \addcontentsline{toc}{part}{Parte II}
+    \part*{Parte II}
 
         \subfile{src/parteSeconda/teoremaFermat}
         \subfile{src/parteSeconda/teoremaRolle}
@@ -56,8 +64,10 @@
         \subfile{src/parteSeconda/criterioRadiceSerie}
         \subfile{src/parteSeconda/formulaEulero}
 
-    \part*{Dimostrazioni aggiuntive}
+    \cleardoublepage{}
+    \phantomsection{}
     \addcontentsline{toc}{part}{Dimostrazioni aggiuntive}
+    \part*{Dimostrazioni aggiuntive}
 
         % Reinizializzo il contatore del capitolo, cambio lo stile della numerazione, modifico lo stile interno delle ancore
         \setcounter{chapter}{0}

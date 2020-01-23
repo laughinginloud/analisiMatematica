@@ -36,8 +36,7 @@
             \subsection*{Dimostrazione}
 
                 Voglio dimostrare che 
-
-                \[\forall \, x_0 \in [a, b] \qquad G(x_0) = \lim_{x \to  x_0} G(x) \]
+                \[\forall \, x_0 \in [a, b], \, G(x_0) = \lim_{x \to  x_0} G(x) \]
             
                 \subsubsection*{Caso 1 - \(a < x_0 < x < b \)}
 
@@ -49,14 +48,13 @@
                     \end{align*}
 
                     Se \( \lim_{x \to x_0^+} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) fosse \emph{infinitesimo} allora:
-
                     \[  \lim_{x \to {x_0}^{+}}G(x) = G(x_0) \]
 
-                    Passiamo quindi a dimostrare che \( \lim_{x \to {x_0}^{+}} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
-
-                    \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; \text{ed} \; x \]
-
-                    \[m(x-x_0) \, \leqslant \int_{x_0}^x \! f(t) \, \mathrm{d}t \, \leqslant M(x-x_0) \]
+                    Passiamo quindi a dimostrare che \( \lim_{x \to x_0^+} \int_{x_0}^x \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
+                    \begin{gather*}
+                        m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x_0 \; \text{e} \; x\\
+                        m(x-x_0) \, \leqslant \int_{x_0}^x \! f(t) \, \mathrm{d}t \, \leqslant M(x-x_0)
+                    \end{gather*}
 
                     L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
 
@@ -70,21 +68,20 @@
                     \end{align*}
 
                     Se \( \lim_{x \to x_0^-} - \int_x^{x_0} \! f(t) \, \mathrm{d}t \) fosse \emph{infinitesimo} allora:
-
                     \[  \lim_{x \to x_0^-}G(x) = G(x_0) \]
 
                     Passiamo quindi a dimostrare che \( \lim_{x \to x_0^-} - \int_x^{x_0} \! f(t) \, \mathrm{d}t \) è \emph{infinitesimo}:
-
-                    \[m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; \text{ed} \; x_0 \]
-
-                    \[m(x_0-x) \, \leqslant - \int_x^{x_0} \! f(t) \, \mathrm{d}t \, \leqslant M(x_0-x) \]
+                    \begin{gather*}
+                        m \leqslant f(t) \leqslant M \qquad \text {accumulo tra} \qquad x \; \text{e} \; x_0\\
+                        m(x_0-x) \, \leqslant - \int_x^{x_0} \! f(t) \, \mathrm{d}t \, \leqslant M(x_0-x)
+                    \end{gather*}
 
                     L'integrale definito è \emph{infinitesimo} perché limitato tra quantità che tendono a 0.
 
-                Nel \emph{caso 1} abbiamo dimostrato che \(  \lim_{x \to x_0^+}G(x) = G(x_0) \) e \emph{caso 2} che \(  \lim_{x \to x_0^-}G(x) = G(x_0) \) quindi abbiamo:
-                \[  \lim_{x \to x_0^-}G(x) = G(x_0) = \lim_{x \to x_0^+}G(x) \qquad \forall \, x_0 \in [a, b] \]
+                    Nel \emph{caso 1} abbiamo dimostrato che \(  \lim_{x \to x_0^+}G(x) = G(x_0) \) e \emph{caso 2} che \(  \lim_{x \to x_0^-}G(x) = G(x_0) \) quindi abbiamo:
+                    \[  \lim_{x \to x_0^-}G(x) = G(x_0) = \lim_{x \to x_0^+}G(x) \qquad \forall \, x_0 \in [a, b] \]
 
-                Che dimostra la continuità di \(G(x)\), c.v.d.
+                    Che dimostra la continuità di \(G(x)\), c.v.d.
             
             \section*{Seconda Forma}
 
@@ -101,7 +98,6 @@
                     \subsubsection*{Tesi}
                     
                         \(G\) è una funzione \textbf{derivabile}.
-
                         \[G \in C^{1}([a, b]) \quad \text{e} \quad G'(x) = f(x) \qquad \forall \, x \in [a,b] \]
         
                     \subsection*{Dimostrazione}
@@ -112,8 +108,8 @@
 
                             \begin{align*}
                                 \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x_0} f(t)dt \right] \\
-                                                            =& \frac{1}{h} \int_{x_0}^{x_0+h}f(t) dt & \text{VMI di \(f\) su} \, [x_0, {x_0} +h]\\
-                                \exists \, \theta \in (x_0, x_0+h) | =& f(\theta) \longmapsto f(x_0)          & \text{per la seconda proprietà del VMI}& \\
+                                                            =& \frac{1}{h} \int_{x_0}^{x_0+h}f(t) dt & \text{\hyperref[teoValorMedioIntegrale]{VMI} di \(f\) su} \, [x_0, {x_0} +h]\\
+                                \exists \, \vartheta \in [x_0, x_0+h] \, | \quad =& f(\vartheta) \longrightarrow f(x_0)          & \text{per la seconda proprietà del \hyperref[teoValorMedioIntegrale]{VMI}}& \\
                                 &                            &  \text{con} \; h \rightarrow 0^{+}&
                             \end{align*}
                             
@@ -125,8 +121,8 @@
                             \begin{align*}
                                 \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_a^{x_0+h} \! f(t) \, \mathrm{d}t - \int_a^{x_0} \! f(t) \, \mathrm{d}t \right] \\
                                                             =& \frac{1}{h} \left[ \int_a^{x_0+h} \! f(t) \, \mathrm{d}t - \int_a^{x_0+h} \! f(t) \, \mathrm{d}t - \int_{x_0+h}^{x_0} \! f(t) \, \mathrm{d}t \right] \\
-                                                            =& \frac{1}{-h} \int_{x_0+h}^{x_0} \! f(t) \, \mathrm{d}t & \text{VMI di \(f\) su} \, [x_0 + h, x_0]\\
-                                \exists \, \theta \in (x_0+h, x_0) \mid \quad =& f(\theta) \longrightarrow f(x_0)          & \text{per la seconda proprietà del VMI}& \\
+                                                            =& \frac{1}{-h} \int_{x_0+h}^{x_0} \! f(t) \, \mathrm{d}t & \text{\hyperref[teoValorMedioIntegrale]{VMI} di \(f\) su} \, [x_0 + h, x_0]\\
+                                \exists \, \vartheta \in [x_0+h, x_0] \mid \quad =& f(\vartheta) \longrightarrow f(x_0)          & \text{per la seconda proprietà del \hyperref[teoValorMedioIntegrale]{VMI}}& \\
                                 &                            &  \text{con} \; h \rightarrow 0^-&
                             \end{align*}
                             
