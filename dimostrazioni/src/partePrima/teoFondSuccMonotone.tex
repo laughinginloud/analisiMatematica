@@ -30,7 +30,7 @@
 
                 \begin{enumerate}
                     \indentitem \item \(a_n \leqslant a_{n+1}\) (ipotesi di monotonia);
-                    \indentitem \item \(a_n\ \in \mathrm{B}_r(0))\) con \(r > 0 \) (ipotesi di limitatezza).
+                    \indentitem \item \(a_n \in \mathrm{B}_r(0))\) con \(r > 0 \) (ipotesi di limitatezza).
                 \end{enumerate}
                 
                 \subsubsection*{Tesi}
@@ -38,13 +38,13 @@
             
             \subsection*{Dimostrazione}
                 Essendo \(a_n\) limitata avrà un maggiorante in \(r\) e quindi avrà il \(\sup\).
-                Dimostro che \(L = \sup{a_n}\)
+                Dimostro che \(L = \sup{a_n}\).
 
-                Definiamo un intorno \(\varepsilon\) di \(\sup\) come \(\mathrm{B}_\varepsilon (S)\), allora
+                Definiamo un intorno \(\varepsilon\) di \(\sup\) come \(\mathrm{B}_\varepsilon (S)\): allora
                 \(\forall \varepsilon \geqslant 0, \, S-\varepsilon\) non è più né sup né maggiorante, quindi
                 \begin{gather*}
-                    \exists \, a_n^* \mid S-\varepsilon < a_n^* \leqslant S \\
-                    \forall n > n^*, \, S-\varepsilon < a_n^* \leqslant a_n \leqslant S \\
+                    \exists \, a_{n^*} \mid S-\varepsilon < a_{n^*} \leqslant S \\
+                    \forall n > n^*, \, S-\varepsilon < a_{n^*} \leqslant a_n \leqslant S \\
                     a_n \in \mathrm{B}_\varepsilon(S) 
                 \end{gather*}
                 
@@ -62,7 +62,7 @@
 
             \begin{enumerate}
                \indentitem \item \(a_n \leqslant a_{n+1}\) (ipotesi di monotonia);
-               \indentitem \item \(\nexists \, \mathrm{B}_r(0) > {a_n} \forall n \) (ipotesi di illimitatezza).
+               \indentitem \item \(\nexists \, \mathrm{B}_r(0) > {a_n} \quad \forall n \) (ipotesi di illimitatezza).
             \end{enumerate}
         
             \subsubsection*{Tesi}
@@ -70,9 +70,9 @@
     
         \subsection*{Dimostrazione}
             Essendo \(a_n\) illimitata 
-            \[\forall \, \mathrm{B}_r(0), \, a_n^* \geqslant r \]
+            \[\forall \, \mathrm{B}_r(0), \, a_{n^*} \geqslant r \]
             e per la monotonia
-            \[\forall n > n^*, \, a_n^* \leqslant a_n\]
+            \[\forall n > n^*, \, a_{n^*} \leqslant a_n\]
             quindi, definitivamente
             \[a_n \in \mathrm{B}_r(+\infty)\]
             e per la definizione di limite 
