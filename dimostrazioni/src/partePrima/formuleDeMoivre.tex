@@ -18,51 +18,50 @@
 
             Il loro prodotto sarà uguale a
             \begin{align*}
-                z_1z_2 =& [\rho_1\cos\vartheta_1+i\sin\vartheta_1\rho_2\cos\vartheta_2+i\sin\vartheta_2] \\
-                       =& \rho_1\rho_2 [\cos\vartheta_1\cos\vartheta_2 + \cos\vartheta_1i\sin\vartheta_2 + i\sin\vartheta_1\cos\vartheta_2 - \sin\vartheta_1\sin\vartheta_2] \\
-                       =& \rho_1\rho_2 [(\cos\vartheta_1\cos\vartheta_2 - \sin\vartheta_1\sin\vartheta_2) + (\cos\vartheta_1 i\sin\vartheta_2 + i\sin\vartheta_1\cos\vartheta_2)] \\
-                       =& \rho_1\rho_2 (\cos(\vartheta_1 + \vartheta_2) + i\sin(\vartheta_1 + \vartheta_2))
+                z_1 \, z_2 \, =& \, \rho_1(\cos\vartheta_1+i\sin\vartheta_1) \, \rho_2(\cos\vartheta_2+i\sin\vartheta_2)\\
+                       =& \, \rho_1\rho_2 (\cos\vartheta_1\cos\vartheta_2 + \cos\vartheta_1i\sin\vartheta_2 + i\sin\vartheta_1\cos\vartheta_2 - \sin\vartheta_1\sin\vartheta_2) \\
+                       =& \, \rho_1\rho_2 [(\cos\vartheta_1\cos\vartheta_2 - \sin\vartheta_1\sin\vartheta_2) + i(\cos\vartheta_1 \sin\vartheta_2 + \sin\vartheta_1\cos\vartheta_2)] \\
+                       =& \, \rho_1\rho_2 [\cos(\vartheta_1 + \vartheta_2) + i\sin(\vartheta_1 + \vartheta_2)]
             \end{align*}
 
         \section*{Quoziente di due numeri complessi}
 
             \begin{align*}
-                \frac{z_1}{z_2} =& \frac{\rho_1\cos\vartheta_1+i\sin\vartheta_1}{\rho_2\cos\vartheta_2+i\sin\vartheta_2} \\
-                                =& \frac{\rho_1}{\rho_2} \frac{\cos\vartheta_1+i\sin\vartheta_1}{\cos\vartheta_2+i\sin\vartheta_2} \frac{\cos\vartheta_1-i\sin\vartheta_1}{\cos\vartheta_2-i\sin\vartheta_2}\\
-                                =& \frac{\rho_1}{\rho_2} \frac{\cos\vartheta_1\cos\vartheta_2 - \cos\vartheta_1 i\sin\vartheta_2 + i\sin\vartheta_1\cos\vartheta_2 + \sin\vartheta_1\sin\vartheta_2)}{\cos^2\vartheta_2 - i\sin\vartheta_2\cos\vartheta_2 + i\sin\vartheta_2\cos\vartheta_2 + \sin^2\vartheta_2} \\
-                                =& \frac{\rho_1}{\rho_2} \frac{[\cos(\vartheta_1 - \vartheta_2) + i\sin(\vartheta_1 - \vartheta_2)]}{\cos^2\vartheta_2 + \sin^2\vartheta_2} \\
-                                =& \frac{\rho_1}{\rho_2} [\cos(\vartheta_1 - \vartheta_2) + i\sin(\vartheta_1 - \vartheta_2)]
+                \frac{z_1}{z_2} \, =& \, \frac{\rho_1\cos\vartheta_1+i\sin\vartheta_1}{\rho_2\cos\vartheta_2+i\sin\vartheta_2} \\
+                                =& \, \frac{\rho_1}{\rho_2} \frac{\cos\vartheta_1+i\sin\vartheta_1}{\cos\vartheta_2+i\sin\vartheta_2} \frac{\cos\vartheta_2-i\sin\vartheta_2}{\cos\vartheta_2-i\sin\vartheta_2}\\
+                                =& \, \frac{\rho_1}{\rho_2} \frac{\cos\vartheta_1\cos\vartheta_2 - \cos\vartheta_1 i\sin\vartheta_2 + i\sin\vartheta_1\cos\vartheta_2 + \sin\vartheta_1\sin\vartheta_2}{\cos^2\vartheta_2 - i\sin\vartheta_2\cos\vartheta_2 + i\sin\vartheta_2\cos\vartheta_2 + \sin^2\vartheta_2} \\
+                                =& \, \frac{\rho_1}{\rho_2} \frac{[\cos(\vartheta_1 - \vartheta_2) + i\sin(\vartheta_1 - \vartheta_2)]}{\cos^2\vartheta_2 + \sin^2\vartheta_2} \\
+                                =& \, \frac{\rho_1}{\rho_2} [\cos(\vartheta_1 - \vartheta_2) + i\sin(\vartheta_1 - \vartheta_2)]
             \end{align*}
 
         \newpage
 
         \section*{Potenza di numero complesso}
 
-            Si dimostra per induzione.
+            \subsection*{Enunciato}
+
+                \[ z^n = \rho^n (\cos n\vartheta +i\sin n\vartheta)\]
+
+            \subsection*{Dimostrazione}
+
+                Lo dimostreremo per induzione.
+
+                Dimostriamo l'enunciato per \(n = 2\):
+                \begin{align*}
+                    z^2 = z \, z =& \, \rho(\cos\vartheta+i\sin\vartheta) \, \rho(\cos\vartheta+i\sin\vartheta)\\
+                                      =& \, \rho^2(\cos2\vartheta + i\sin2\vartheta)
+                \end{align*}
+                secondo la prima formula, con \(z_1 = z_2 = z\).
+                Possiamo perciò considerare l'enunciato vero al passo \(n - 1\).
+
+                Dimostriamolo per \(n\):
+                \begin{align*}
+                    z^{n - 1} \, =& \, \rho^{n - 1} (\cos (n - 1)\vartheta + i \sin (n - 1)\vartheta)\\
+                    z^{n} \, = \, z^{n - 1} z \, =& \, \rho^{n - 1} (\cos (n - 1)\vartheta + i \sin (n - 1)\vartheta) \, \rho(\cos \vartheta + i \sin \vartheta) \\
+                                               =& \, \rho^n (\cos n\vartheta + i\sin n\vartheta)
+                \end{align*}
+                sempre secondo la prima formula.
+
+                Abbiamo perciò dimostrato anche la terza formula. c.v.d.
             
-            \medskip
-
-            Dimostriamo l'enunciato per \(n = 2\):
-            \begin{align*}
-                z^2 \, = \, zz \, =& \, \rho\rho [\cos(\vartheta + \vartheta) + i\sin(\vartheta+\vartheta)] \\
-                                  =& \, \rho^2(\cos2\vartheta)+ i\sin2\vartheta)
-            \end{align*}
-
-            Che è quindi, in generale, uguale a
-
-            \[\rho^n (\cos n\vartheta +i\sin n\vartheta)\]
-
-            Possiamo perciò considerare l'enunciato vero al passo \(n\).
-
-            \medskip
-
-            Dimostriamolo per \(n + 2\):
-            \begin{align*}
-                z^{n+2} \, = \, z^n z^2 \, =& \, \rho^n \rho^2 [(\cos n\vartheta + i\sin n\vartheta)(\cos 2\vartheta + i\sin 2\vartheta)] \\
-                                           =& \, \rho^n \rho^2 [\cos n\vartheta\cos2\vartheta + \cos n\vartheta i\sin2\vartheta + i\sin n\vartheta \cos2\vartheta - \sin n\vartheta \sin2\vartheta] \\
-                                           =& \, \rho^{n+2} (\cos(n\vartheta + 2\vartheta) + i\sin(n\vartheta + 2\vartheta)) \\
-                                           =& \, \rho^{n+2} (\cos(n+2)\vartheta + i\sin(n+2)\vartheta)
-            \end{align*}
-            
-
 \end{document}
