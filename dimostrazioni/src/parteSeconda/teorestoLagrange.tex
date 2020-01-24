@@ -72,9 +72,10 @@
             \bigskip
 
             Toniamo ora su ciò che dobbiamo dimostrare:
-            \[  \exists \, \vartheta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f^{n+1}(\vartheta)}{(n+1)!}(x-x_0)^{n+1} \]
-
-            \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f^{n+1}(\vartheta)}{(n+1)!}    \]
+            \begin{gather*}
+                \exists \, \vartheta \in (x_0, x) \; | \; f(x) - T _n ^ f (x) = \frac{f^{n+1}(\vartheta)}{(n+1)!}(x-x_0)^{n+1}\\
+                \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{f^{n+1}(\vartheta)}{(n+1)!}
+            \end{gather*}
 
             Notiamo che \(  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)}    \) quindi utilizzando il \textbf{\hyperref[teoCauchy]{teorema di Cauchy}}:
             \begin{align*}
@@ -90,10 +91,10 @@
 
             \newpage
             
-            Quindi le derivate (\(n+1\))-esime dal precedente calcolo di \(g(x) \text{e} w(x)\) sono:
+            Quindi le derivate (\(n+1\))-esime dal precedente calcolo di \(g(x)\) e \(w(x)\) sono:
             \[  \frac{g^{(n+1)}(\vartheta)}{w^{(n+1)}(\vartheta)} = \frac{f^{n+1}(\vartheta)}{(n+1)!} \]
 
-            Quindi per come abbiamo definito \(g(x) \; \text{e} \; w(x)\):
+            Quindi per come abbiamo definito \(g(x)\) e \(w(x)\):
             \[  \frac{f(x) - T _n ^ f (x)}{(x-x_0)^{n+1}} = \frac{g(x)}{w(x)} = \frac{g^{(n+1)}(\vartheta)}{w^{(n+1)}(\vartheta)} = \frac{f^{n+1}(\vartheta)}{(n+1)!}   \]
 
             Da cui:
