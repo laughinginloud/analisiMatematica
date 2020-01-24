@@ -107,8 +107,8 @@
                         \subsubsection*{Caso 1 - \(h>0\)}
 
                             \begin{align*}
-                                \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_{a}^{x_0+h} f(t) dt - \int_{a}^{x_0} f(t)dt \right] \\
-                                                            =& \frac{1}{h} \int_{x_0}^{x_0+h}f(t) dt & \text{\hyperref[teoValorMedioIntegrale]{VMI} di \(f\) su} \, [x_0, {x_0} +h]\\
+                                \frac{G(x_0+h) - G(x_0)}{h} =& \frac{1}{h} \left[ \int_{a}^{x_0+h} \! f(t) \, \mathrm{d}t - \int_{a}^{x_0} \! f(t) \, \mathrm{d}t \right] \\
+                                                            =& \frac{1}{h} \int_{x_0}^{x_0+h} \! f(t) \, \mathrm{d}t & \text{\hyperref[teoValorMedioIntegrale]{VMI} di \(f\) su} \, [x_0, {x_0} +h]\\
                                 \exists \, \vartheta \in [x_0, x_0+h] \, | \quad =& f(\vartheta) \longrightarrow f(x_0)          & \text{per la seconda proprietà del \hyperref[teoValorMedioIntegrale]{VMI}}& \\
                                 &                            &  \text{con} \; h \rightarrow 0^{+}&
                             \end{align*}
