@@ -11,7 +11,7 @@
 
         \section*{Enunciato}
 
-            Sia \(\sum a_n\) una serie a termini positivi \(a_n > 0 \; \forall \, n\). Se
+            Sia \(\sum a_n\) una serie a termini positivi, con \(a_n > 0, \, \forall \, n\). Se
              \[\sqrt[n]{a_n} \rightarrow l \qquad \text{per} \; n  \rightarrow +\infty \]
             
             Allora
@@ -29,11 +29,13 @@
             \subsection*{Caso 1 - \(0 \leqslant l < 1\)} 
                     
                 Introduco una \textbf{successione ausiliaria}
-                \[b_n = \sqrt[n]{a_n} \]  
-                \[\lim_{n \to +\infty} b_n = l \qquad \text{e so che} \; l < 1\]
+                \begin{gather*}
+                    b_n = \sqrt[n]{a_n}\\
+                    \lim_{n \to +\infty} b_n = l \qquad \text{e so che} \; l < 1
+                \end{gather*}
 
                 Per la definizione di limite
-                \[\forall \, B_\varepsilon (l) \; \exists \, M \mid \forall \, n > M \quad b_n \in B_\varepsilon (l) \]
+                \[\forall \, \mathrm{B}_\varepsilon (l), \, \exists \, M \mid \forall \, n > M, \, b_n \in \mathrm{B}_\varepsilon (l) \]
 
                 Scegliamo \(\varepsilon\) in modo che \(\varepsilon < 1 - l\) da \(M\) in poi. Dunque,
                 \begin{align*}
@@ -55,7 +57,7 @@
                 \[ \lim_{n \to +\infty}b_n = l > 1 \]
 
                 Da ciò possiamo dedurre che
-                \[\forall \, n \quad \sqrt[n]{a_n} = 1 + k\]
+                \[\forall \, n , \, \sqrt[n]{a_n} = 1 + k\]
                 con \(k > 0\).
 
                 Questo ci permette di dividere la serie di partenza in una somma di due serie distinte:

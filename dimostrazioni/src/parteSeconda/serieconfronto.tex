@@ -37,34 +37,35 @@
                 Siano \(A_N = \sum_{n=\dots}^{N} a_n\) e \(B_N = \sum_{n=\dots}^{N} b_n\). 
                 Se \(\sum_{n=\dots}^{+\infty} a_n\) diverge significa che \(\lim_{N \to +\infty} A_N = +\infty\) 
                 quindi per definizione di limite:
-
-                \[\forall \, B_r(+\infty) \, \exists \, R \mid \forall \, N > R  \quad A_N > R\]
+                \[\forall \, \mathrm{B}_r(+\infty), \, \exists \, R \mid \forall \, N > R, \, A_N > R\]
 
                 Ricordiamo che:
                 \[ a_n \leqslant b_n \qquad (\forall \, n > M_2) \]
 
                 Con le sommatorie:
-                \[ \sum_{n = max(M_1,M_2)}^{+\infty} a_n \leqslant \sum_{n = max(M_1,M_2)}^{+\infty} b_n\]
-                \[  A_N \leqslant B_N   \]
+                \begin{gather*}
+                    \sum_{n = max(M_1,M_2)}^{+\infty} a_n \leqslant \sum_{n = max(M_1,M_2)}^{+\infty} b_n\\
+                    A_N \leqslant B_N
+                \end{gather*}
 
                 Da cui:
-                \[  \lim_{N \to +\infty} B_N = +\infty  \]
-                \[  B_N > R \Rightarrow \; \text{Quindi} \; \sum b_n \text{diverge a} +\infty \]
+                \begin{gather*}  
+                    \lim_{N \to +\infty} B_N = +\infty\\
+                    B_N > R \Rightarrow \; \text{Quindi} \; \sum b_n \text{diverge a} +\infty
+                \end{gather*}
 
                 c.v.d.
 
             \subsubsection*{Parte 2 - Convergenza}
 
-                Se \(\sum_{n=\dots}^{+\infty} b_n\) converge significa che \(   \lim_{N \to +\infty} B_N = L  \) ovvero per definizoone di limite:
-
-                \[  \forall \, B_r(L)\, \exists \, M_3 \mid \forall \, n>M_3 \quad B_N \in B_r(L) \quad  L-r \leqslant B_N \leqslant L + r   \]
+                Se \(\sum_{n=\dots}^{+\infty} b_n\) converge significa che \(   \lim_{N \to +\infty} B_N = L  \) ovvero per definizione di limite:
+                \[  \forall \, \mathrm{B}_r(L), \, \exists \, M_3 \mid \forall \, n>M_3, \, B_N \in \mathrm{B}_r(L), \,  L-r \leqslant B_N \leqslant L + r   \]
                 
-                \(A_N \leqslant B_N\) inoltre \(A_N, B_N\) sono monotone, infatti:
+                \(A_N \leqslant B_N\). Inoltre \(A_N, B_N\) sono monotone, infatti:
                 \[  A_{N+1} = A_N + a_{N+1}\; \text{e} \; a_{N+1} > 0 \quad \text{perciò} \quad A_{N+1} > A_N\]
 
                 \(A_N\) è strettamente crescente e limitata (dal valore di \(L\)).
                 \[  A_N \leqslant B_N \leqslant L \]
-
                 quindi per il teorema fondamentale delle successioni monotone \(A_N\) converge, c.v.d.
 
 \end{document}
