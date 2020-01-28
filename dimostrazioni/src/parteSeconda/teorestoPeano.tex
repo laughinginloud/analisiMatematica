@@ -43,7 +43,7 @@
             \medskip
 
             % Nota: sono attaccate per evitare multiple righe vuote
-            \subsection*{Passo Base: \(F(1)\)}
+            \subsection*{Passo base: \(F(1)\)}
 
                 Dimostriamo l'enunciato per \(n = 1\):
                 \begin{gather*}
@@ -65,19 +65,16 @@
                 Assumiamo per ipotesi induttiva vera la seguente affermazione:
                 \begin{gather*}
                     \forall \, g \in C^{n-1} (A)\\
-                    g(x) - T _n ^ g (x) = o ((x-x_0)^{n-1})
+                    g(x) - T _{n - 1} ^ g (x) = o ((x-x_0)^{n-1})
                 \end{gather*}
                 
                 Che possiamo riscrivere come:
-                \[  \lim_{x \to x_0} \frac{g(x) - T _n ^ g (x)}{(x-x_0)^{n-1}} = 0 \]
+                \[  \lim_{x \to x_0} \frac{g(x) - T _{n - 1} ^ g (x)}{(x-x_0)^{n-1}} = 0 \]
 
             \subsection*{Verifica per \(F(n)\)}
 
                 Per verificare la tesi, mi devo anche qui rifare alla definizione di \(o\)-piccolo:
-                \begin{gather*}
-                    \mathrm{B}_\varepsilon \, (0)\\
-                    \lim_{x \to x_0} \frac{f(x)-T _n ^ f (x)}{(x-x_0)^n} \stackrel{?}{=} 0
-                \end{gather*}
+                \[\lim_{x \to x_0} \frac{f(x)-T _n ^ f (x)}{(x-x_0)^n} \stackrel{?}{=} 0\]
 
                 Questa è però una forma di indeterminazione \(\left[\frac{0}{0}\right]\). Per risolverla, le applico il \textbf{\hyperref[teoHopital]{teorema di de l'Hôpital}}
                 \begin{gather*}
@@ -100,8 +97,8 @@
                 Notiamo che \(f' \in C^{n-1}\) e che \(g \in C^{n-1}\). Poniamo quindi \(g = f'\). Da cui abbiamo:
                 \[  \lim_{x \to x_0} \frac{g(x)-T_{n-1} ^{g} (x)}{n(x-x_0)^{n-1}}    \]
 
-                Per ipotesi di induzione sappiamo che:
-                \[  \lim_{x \to x_0} \frac{g(x) - T _n ^ g (x)}{(x-x_0)^{n-1}} = 0 \]
+                Per ipotesi induttiva sappiamo che:
+                \[  \lim_{x \to x_0} \frac{g(x) - T _{n - 1} ^ g (x)}{(x-x_0)^{n-1}} = 0 \]
                 quindi anche:
                 \[  \lim_{x \to x_0} \frac{g(x)-T_{n-1} ^{g} (x)}{n(x-x_0)^{n-1}}  = 0  \]
 
