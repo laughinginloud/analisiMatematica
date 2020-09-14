@@ -14,7 +14,7 @@
             Un'equazione differenziale ordinaria del primo ordine, per brevità EDO, è una relazione che coinvolge una funzione incognita
             \(y(x)\), dove \(x \in \mathbb{R}\), e la sua derivata prima \(y'(x)\):
             \[
-                F\left(x, \, y(x), \, y'(x)\right) = 0
+                F\left(x, \, y(x), \, y'(x)\right) = 0.
             \]
 
             In altre parole, \textbf{una EDO è un'equazione nella quale l'incognita non è un numero, ma una funzione}.
@@ -23,7 +23,7 @@
         \begin{definizione}[Forma normale di una EDO]
             Una EDO del primo ordine in forma normale è una EDO nella forma
             \[
-                y'(x) = f\left(x, \, y(x)\right)
+                y'(x) = f\left(x, \, y(x)\right).
             \]
         \end{definizione}
 
@@ -36,5 +36,20 @@
 
             Si chiama \textbf{integrale particolare} dell'equazione, più raramente soluzione particolare, una specifica soluzione.
         \end{definizione}
+
+        Alcune osservazioni:
+        \begin{itemize}
+            \item Nel caso particolare di EDO del tipo
+                \[
+                    y'(x) = f(x)
+                \]
+                cioè EDO del primo ordine, in forma normale con \(f\left(x, \, \xcancel{y(x)} \, \right)\), basta integrare:
+                \[
+                    y(x) = \int \! f(x) \, \mathrm{d}x.
+                \]
+            \item Più in generale, risolvere una EDO non significa calcolare un integrale, ma comunque trovare \(y\) conoscendo delle
+                informazioni relative a \(y'\). Da qui il nome \emph{integrale generale}.
+            \item In generale, una EDO ha infinite soluzioni, proprio come la soluzione di un integrale indefinito.
+        \end{itemize}
             
 \end{document}
