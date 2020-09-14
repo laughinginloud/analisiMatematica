@@ -3,7 +3,7 @@
 
 % Costanti
 \newcommand{\autori}{Mattia Martelli}
-\newcommand{\titolo}{Dimostrazioni di Analisi Matematica II}
+\newcommand{\titolo}{Analisi Matematica II}
 
 % Utilizzo il tipo libro impostato per evitare pagine vuote, utili solo per la stampa
 \documentclass[oneside]{book}
@@ -25,7 +25,10 @@
 \usepackage{tikz,pgfplots}
 
 % Importo i pacchetti per la matematica
-\usepackage{mathtools,amssymb}
+\usepackage{mathtools,amssymb,amsthm,thmtools}
+
+% Imposto lo stile per l'indice dei teoremi e delle definizioni
+\renewcommand{\listtheoremname}{Indice dei Teoremi e delle Definizioni}
 
 % Imposto i collegamenti
 \usepackage{hyperref}
@@ -49,7 +52,17 @@
 
 % Importo il pacchetto per la personalizzazione del titolo e lo modifico
 \usepackage{titlesec}
-\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione numero \thechapter}{.5em}{\Huge}
+%\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione numero \thechapter}{.5em}{\Huge}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\titleformat{\chapter}[display]
+    {\bfseries\Large}
+    {\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+    {4ex}
+    {\titlerule
+     \vspace{2ex}%
+     \filright}
+    [\vspace{2ex}%
+     \titlerule]
 
 % Importo il pacchetto per i sottofile
 \usepackage{subfiles}
