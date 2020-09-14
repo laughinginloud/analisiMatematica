@@ -1,0 +1,46 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Equazioni differenziali del primo ordine lineari}
+
+        Introduciamo ora il concetto di equazione differenziale lineare ordinaria del primo ordine.
+
+        \begin{definizione}[EDO lineari del primo ordine]
+            Un'equazione differenziale lineare ordinaria del primo ordine è una EDO nella forma
+            \[
+                c(x) \, y'(x) + a(x) \, y(x) = b(x),
+            \]
+            con \(c, a, b : \mathrm{J} \subseteq \R \to \R\) continue su \(\mathrm{J}\).
+
+            Ci occuperemo solo di EDO lineari del primo ordine in forma normale, cioè
+            \[
+                y'(x) + a(x) \, y(x) = b(x).
+            \]
+        \end{definizione}
+
+        A questo punto passiamo alla loro risoluzione.
+
+        \begin{teorema}[Integrale generale di una EDO lineare del primo ordine]
+            Date \(a, b : \mathrm{J} \subseteq \R \to \R\) continue, consideriamo
+            \[
+                y'(x) + a(x) \, y(x) = b(x).
+            \]
+
+            L'integrale generale di questa equazione è dato dalla formula
+            \[
+                y(x) = e^{-A(x)} \left[B(x) + \mathrm{c}\right],
+            \]
+            dove
+            \begin{itemize}
+                \item \(\mathrm{c} \in \R\);
+                \item \(A(x)\) è una qualunque primitiva di \(a(x)\): \(A = \int \! a\);
+                \item \(B(x)\) è una qualunque primitiva di \(e^{A(x)} \, b(x)\): \(A = \int \! e^{\int \! a} \, b\).
+            \end{itemize}
+        \end{teorema}
+            
+\end{document}
