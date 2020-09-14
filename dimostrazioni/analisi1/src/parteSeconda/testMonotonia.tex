@@ -1,0 +1,60 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+
+\begin{document}
+
+    \chapter{Test di monotonia di \emph{f} su un intervallo aperto}
+
+        \section*{Enunciato}
+
+        \subsection*{Ipotesi}
+
+            Sia \(f(x)\) una funzione tale che
+            \begin{align*}
+                f : A = (a, b) &\longrightarrow \mathbb{R}\\
+                x &\longmapsto y = f(x) 
+            \end{align*}
+
+            Supponiamo inoltre che \(f\) sia derivabile su \((a, b)\).
+
+        \subsection*{Tesi}
+
+            \[ f'(x) > 0 \quad \forall \, x \in A \Rightarrow f \text{\emph{ è monotona strettamente crescente su A.}}\]
+            \[ f'(x) < 0 \quad \forall \, x \in A \Rightarrow f \text{\emph{ è monotona strettamente decrescente su A.}}\]
+
+        \section*{Dimostrazione}
+
+            \medskip
+
+            \subsection*{Caso 1 - \( f'(x) > 0 \quad \forall \, x \in A \)}
+
+            Siano \(x_1, x_2 \in A \mid a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
+            Su \( [x_1, x_2] \) applico il \textbf{\hyperref[teoLagrange]{teorema di Lagrange}} a \(f\) quindi:
+            \[
+                \exists \, x_0 \in (x_1, x_2) \mid f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
+            \]
+            essendo \( f'(x_0) > 0 \) e anche \( x_2 - x_1 > 0 \) ne segue che:
+            \[
+                \forall \, x_1 < x_2 \Rightarrow f(x_2) > f(x_1)
+            \]
+            quindi \(f(x)\) è monotona strettamente crescente, c.v.d.
+
+            \subsection*{Caso 2 - \( f'(x) < 0 \quad \forall \, x \in A \)}
+
+            Siano \(x_1, x_2 \in A \mid a < x_1 < x_2 < b \). Seleziono un sottointervallo chiuso interno ad \(A\).
+            Su \( [x_1, x_2] \) applico il \textbf{\hyperref[teoLagrange]{teorema di Lagrange}} a \(f\) quindi:
+            \[
+                \exists \, x_0 \in (x_1, x_2) \, | \, f(x_2) - f(x_1) = f'(x_0)(x_2 - x_1) 
+            \]
+            essendo \( f'(x_0) < 0 \) e \( x_2 - x_1 > 0 \) ne segue che:
+            \[
+                \forall \, x_1 < x_2 \Rightarrow f(x_2) < f(x_1)
+            \]
+            quindi \(f(x)\) è monotona strettamente decrescente, c.v.d.
+    
+    
+\end{document}

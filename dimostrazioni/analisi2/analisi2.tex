@@ -1,0 +1,80 @@
+% Importo la struttura del documento
+\input{src/struttura.tex}
+
+% Importo i comandi personalizzati
+\input{src/comandi.tex}
+
+\begin{document}
+
+    % Creo la copertina
+    \maketitle
+
+    % Creo l'indice
+    \tableofcontents
+
+    % Imposto lo stile interno delle ancore
+    \renewcommand*{\theHchapter}{ch.\the\value{chapter}}
+
+    %\part{}
+    \cleardoublepage{}
+    \phantomsection{}
+    \addcontentsline{toc}{part}{Parte I}
+    \part*{Parte I}
+
+        \subfile{src/partePrima/progressioneGeometrica}
+        \subfile{src/partePrima/formuleDeMorgan}
+        \subfile{src/partePrima/disuguaglianzaBernoulli}
+        \subfile{src/partePrima/binomioNewton}
+        \subfile{src/partePrima/cardinalitàInsiemeParti}
+        \subfile{src/partePrima/formuleDeMoivre}
+        \subfile{src/partePrima/estrazioneRadiceComplessa}
+        \subfile{src/partePrima/irrazionalitàRadice2}
+        \subfile{src/partePrima/asintoticoOPiccolo}
+        \subfile{src/partePrima/numerabilitàZQR}
+        \subfile{src/partePrima/teoFondSuccMonotone}
+        \subfile{src/partePrima/convergenzaE}
+        \subfile{src/partePrima/unicitàLimite}
+        \subfile{src/partePrima/permanenzaSegno}
+        \subfile{src/partePrima/confrontoSuccessioni}
+        \subfile{src/partePrima/teoBolzano}
+        \subfile{src/partePrima/teoDarboux}
+        \subfile{src/partePrima/derivateElementari}
+        \subfile{src/partePrima/derivabilitàContinuità}
+
+    %\part{}
+    \cleardoublepage{}
+    \phantomsection{}
+    \addcontentsline{toc}{part}{Parte II}
+    \part*{Parte II}
+
+        \subfile{src/parteSeconda/teoremaFermat}
+        \subfile{src/parteSeconda/teoremaRolle}
+        \subfile{src/parteSeconda/teoremaLagrange}
+        \subfile{src/parteSeconda/testMonotonia}
+        \subfile{src/parteSeconda/teoremaCauchy}
+        \subfile{src/parteSeconda/teoremaHopital}
+        \subfile{src/parteSeconda/teorestoPeano}
+        \subfile{src/parteSeconda/teorestoLagrange}
+        \subfile{src/parteSeconda/teoFondCalcoloIntegrale1}
+        \subfile{src/parteSeconda/teoValorMedioIntegrale}
+        \subfile{src/parteSeconda/teoFondCalcoloIntegrale2}
+        \subfile{src/parteSeconda/CNconvserie.tex}
+        \subfile{src/parteSeconda/criterioRapportoSerie}
+        \subfile{src/parteSeconda/serieconfronto}
+        \subfile{src/parteSeconda/criterioRadiceSerie}
+        \subfile{src/parteSeconda/formulaEulero}
+
+    \cleardoublepage{}
+    \phantomsection{}
+    \addcontentsline{toc}{part}{Dimostrazioni aggiuntive}
+    \part*{Dimostrazioni aggiuntive}
+
+        % Reinizializzo il contatore del capitolo, cambio lo stile della numerazione, modifico lo stile interno delle ancore
+        \setcounter{chapter}{0}
+        \renewcommand\thechapter{A\arabic{chapter}}
+        \titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione aggiuntiva numero \arabic{chapter}}{.5em}{\Huge}
+        \renewcommand*{\theHchapter}{chA.\the\value{chapter}}
+
+        \subfile{src/parteExtra/cardinalitàRn}
+    
+\end{document}

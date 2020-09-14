@@ -1,0 +1,79 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Condizione necessaria per la convergenza di una serie}
+    \label{CNconvergenza}
+
+        \section*{Definizioni necessarie}
+
+            \begin{itemize}
+                \item Data la successione:
+                        \begin{align*}
+                            a_n : \mathbb{N} &\longrightarrow \mathbb{R}\\
+                            n &\longmapsto a_n 
+                        \end{align*}
+    
+                        Si dice \textbf{serie}:
+
+                        \[  \sum_{n=0}^{+\infty} a_n\]
+
+                \item La successione \(a_n\) è detta \emph{argomento} della serie;
+                \item La \textbf{successione delle somme parziali} è così definita:
+                      
+                        \[  S_N = \sum_{n=0}^{N} a_n\]
+                    
+                \item Il \emph{carattere} (o la \emph{natura}) della \textbf{serie} è il \emph{carattere} (o la \emph{natura}) della sua \textbf{successione delle somme parziali}.
+            \end{itemize}
+           
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                \[  \sum_{n=0}^{+\infty} a_n \quad \text{converge} \]
+                
+            \subsection*{Tesi}
+
+                \[  \lim_{n \to +\infty} a_n = 0  \]
+
+        \section*{Dimostrazione}
+
+            Se \(\sum_{n=0}^{+\infty} a_n \) converge allora:
+
+            \[  L = \lim_{N \to +\infty} S_N   \]
+
+            \subsection*{Osservazione}
+
+                Posso definire \(S_N\) ricorsivamente:
+
+                \[  
+                    \left\{
+                        \begin{aligned}
+                            S_{N+1} &= S_N + a_{N+1}\\
+                            S_0 &= a_0
+                        \end{aligned}
+                    \right.
+                \]
+
+            Noto che anche:
+            \begin{align*}
+                \lim_{N \to +\infty} S_{N+1} &= L\\
+                \lim_{N \to +\infty} S_{N} &= L
+            \end{align*}
+            
+            Essendo i due limiti finiti posso fare il limite della loro differenza:
+            \[  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = L - L = 0  \]
+
+            Dalla definizione ricorsiva che ho dato di \(S_N\) posso riscrivere il tutto come:
+            \[  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = \lim_{N \to +\infty} \left(S_N + a_{N+1} - S_N \right) = \lim_{N \to +\infty} a_{N+1} \]
+
+            Da quanto detto sopra sappiamo che \(  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = 0  \), quindi:
+            \[  \lim_{N \to +\infty}\left(S_{N+1} - S_N \right) = \lim_{N \to +\infty} a_{N+1} = 0 \]
+
+            c.v.d.
+\end{document}

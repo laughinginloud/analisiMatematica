@@ -1,0 +1,44 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Binomio di Newton}
+
+        \section*{Enunciato}
+
+            Il binomio di Newton è
+            \[ (a + b)^n = \sum_{k = 0}^n \binom{n}{k} \, a^k \, b^{n - k} \]
+
+        \section*{Dimostrazione}
+
+            Per dimostrare l'enunciato, procediamo con una dimostrazione per induzione.
+
+            % Nota: sono attaccate per evitare multiple righe vuote
+            Dimostriamo l'enunciato per \(n = 0\):
+            \begin{align*}
+                (a + b)^0 \, &= \, \sum_{k = 0}^0 \binom{n}{k} \, a^k \, b^{n - k}\\
+                        1 \, &= \, \binom{0}{0} a^0 \, b^0\\
+                        1 \, &= \, 1
+            \end{align*}
+
+            Possiamo perciò considerare l'enunciato vero al passo \(n\).
+
+            % Nota: si veda sopra
+            Dimostriamolo per \(n + 1\):
+            \begin{align*}
+                (a + b)^{n + 1} \, &= \, (a + b) (a + b)^n\\
+                                   &= \, (a + b) \sum_{k = 0}^n \binom{n}{k} \, a^k \, b^{n - k}\\
+                                   &= \, \sum_{k = 0}^n \binom{n}{k} \, a^{k + 1} \, b^{n - k} + \sum_{k = 0}^n \binom{n}{k} \, a^k \, b^{n - k + 1}\\
+                                   &= \, \sum_{k = 1}^{n + 1} \binom{n}{k - 1} \, a^k \, b^{n - k + 1} + \sum_{k = 0}^n \binom{n}{k} \, a^k \, b^{n - k + 1}\\
+                                   &= \, \binom{n}{n} \, a^{n + 1} + \binom{n}{0} \, b^{n + 1} + \sum_{k = 1}^n \binom{n}{k - 1} \, a^k \, b^{n - k + 1} + \sum_{k = 1}^n \binom{n}{k} \, a^k \, b^{n - k + 1}\\
+                                   &= \, \binom{n + 1}{n + 1} \, a^{n + 1} + \binom{n + 1}{0} \, b^{n + 1} + \sum_{k = 1}^n \binom{n + 1}{k} \, a^k \, b^{n - k + 1}\\
+                                   &= \, \sum_{k = 0}^{n + 1} \binom{n + 1}{k} \, a^k \, b^{n + 1 - k}
+            \end{align*}
+
+            Abbiamo quindi dimostrato il binomio di Newton.
+
+\end{document}

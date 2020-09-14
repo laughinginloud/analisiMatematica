@@ -1,0 +1,99 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Proprietà di \texorpdfstring{\(\sim\) ed \(o\)}{asintotico ed o-piccolo}}
+
+        \section*{Teorema fondamentale che li lega}
+
+            \subsection*{Enunciato}
+
+                Per \(x \to x_0\),
+                \[
+                    f \sim g \iff f = g + o(g)
+                \]
+
+            \subsection*{Dimostrazione}
+
+                Lo dimostreremo in entrambe le direzioni. Partiamo da sinistra.
+                \begin{align*}
+                    f &\sim g\\
+                    f &= gh & h \to 1\\
+                    f - g &= gh - g\\
+                    f - g &= g (h - 1) & H = h - 1 \to 0\\
+                    f - g &= o(g)\\
+                    f &= g + o(g)
+                \end{align*}
+
+                Partiamo ora da destra.
+                \begin{align*}
+                    f - g &= o(g)\\
+                    f - g &= gh & h \to 0\\
+                    f &= g + gh\\
+                    f &= g (h + 1) & H = h + 1 \to 1\\
+                    f &\sim g
+                \end{align*}
+                
+                c.v.d.
+
+        \section*{Proprietà di \(o\)}
+
+            \begin{description}[style=nextline]
+                \item[\(o(k \, g) = k \, o(g) = o(g)\)]
+                    \textbf{Dimostrazione}
+                    \begin{align*}
+                        f &= o(k \, g)\\
+                        f &= g \, kh & h \to 0 \therefore kh \to 0\\
+                        f &= o(g)
+                    \end{align*}
+                \item[\(o(g) \pm o(g) = o(g)\)]
+                    \textbf{Dimostrazione per \(o(g) + o(g) = o(g)\)}
+                    \[
+                        o(g) + o(g) = 2 \, o(g) = o(g)
+                    \]
+                    \textbf{Dimostrazione per \(o(g) - o(g) = o(g)\)}
+                    \[
+                        o(g) - o(g) = o(g) + (-o(g)) = o(g) + o(g) = o(g)
+                    \]
+                \item[\(f \, o(g) = o(f \, g)\)]
+                    \textbf{Dimostrazione}
+                    \begin{align*}
+                        F &= o(g)\\
+                        F &= gh & h \to 0\\
+                        f \, F &= f \, gh\\
+                        f \, o(g) &= o(f \, g)
+                    \end{align*}
+                \item[\({(o(g))}^n = o(g^n) \quad \forall n \in \mathbb{R}^+\)]
+                    \textbf{Dimostrazione}
+                    \begin{align*}
+                        G &= o(g)\\
+                        G &= gh & h \to 0\\
+                        G^n &= g^n h^n & H = h^n \to 0\\
+                        {(o(g))}^n &= o(g^n)
+                    \end{align*}
+            \end{description}
+
+        \section*{Proprietà di \(\sim\)}
+        
+            \begin{description}[style=nextline]
+                \item[Se \(f \sim g\) allora \(f^n \sim g^n \quad \text{\emph{dove }} n \neq 0\)]
+                    \textbf{Dimostrazione}
+                    \begin{align*}
+                        f &= g \, h & h \to 1\\
+                        f^n &= g^n \, h^n & H = h^n \to 1
+                    \end{align*} 
+                \item[Se \(f_1 \sim g_1\) e \(f_2 \sim g_2\) allora \(f_1 \, f_2 \sim g_1 \, g_2\) e \(\frac{f_1}{f_2} \sim \frac{g_1}{g_2}\)] 
+                    \textbf{Dimostrazione}
+                    \begin{align*}
+                        f_1 \sim g_1 \qquad f_1 &= g_1 \, h_1 & h_1 \to 1\\
+                        f_2 \sim g_2 \qquad f_2 &= g_2 \, h_2 & h_2 \to 1\\
+                        f_1 \, f_2 &= g_1 \, g_2 \, H & H = h_1 \, h_2 \to 1\\
+                        \frac{f_1}{f_2} &= \frac{g_1}{g_2} \, H & H = \frac{h_1}{h_2} \to 1
+                    \end{align*}
+            \end{description}
+            
+\end{document}

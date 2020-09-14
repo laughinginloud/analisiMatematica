@@ -1,0 +1,39 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Derivabilità implica continuità}
+
+        \section*{Enunciato}
+
+            Se \(f\) è derivabile in un punto \(x_0\) allora \(f\) è continua in \(x_0\).
+
+        \section*{Dimostrazione}
+
+            Per la definizione di derivata, se la funzione è derivabile in un punto \(x_0\)
+            significa che
+            \begin{align*}
+                m = &\lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h} \quad \exists \text{ finito}\\
+                &\lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{m h} = 1
+            \end{align*}
+
+            Dunque, per la definizione di asintotico, con \(h \to 0\),
+            \begin{align*}
+                f(x_0 + h) - f(x_0) &\sim m h\\
+                f(x_0 + h) - f(x_0) &= m h + o(m h)\\
+                f(x_0 + h) &= f(x_0) + m h + o(m h)
+            \end{align*}
+
+            Bisogna perciò calcolare \(\lim_{h \to 0} f(x_0 + h)\). Eseguendo la sostituzione
+            \(x = x_0 + h\) si ottiene
+            \[
+                \lim_{h \to 0} f(x) = \lim_{h \to 0} f(x_0) + \underbrace{mh}_{\to 0} + \underbrace{o(mh)}_{\to 0} = f(x_0)
+            \]
+
+            c.v.d.
+
+\end{document}

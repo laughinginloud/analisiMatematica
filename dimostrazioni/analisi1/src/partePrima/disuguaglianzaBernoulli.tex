@@ -1,0 +1,47 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Disuguaglianza di Bernoulli}
+    \label{disBernoulli}
+
+        \section*{Enunciato}
+
+            La disuguaglianza di Bernoulli è
+
+            \[ (1 + x)^n \geqslant 1 + nx \qquad \forall n \in \mathbb{N}, \, \forall x \in \mathbb{R}, \, x > -1 \]
+
+        \section*{Dimostrazione}
+
+            Per dimostrare l'enunciato, procediamo con una dimostrazione per induzione.
+
+            \medskip
+
+            % Nota: sono attaccate per evitare multiple righe vuote
+            Dimostriamo l'enunciato per \(n = 0\):
+            \begin{align*}
+                (1 + x)^0 \, &\geqslant \, 1 + 0 x\\
+                        1 \, &\geqslant \, 1
+            \end{align*}
+
+            Possiamo perciò considerare l'enunciato vero al passo \(n\).
+
+            \medskip
+
+            % Nota: si veda sopra
+            Dimostriamolo per \(n + 1\):
+            \begin{align*}
+                (1 + x)^{n + 1} \, =& \, (1 + x)(1 + x)^n\\
+                                \geqslant& \, (1 + x)(1 + nx) & \text{\emph{Per ipotesi induttiva}}\\
+                                =& \, 1 + nx + x + nx^2\\
+                                =& \, 1 + x (n + 1) + nx^2\\
+                                \geqslant& \, 1 + x (n + 1) & \text{\emph{Per l'enunciato del teorema}}
+            \end{align*}
+
+            Abbiamo quindi dimostrato la disuguaglianza di Bernoulli.
+    
+\end{document}

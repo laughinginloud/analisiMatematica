@@ -1,0 +1,51 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema di de l'Hôpital}
+    \label{teoHopital}
+
+        \section*{Enunciato}
+
+            \subsection*{Ipotesi}
+
+                Date:
+                \begin{align*}
+                    f,g : A = [a, b] \longrightarrow \, &\mathbb{R}\\
+                    x \longmapsto \, &y = f(x)\\
+                                  &y = g(x) 
+                \end{align*}
+
+                Supponendo inoltre: 
+
+                \begin{enumerate}
+                    \indentitem \item \(f, g\) continue in A e derivabili in \( (a,b) \);
+                    \indentitem \item \(f, g\) infinitesime in \(x_0 \in (a,b)\).
+                \end{enumerate}
+
+            \subsection*{Tesi}
+
+                \[ 
+                    \text{Se } l = \lim_{x \to x_0} \frac{f'(x)}{g'(x)} \text{, allora } l = \lim_{x \to x_0} \frac{f(x)}{g(x)}
+                \]
+
+        \section*{Dimostrazione}
+
+            La dimostrazione avviene direttamente utilizzando il \textbf{\hyperref[teoCauchy]{teorema di Cauchy}}:
+
+            \[ \exists \; \vartheta \in (a,b) \Rightarrow \vartheta \in (x_0, x) \]
+
+            Aggiungo \(f(x_0)\) che ricordiamo essere infinitesimo per ipotesi, poi considerando l'intervallo \((x_0, x)\):
+
+            \[  \frac{f(x)}{g(x)} = \frac{f(x) - f(x_0)}{g(x) - g(x_0)} = \frac{f'(\vartheta)}{g'(\vartheta)} \]
+
+            Da cui:
+            
+            \[  \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \frac{f'(\vartheta)}{g'(\vartheta)} = l \]
+            
+            c.v.d.
+\end{document}

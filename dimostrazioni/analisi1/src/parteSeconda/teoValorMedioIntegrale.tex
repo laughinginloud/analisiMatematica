@@ -1,0 +1,61 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Teorema del valor medio integrale}
+    \label{teoValorMedioIntegrale}
+
+    \section*{Enunciato}
+
+        \subsection*{Ipotesi}
+
+            Sia \(f(x)\) una funzione limitata tale che
+            \begin{align*}
+                f : A = [a, b] &\longrightarrow \mathbb{R}\\
+                t &\longmapsto y = f(t) 
+            \end{align*}
+
+            Supponiamo inoltre che:
+
+                \begin{enumerate}
+                    \indentitem \item \(m\) = min \(f\) su \([a, b]\);
+                    \indentitem \item \(M\) = max \(f\) su \([a, b]\).
+                \end{enumerate}  
+
+        \subsection*{Definizione}
+
+            \[ \frac{1}{b-a} \int_{a}^{b} \! f(t) \, \mathrm{d} t \]
+            purché \(f\) sia Riemann-integrabile.
+
+    \section*{Proprietà 1}
+
+        \[ m \leqslant VMI \leqslant M \]
+
+        \subsection*{Dimostrazione}
+    
+            \[m \leqslant f(t) \leqslant M  \qquad \forall t \in [a, b] \]
+
+            Integrale definito:
+            \[\int_{a}^{b} \! m \, \mathrm{d} t \leqslant \int_{a}^{b} \! f(t) \, \mathrm{d} t \leqslant \int_{a}^{b} \! M \, \mathrm{d} t\]
+
+            Per la monotonia:
+            \begin{alignat*}{2}
+                m(b-a) &\leqslant \quad \: \int_{a}^{b} \! f(t) \, \mathrm{d} t &&\leqslant M(b-a) \\
+                m &\leqslant \frac{1}{b-a} \int_{a}^{b} \! f(t) \, \mathrm{d} t &&\leqslant M
+            \end{alignat*}
+
+    \section*{Proprietà 2}
+
+        Se \(f \in C^0 ([a,b]) \) allora:
+        \[\exists \, \vartheta\in [a, b] \mid f(\vartheta) = VMI \]
+
+        \subsection*{Dimostrazione}
+    
+            Valendo Weierstrass e \hyperref[teoDarboux]{Darboux}:
+            \[m \leqslant VMI \leqslant M \]
+
+\end{document}

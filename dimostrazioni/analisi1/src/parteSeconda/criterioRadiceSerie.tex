@@ -1,0 +1,69 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Criterio della radice per la convergenza delle serie a termini positivi}
+    \label{criterioRadiceSerie}
+
+        \section*{Enunciato}
+
+            Sia \(\sum a_n\) una serie a termini positivi, con \(a_n > 0, \, \forall \, n\). Se
+             \[\sqrt[n]{a_n} \rightarrow l \qquad \text{per} \; n  \rightarrow +\infty \]
+            
+            Allora
+            \[
+                l \;
+                \begin{cases}
+                    \text{diverge} & \text{se} \; l > 1\\
+                    \text{il criterio non si applica} & \text{se} \; l = 1\\
+                    \text{converge} & \text{se} \; 0 \leqslant l < 1
+                \end{cases}
+            \]
+            
+        \section*{Dimostrazione}
+            
+            \subsection*{Caso 1 - \(0 \leqslant l < 1\)} 
+                    
+                Introduco una \textbf{successione ausiliaria}
+                \begin{gather*}
+                    b_n = \sqrt[n]{a_n}\\
+                    \lim_{n \to +\infty} b_n = l \qquad \text{e so che} \; l < 1
+                \end{gather*}
+
+                Per la definizione di limite
+                \[\forall \, \mathrm{B}_\varepsilon (l), \, \exists \, M \mid \forall \, n > M, \, b_n \in \mathrm{B}_\varepsilon (l) \]
+
+                Scegliamo \(\varepsilon\) in modo che \(\varepsilon < 1 - l\) da \(M\) in poi. Dunque,
+                \begin{align*}
+                    l - \varepsilon < b_n &< l + \varepsilon \qquad (<1) \\
+                    \sqrt[n]{a_n} &< l + \varepsilon \qquad (<1) \\
+                    a_n &< (l+\varepsilon)^{n}  
+                \end{align*}
+                                     
+                Applico il \textbf{\hyperref[serieconfronto]{criterio del confronto}} tra \(\sum a_n\) e \(\sum(l + \varepsilon)^n\),
+                dove \(\sum(l + \varepsilon)^n\) è la geometrica di ragione \(q = l + \varepsilon\), con \(-1 < q < 1\).
+                Essendo quest'ultima convergente, possiamo concludere che anche la serie di partenza \textbf{converge}.
+
+            \subsection*{Caso 2 - \(l > 1\)}
+
+                Definiamo una successione ausiliaria \(b_n\) come
+                \[ b_n = \sqrt[n]{a_n} \]
+
+                Sappiamo inoltre che
+                \[ \lim_{n \to +\infty}b_n = l > 1 \]
+
+                Da ciò possiamo dedurre che
+                \[\forall \, n , \, \sqrt[n]{a_n} = 1 + k\]
+                con \(k > 0\).
+
+                Questo ci permette di dividere la serie di partenza in una somma di due serie distinte:
+                \[\sum a_n = \sum 1 + \sum k\]
+
+                Ma, poiché \(\sum 1\) diverge a \(+ \infty\) e \(\sum k > 0\), perciò sicuramente non diverge a \(- \infty\),
+                sicuramente la serie risultante dalla loro somma, ovvero la serie di partenza, diverge a \(+ \infty\), c.v.d.
+
+\end{document}

@@ -1,0 +1,40 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Derivate elementari con la definizione}
+
+        \section*{Derivata di \(x^n\)}
+            \begin{align*}
+                f'(x_0) &= \lim_{h \to 0} \, \frac{f(x_0 + h) - f(x_0)}{h}\\
+                &= \lim_{h \to 0} \, \frac{{(x_0 + h)}^n - x_0^n}{h}\\
+                &= \lim_{h \to 0} \, \frac{\sum_{k = 0}^n \binom{n}{k} \, x_0^n \, h^{n - k} - x_0^n}{h}\\
+                &= \lim_{h \to 0} \, \frac{\sum_{k = 0}^{n - 1} \binom{n}{k} \, x_0^n \, h^{n - k}}{h}\\
+                &= \lim_{h \to 0} \, \sum_{k = 0}^{n - 1} \binom{n}{k} \, x_0^n \, h^{n - k - 1}\\
+                &= \binom{n}{n - 1} \, x_0^{n - 1} + o(1) = n x_0^{n - 1}
+            \end{align*}
+            
+        \section*{Derivata di \(\ln x\)}
+            \begin{align*}
+                f'(x_0) &= \lim_{h \to 0} \, \frac{f(x_0 + h) - f(x_0)}{h}\\
+                &= \lim_{h \to 0} \, \frac{\ln(x_0 + h) - \ln(x_0)}{h}\\
+                &= \lim_{h \to 0} \, \frac{1}{h} \, \ln \left(\frac{x_0 + h}{x_0}\right)\\
+                &= \lim_{h \to 0} \, \frac{1}{h} \, \ln \left(1 + \frac{h}{x_0}\right)\\
+                &= \lim_{h \to 0} \, \frac{1}{h} \left(\frac{h}{x_0} + o\!\left(\frac{h}{x_0}\right)\right)\\
+                &= \frac{1}{x_0} + o\!\left(\frac{1}{x_0}\right)\\
+                &= \frac{1}{x_0} + o(1) = \frac{1}{x_0}
+            \end{align*}
+
+        \section*{Derivata di \(e^x\)}
+            \begin{align*}
+                f'(x_0) &= \lim_{h \to 0} \, \frac{f(x_0 + h) - f(x_0)}{h}\\
+                &= \lim_{h \to 0} \, \frac{e^{x_0 + h} - e^{x_0}}{h}\\
+                &= \lim_{h \to 0} \, \frac{e^{x_0} (e^h - 1)}{h}\\
+                &= \lim_{h \to 0} \, e^{x_0} \frac{h + o(h)}{h}\\
+                &= e^{x_0} (1 + o(1)) = e^{x_0}
+            \end{align*}
+\end{document}

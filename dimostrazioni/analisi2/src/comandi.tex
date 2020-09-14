@@ -1,0 +1,29 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+% !TEX root = ../analisi2.tex
+
+% Comando per l'indentazione degli elementi di un elenco
+\newcommand{\indentitem}{\setlength\itemindent{25pt}}
+
+% Comandi per le notazioni insiemistiche
+\newcommand{\insieme}[1]{\overline{\rm \underline{#1}}}
+\newcommand{\insiemeparti}[1]{\mathcal{P}\left(\insieme{#1}\right)}
+\newcommand{\card}[1]{\left| #1 \right|}
+
+% Evito che PGF vada in modalità legacy
+\pgfplotsset{compat=1.16}
+
+% Definisco le punte stondate in entrambi i versi [(-) e )-(]
+\pgfarrowsdeclare{(}{)}{}
+{
+  \pgfsetroundcap{}
+  \pgfpathmoveto{\pgfpoint{-1.5pt}{-1.5pt}}
+  \pgfpatharc{90}{270}{-1.5pt}
+  \pgfusepathqstroke{}
+}
+\pgfarrowsdeclare{)}{(}{}
+{
+  \pgfsetroundcap{}
+  \pgfpathmoveto{\pgfpoint{1.5pt}{1.5pt}}
+  \pgfpatharc{90}{270}{1.5pt}
+  \pgfusepathqstroke{}
+}

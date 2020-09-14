@@ -1,0 +1,47 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi1.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../dimostrazioni]{subfiles}
+
+\begin{document}
+
+    \chapter{Formule di De Morgan}
+
+        \section*{Prima formula}
+
+            La prima formula è
+            \[
+                (A \cup B)^\complement \equiv A^\complement \cap B^\complement
+            \]
+
+            La dimostreremo in entrambe le direzioni:
+            \begin{itemize}
+                \item se \(x \in (A \cup B)^\complement\), allora \(x \notin A \cup B\), quindi
+                    \(x \notin A \, \land \, x \notin B\), perciò \(x \in A^\complement \, \land \, x \in B^\complement\),
+                    dunque \(x \in A^\complement \cap B^\complement\);
+                \item se \(x \in A^\complement \cap B^\complement\), allora \(x \in A^\complement \land x \in B^\complement\),
+                    quindi \(x \notin A \land x \notin B\), perciò \(x \notin A \cup B\), dunque \(x \in (A \cup B)^\complement\).
+            \end{itemize}
+
+            Abbiamo quindi dimostrato la prima formula.
+
+        \section*{Seconda formula}
+
+            La seconda formula è
+            \[
+                (A \cap B)^\complement \equiv A^\complement \cup B^\complement
+            \]
+
+            Anche questa la dimostreremo in entrambe le direzioni:
+            \begin{itemize}
+                \item se \(x \in (A \cap B)^\complement\), allora \(x \notin A \cap B\), quindi
+                    \(x \notin A \, \lor \, x \notin B\), perciò \(x \in A^\complement \, \lor \, x \in B^\complement\),
+                    dunque \(x \in A^\complement \cup B^\complement\);
+                \item se \(x \in A^\complement \cup B^\complement\), allora \(x \in A^\complement \lor x \in B^\complement\),
+                    quindi \(x \notin A \lor x \notin B\), perciò \(x \notin A \cap B\), dunque \(x \in (A \cap B)^\complement\).
+            \end{itemize}
+
+            Abbiamo quindi dimostrato anche la seconda formula.
+
+\end{document}
