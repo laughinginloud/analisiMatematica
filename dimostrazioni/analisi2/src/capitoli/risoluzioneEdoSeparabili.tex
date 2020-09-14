@@ -6,8 +6,94 @@
 
 \begin{document}
 
-    \chapter{Equazioni differenziali fdel primo ordine a variabili separabili}
+    \chapter{Equazioni differenziali del primo ordine a variabili separabili}
 
+        Introduciamo ora il concetto di equazione differenziale ordinaria del primo ordine a variabili separabili.
 
+        \begin{definizione}[EDO a variabili separate]
+            Una EDO del primo ordine in forma normale si dice a variabili separabili se è della forma
+            \[
+                y'(x) = h(x) \; g(y(x)),
+            \]
+            con \(h : \mathrm{J}_1 \subseteq \R \to \R\) e \(g : \mathrm{J}_2 \subseteq \R \to \R\) continue.
+
+            Cioè \(f(x, \, y) = h(x) \times g(y)\) è il prodotto di una funzione che dipende da \(x\) per una funzione che dipende solo
+            da \(y\).
+        \end{definizione}
+
+        A questo punto passiamo alla loro risoluzione.
+
+        \begin{teorema}[Risoluzione di EDO a variabili separabili]
+            Consideriamo la EDO a variabili separate
+            \[
+                y'(x) = h(x) \; g(y(x)),
+            \]
+            con \(h : \mathrm{J}_1 \subseteq \R \to \R\) e \(g : \mathrm{J}_2 \subseteq \R \to \R\) continue.
+
+            Possiamo dunque dividere le soluzioni in due categorie:
+            \begin{enumerate}
+                \item Se \(g(D) = 0\) per qualche \(D \in \R\) allora la funzione costante \(y(x) = D, \, \forall \, x\) è soluzione.
+                \item Se \(g(y) \neq 0, \forall \, y\) in un certo intervallo, una soluzione \(y(x)\) è definita implicitamente
+                    dall'equazione
+                    \[
+                        \Gamma(y(x)) = H(x) + \mathrm{c},
+                    \]
+                    dove
+                    \begin{itemize}
+                        \item \(\mathrm{c} \in \R\);
+                        \item \(H\) è una primitiva di \(h\);
+                        \item \(\Gamma\) è una primitiva di \(\frac{1}{g}\).
+                    \end{itemize}
+
+                    Se \(\Gamma\) non è invertibile otteniamo eslicitamente
+                    \[
+                        y(x) = \Gamma^{-1}(H(x) + \mathrm{c}),
+                    \]
+                    con \(c \in \R\).
+            \end{enumerate}
+        \end{teorema}
+        \newpage
+        \begin{proof}
+            Dimostriamo entrambe le categorie:
+            \begin{enumerate}
+                \item Sia \(g(D) = 0\) e \(y(x) = D\), \(\forall \, x\).
+                    L'identità è soddisfatta:
+                    \begin{enumerate}
+                        \item Sinistra: \(y'(x) = 0\);
+                        \item Destra: \(h(x) \, g(y(x)) = h(x) \, g(D) = h(x) \times 0 = 0\).
+                    \end{enumerate}
+                \item Prendiamo un intervallo \([x_0, x]\) in cui la funzione \(g(y)\) non si annulla. Dunque,
+                    \[
+                        \frac{y'(x)}{g(y(x))} = h(x).
+                    \]
+
+                    Dati \(x_0 < x\), con \(x_0, \, x \in \mathrm{J}_1\), integriamo:
+                    \[
+                        \int_{x_0}^{x} \! \frac{y'(r)}{g(y(r))} \, \mathrm{d}r = \int_{x_0}^{x} \! h(r) \, \mathrm{d}r = H(x) + \mathrm{c}.
+                    \]
+
+                    Per il lato sinistro faccio il cambio di variabili:
+                    \begin{align*}
+                        y(r) &= k,\\
+                        y'(r) &= \mathrm{d}k,
+                    \end{align*}
+                    quando
+                    \begin{align*}
+                        r = x_0 &\Rightarrow k = y(x_0),\\
+                        r = x &\Rightarrow k = y(x).
+                    \end{align*}
+
+                    Dunque,
+                    \[
+                        \int_{x_0}^{x} \! \frac{y'(r)}{g(y(r))} \, \mathrm{d}r = \int_{y(x_0)}^{y(x)} \! \frac{1}{g(k)} \, \mathrm{d}k = \Gamma(y(x)) + \mathrm{c}.
+                    \]
+
+                    Uguagliando i due lati,
+                    \[
+                        \Gamma(y(x)) = H(x) + \mathrm{c},
+                    \]
+                    con \(\mathrm{c} \in \R\).
+            \end{enumerate}
+        \end{proof}
             
 \end{document}
