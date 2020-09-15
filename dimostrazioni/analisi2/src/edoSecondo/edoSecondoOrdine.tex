@@ -46,5 +46,60 @@
             \]
             ha \textbf{una ed una sola} soluzione definita su \textbf{tutto l'intervallo} \(\mathrm{I}\).
         \end{teorema}
+
+        Introduciamo dunque un importante teorema che sfrutta la linearità delle equazioni: il principio di sovrapposizione.
+
+        \begin{teorema}[Principio di sovrapposizione]
+            Se \(y_1\) è soluzione di \(a \, y'' + b \, y' + c \, y = f_1\) ed \(y_2\) è soluzione di
+            \(a \, y'' + b \, y' + c \, y = f_2\), allora la funzione
+            \[
+                y(t) = \mathrm{C_1} \, y_1(t) + \mathrm{C_2} \, y_2(t)
+            \]
+            è soluzione di
+            \[
+                a \, y'' + b \, y' + c \, y = \mathrm{C_1} \, f_1 + \mathrm{C_2} \, f_2.
+            \]
+        \end{teorema}
+
+        Prendiamo ora un'equazione differenziale omogenea, ovvero con \(f = 0\). Possiamo a questo punto notare che l'insieme
+        \(\mathrm{S}\) delle soluzioni forma uno \textbf{spazio vettoriale} di dimensione due. Da questo ricaviamo il teorema di
+        struttura.
+
+        \begin{teorema}[Teorema di struttura]
+            L'integrale generale di
+            \[
+                a(t) \, y'' + b(t) \, y' + c(t) \, y = 0,
+            \]
+            con \(a\), \(b\) e \(c\) continue su \(\mathrm{I}\) e \(a(t) \neq 0\), è dato da tutte le combinazioni lineari
+            \[
+                y(t) = \mathrm{C_1} \, y_1(t) + \mathrm{C_2} \, y_2(t) \quad \forall \, \mathrm{C_1}, \, \mathrm{C_2} \in \R,
+            \]
+            dove \(y_1\) ed \(y_2\) sono due \textbf{soluzioni linearmente indipendenti} dell'equazione stessa.
+        \end{teorema}
+
+        Osserviamo adesso un'equazione con \(f \neq 0\). Questa è detta \text{completa} o \textbf{non omogenea}. Se poniamo \(f = 0\),
+        otteniamo dunque l'equazione \textbf{omogenea associata}. Definendo \(y_P\) come una particolare soluzione dell'equazione
+        completa e \(y_0\) come una particolare soluzione dell'equazione omogenea associata, notiamo che queste soddisfano il
+        principio di sovrapposizione. Con queste premesse possiamo dunque estendere il teorema di struttura alle equazioni non
+        omogenee.
+
+        \begin{teorema}[Teorema di struttura per equazioni complete]
+            L'integrale generale di
+            \[
+                a(t) \, y'' + b(t) \, y' + c(t) \, y = f(t),
+            \]
+            con \(a\), \(b\), \(c\) e \(f\) continue su \(\mathrm{I}\) e \(a(t) \neq 0\), è dato da \textbf{tutte e sole} le funzioni
+            \[
+                y(t) = \mathrm{C_1} \, y_1(t) + \mathrm{C_2} \, y_2(t) + y_P(t) \quad \forall \, \mathrm{C_1}, \, \mathrm{C_2} \in \R,
+            \]
+            dove \(y_1\) ed \(y_2\) sono due \textbf{soluzioni linearmente indipendenti} dell'equazione omogenea associata
+            \[
+                a(t) \, y'' + b(t) \, y' + c(t) \, y = 0
+            \]
+            e \(y_P\) è una \textbf{soluzione particolare} dell'equazione completa
+            \[
+                a(t) \, y'' + b(t) \, y' + c(t) \, y = f(t).
+            \]
+        \end{teorema}
             
 \end{document}
