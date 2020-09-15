@@ -44,15 +44,15 @@
 % Importo il pacchetto per lo stile degli elenchi
 \usepackage{enumitem}
 
-% Importo il pacchetto per lo stile delle tabelle
-\usepackage{array}
+% Modifico lo stile delle tabelle
+\usepackage{array,multirow}
+\renewcommand{\arraystretch}{1.3}
 
 % Importo il pacchetto per le frazioni in diagonale
 \usepackage{xfrac}
 
-% Importo il pacchetto per la personalizzazione del titolo e lo modifico
+% Importo il pacchetto per la personalizzazione dei titolo e li modifico
 \usepackage{titlesec}
-%\titleformat{\chapter}[display]{\normalfont\LARGE\bfseries}{Dimostrazione numero \thechapter}{.5em}{\Huge}
 \renewcommand{\thechapter}{\Roman{chapter}}
 \titleformat{\chapter}[display]
     {\bfseries\Large}
@@ -76,6 +76,9 @@
       \vspace{1pc}
       \huge
       \MakeUppercase}
+
+%Cambio la numerazione per le sezioni
+\renewcommand{\thesection}{\Roman{section}}
 
 % Importo il pacchetto per i sottofile
 \usepackage{subfiles}

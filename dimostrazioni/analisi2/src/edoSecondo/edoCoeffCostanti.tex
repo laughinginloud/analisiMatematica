@@ -1,0 +1,128 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Equazioni differenziali omogenee del secondo ordine a coefficienti costanti}
+
+        Per studiare un'equazione differenziale omogenea a coefficienti costanti, possiamo sfruttare il teorema di struttura.
+        Partiamo innanzitutto definendo il \textbf{polinomio caratteristico}: data una generica equazione differenziale
+        \(a \, y'' + b \, y' + c \, y = 0\), il polinomio caratteristico associato è
+        \[
+            P(\lambda) = a \, \lambda^2 + b \, \lambda + c.
+        \]
+        Possiamo dunque facilmente definire l'equazione caratteristica come \(P(\lambda) = 0\), o, più esplicitamente,
+        \[
+            a \, \lambda^2 + b \, \lambda + c = 0.
+        \]
+        Abbiamo dunque ricondotto la ricerca delle soluzioni dell'equazione differenziale omogenea a quella delle radici del
+        polinomio caratteristico, ovvero alla risoluzione dell'equazione caratteristica. La natura delle radici dipende chiaramente
+        dal discriminante \(\Delta = b^2 - 4ac\).
+
+        \section{Il caso \texorpdfstring{\(\Delta > 0\)}{discriminante maggiore di zero}}
+
+            Nel caso di un discriminante positivo, possiamo ricavare due radici \textbf{reali e distinte} tramite la classica formula
+            \[
+                \lambda_i = \frac{-b \pm \sqrt{\Delta}}{2a},
+            \]
+            da cui ricaviamo le due soluzioni dell'equazione differenziale come
+            \begin{align*}
+                y_1(t) &= e^{\lambda_1 \, t},\\
+                y_2(t) &= e^{\lambda_2 \, t},
+            \end{align*}
+            linearmente indipendenti poiché \(\lambda_1 \neq \lambda_2\). Possiamo dunque sfruttare il teorema di struttura ed ottenere
+            l'integrale generale dell'equazione di partenza come
+            \[
+                y(t) = \mathrm{C_1} \, e^{\lambda_1 \, t} + \mathrm{C_2} \, e^{\lambda_2 \, t}.
+            \]
+
+        \newpage
+
+        \section{Il caso \texorpdfstring{\(\Delta < 0\)}{discriminante minore di zero}}
+
+            Nel caso di un discriminante negativo, possiamo ricavare due radici \textbf{complesse e coniugate} definite come
+            \begin{align*}
+                \lambda_1 &= \alpha + i \, \beta,\\
+                \lambda_2 &= \alpha - i \, \beta,
+            \end{align*}
+            dove
+            \begin{align*}
+                \alpha &= \frac{-b}{2a},\\
+                \beta &= \frac{\sqrt{-\Delta}}{2a},
+            \end{align*}
+            ricavabili dalla formula classica. Prendendo la generica soluzione \(y(t) = e^{\lambda \, t}\) e ricordando la formula
+            di Eulero per l'esponenziale complesso \(e^{\alpha + i \, \beta} = e^{\alpha} (\cos \beta + i \, \sin \beta)\), possiamo
+            dunque scrivere le soluzioni come
+            \begin{align*}
+                y_1(t) &= e^{\alpha} (\cos \beta + i \, \sin \beta),\\
+                y_2(t) &= e^{\alpha} (\cos \beta + i \, \sin \beta).
+            \end{align*}
+            Ma poiché cerchiamo soluzioni reali, dobbiamo definire due funzioni che chiameremo \(u\) come
+            \begin{align*}
+                u_1(t) &= \frac{y_1(t) + y_2(t)}{2},\\
+                u_2(t) &= \frac{y_1(t) - y_2(t)}{2},
+            \end{align*}
+            che possono dunque essere generalizzate come
+            \begin{align*}
+                u_1(t) &= e^{\alpha \, t} \cos(\beta \, t),\\
+                u_2(t) &= e^{\alpha \, t} \sin(\beta \, t).
+            \end{align*}
+            L'integrale generale è dunque
+            \[
+                y(t) = e^{\alpha \, t} \left(\mathrm{C_1} \, \cos(\beta \, t) + \mathrm{C_2} \, \sin(\beta \, t)\right).
+            \]
+
+        \section{Il caso \texorpdfstring{\(\Delta = 0\)}{discriminante uguale a zero}}
+
+            Nel caso di un discriminante nullo, possiamo ricavare due radici \textbf{reali e concidenti} definite come
+            \[
+                \lambda_1 = \lambda_2 = -\frac{b}{2a},
+            \]
+            come si può facilmente ricavare dalla formula classica. Poiché abbiamo una sola soluzione, abbiamo bisogno di cercare una
+            funzione \(C(t)\) tale che
+            \begin{align*}
+                y_2(t) &= C(t) \, e^{\lambda_1},\\
+                y_2(t)' &= e^{\lambda_1} \left(C'(t) + \lambda_1 \, C(t)\right),\\
+                y_2(t)'' &= e^{\lambda_1} \left(C''(t) + 2\lambda_1 \, C'(t) + 3\lambda_1 \, C(t)\right).
+            \end{align*}
+            Se sostituiamo nell'equazione differenziale ci accorgiamo che tutti i termini contenenti \(C(t)\) e \(C'(t)\) si
+            semplificano, risultando nell'equazione
+            \[
+                C''(t) = 0 \quad \forall \, t \in \R.
+            \]
+            La più semplice funzione che soddisfa l'equazione è la funzione identità, ovvero \(C(t) = t\). Possiamo dunque generalizzare
+            quanto trovato definendo l'integrale generale come
+            \[
+                y(t) = \mathrm{C_1} \, e^{\lambda_1 \, t} + \mathrm{C_2} \, t \, e^{\lambda_2 \, t}.
+            \]
+
+        \section{Tabella riassuntiva}
+
+            Riassumiamo quanto trovato in una tabella.
+
+            \begin{table}[h!]
+
+                \centering
+
+                \begin{tabular}{||c|c|c|c|c||}
+                    \hline
+                    \multirow{2}{*}{\(\Delta\)} & \multirow{2}{*}{Radici} & \multicolumn{2}{c|}{Soluzioni} & Integrale generale\\ \cline{3-5}
+                    & & \(y_1(t)\) & \(y_2(t)\) & \(\forall \, \mathrm{C_1}, \mathrm{C_2} \in \R\)\\
+                    \hline\hline
+                    \(\Delta > 0\) & \(\lambda_1 \neq \lambda_2, \; \lambda_1, \, \lambda_2 \in \R\) & \(e^{\lambda_1 \, t}\) & \(e^{\lambda_2 \, t}\) & \(y(t) = \mathrm{C_1} \, e^{\lambda_1 \, t} + \mathrm{C_2} \, e^{\lambda_2 \, t}\)\\
+                    \hline
+                    \(\Delta = 0\) & \(\lambda_1 = \lambda_2, \; \lambda_1, \, \lambda_2 \in \R\) & \(e^{\lambda_1 \, t}\) & \(t \, e^{\lambda_2 \, t}\) & \(y(t) = \mathrm{C_1} \, e^{\lambda_1 \, t} + \mathrm{C_2} \, t \, e^{\lambda_2 \, t}\)\\
+                    \hline
+                    \(\Delta < 0\) & \(\lambda_{1, \, 2} = \alpha \pm \beta, \; \alpha, \, \beta \in \R\) & \(e^{\alpha \, t} \cos(\beta \, t)\) & \(e^{\alpha \, t} \sin(\beta \, t)\) & \(y(t) = e^{\alpha \, t} \left(\mathrm{C_1} \, \cos(\beta \, t) + \mathrm{C_2} \, \sin(\beta \, t)\right)\)\\
+                    \hline
+                \end{tabular}
+                
+            \end{table}
+
+            Queste formule generali valgono per la risoluzione di equazioni \textbf{omogenee}, siano esse associate o meno, con
+            \textbf{coefficienti costanti}. Non si applicano se queste due condizioni non sono verificate.
+            
+\end{document}
