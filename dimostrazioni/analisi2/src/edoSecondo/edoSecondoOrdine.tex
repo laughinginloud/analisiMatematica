@@ -1,0 +1,50 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Introduzione alle equazioni differenziali lineari del secondo ordine}
+
+        Un'equazione differenziale del secondo ordine si presenta nella forma
+        \[
+            a(t) \, y'' + b(t) \, y' + c(t) \, y = f(t),
+        \]
+        con \(t \in \mathrm{I}\). Definiamo dunque una sua soluzione.
+
+        \begin{definizione}[Soluzione di un'equazione differenziale del secondo ordine]
+            Si dice \textbf{soluzione dell'equazione differenziale} nell'intervallo \(\mathrm{I} \subset \R\) una funzione
+            \(y : \mathrm{I} \to \R\) \textbf{derivabile due volte} per cui, sostituendo nell'equazione differenziale i valori effettivi
+            di \(y(t)\), \(y'(t)\) e \(y''(t)\), si ottiene che
+            \[
+                a(t) \, y'' + b(t) \, y' + c(t) \, y = f(t) \quad \forall \, t \in \mathrm{I},
+            \] cioè un'identità su \(\mathrm{I}\).
+        \end{definizione}
+
+        Un'equazione differenziale del secondo ordine ha soluzioni infinite. Queste vengono racchiuse nella loro totalità
+        in dipendenza da due parametri all'interno dell'integrale generale. Se a questo aggiungiamo una coppia di condizioni iniziali
+        otteniamo una soluzione specifica. Il sistema formato dall'integrale generale e le condizioni iniziali è detto
+        \textbf{problema di Cauchy} ed il teorema che garantisce l'unicità della soluzione è detto \textbf{teorema di Cauchy}.
+
+        \begin{teorema}[Teorema di Cauchy]
+            Data l'equazione differenziale
+            \[
+                a(t) \, y'' + b(t) \, y' + c(t) \, y = f(t),
+            \]
+            con \(t \in \mathrm{I}\), \(a\), \(b\), \(c\) e \(d\) funzioni continue in \(\mathrm{I}\) e \(a \neq 0\), allora,
+            \(\forall \, t_0 \in \mathrm{I}\) e \(\forall \, (y_0, \, v_0) \in \R^2\), il problema di Cauchy
+            \[
+                \left\{
+                    \begin{aligned}
+                        &a(t) \, y'' + b(t) \, y' + c(t) \, y = f(t)\\
+                        &y(t_0) = y_0\\
+                        &y'(t_0) = v_0
+                    \end{aligned}
+                \right.
+            \]
+            ha \textbf{una ed una sola} soluzione definita su \textbf{tutto l'intervallo} \(\mathrm{I}\).
+        \end{teorema}
+            
+\end{document}
