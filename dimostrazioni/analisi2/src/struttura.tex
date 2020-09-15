@@ -59,10 +59,23 @@
     {\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
     {4ex}
     {\titlerule
-     \vspace{2ex}%
+     \vspace{2ex}
      \filright}
-    [\vspace{2ex}%
+    [\vspace{2ex}
      \titlerule]
+
+\titleformat{\part}[display]
+     {\centering\normalfont\Huge\bfseries}
+     {\titlerule[5pt]
+      \vspace{3pt}
+      \titlerule[2pt]
+      \vspace{3pt}
+      \MakeUppercase{\partname} \thepart}
+     {0pt}
+     {\titlerule[2pt]
+      \vspace{1pc}
+      \huge
+      \MakeUppercase}
 
 % Importo il pacchetto per i sottofile
 \usepackage{subfiles}
