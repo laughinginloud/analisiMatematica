@@ -65,5 +65,98 @@
             \]
             Per ottenere la formula è sufficiente moltiplicare questa equazione per \(e^{-A(x)}\).
         \end{proof}
+
+        Introduciamo ora le EDO omogenee del primo ordine con alcuni importanti teoremi.
+
+        \begin{definizione}[Equazione omogenea associata ad una EDO del primo ordine]
+            Data una EDO lineare del primo ordine nella forma
+            \[
+                y'(x) + a(x) \, y(x) = b(x),
+            \]
+            si chiama \textbf{equazione omogenea associata} la EDO
+            \[
+                y'(x) + a(x) \, y(x) = 0.
+            \]
+        \end{definizione}
+
+        \begin{teorema}[Principio di sovrapposizione per EDO lineari omogenee del primo ordine]
+            Data \(a : \mathrm{J} \subseteq \R \to \R\) continua, consideriamo la EDO omogenea
+            \[
+                y'(x) + a(x) \, y(x) = 0.
+            \]
+            Se \(y_1\) e \(y_2\) sono due soluzioni di questa equazione e \(\alpha_1, \, \alpha_2 \in \R\), allora
+            \[
+                \alpha_1 \, y_1(x) + \alpha_2 \, y_2(x)
+            \]
+            è anch'essa soluzione dell'equazione.
+        \end{teorema}
+        \begin{proof}
+            Sapendo che
+            \[
+                y_1'(x) + a(x) \, y_1(x) = y_2'(x) + a(x) \, y_2(x) = 0,
+            \]
+            dobbiamo dimostrare che
+            \[
+                \left(\alpha_1 \, y_1(x) + \alpha_2 \, y_2(x)\right)' + a(x) \left(\alpha_1 \, y_1(x) + \alpha_2 \, y_2(x)\right) = 0.
+            \]
+            Possiamo riarrangiare i termini per linearità:
+            \begin{gather*}
+                \left(\alpha_1 \, y_1(x) + \alpha_2 \, y_2(x)\right)' + a(x) \left(\alpha_1 \, y_1(x) + \alpha_2 \, y_2(x)\right) =\\
+                \qquad\qquad
+                \begin{aligned}
+                    &= \alpha_1 \, y_1'(x) + \alpha_2 \, y_2'(x) + a(x) \, \alpha_1 \, y_1(x) + a(x) \, \alpha_2 \, y_2(x)\\
+                    &= \alpha_1 \left(y_1'(x) + a(x) \, y_1(x)\right) + \alpha_2 \left(y_2'(x) + a(x) \, y_2(x)\right)\\
+                    &= \alpha_1 \times 0 + \alpha_2 \times 0 = 0
+                \end{aligned}
+            \end{gather*}
+        \end{proof}
+
+        \begin{teorema}[Struttura dell'integrale generale di EDO lineari del primo ordine]
+            Siano \(a, \, b : \mathrm{J} \subseteq \R \to \R\) continue:
+            \begin{enumerate}
+                \item L'integrale generale dell'equazione omogenea
+                    \[
+                        y'(x) + a(x) \, y(x) = 0
+                    \]
+                    è uno spazio vettoriale di dimensione unitaria, cioè
+                    \[
+                        y_O(x) = \mathrm{C} \times \overline{y_O}(x),
+                    \]
+                    con \(\mathrm{C} \in \R\).
+                \item L'integrale generale dell'equazione completa
+                    \[
+                        y'(x) + a(x) \, y(x) = b(x)
+                    \]
+                    equivale a
+                    \[
+                        y(x) = y_O(x) + y_P(x),
+                    \]
+                    dove
+                    \begin{itemize}
+                        \item \(y_O(x)\) è l'integrale dell'equazione omogenea, come al punto I;
+                        \item \(y_P(x)\) è una soluzione particolare dell'equazione completa.
+                    \end{itemize}
+            \end{enumerate}
+        \end{teorema}
+
+        Introduciamo infine il concetto di problema di Cauchy.
+
+        \begin{definizione}[Problema di Cauchy]
+            Data la EDO del primo ordine in forma normale
+            \[
+                y'(x) = f\left(x, \, y(x)\right)
+            \]
+            ed assegnata la coppia \((x_0, \, y_0) \in \R^2\) nella quale \(f\) è ben definita, si chiama \textbf{problema di Cauchy}
+            il problema di determinare \(y : \mathrm{I} \subseteq \R \to \R\) che soddisfa
+            \[
+                \left\{
+                    \begin{aligned}
+                        &y'(x) = f \left(x, \, y(x)\right)\\
+                        &y(x_0) = y_0
+                    \end{aligned}
+                \right.
+                .
+            \]
+        \end{definizione}
             
 \end{document}
