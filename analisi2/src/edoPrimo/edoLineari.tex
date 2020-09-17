@@ -57,11 +57,11 @@
             \]
             Ora integriamo tra \(x_0\) e \(x\):
             \[
-                \int_{x_0}^x \! \left(y(s) \, e^{A(s)}\right)' \; \mathrm{d}s = \int_{x_0}^{x} \! e^{A(s)} \, b(s) \; \mathrm{d}s.
+                \intDef{x_0}{x}{\left(y(s) \, e^{A(s)}\right)'}{s} = \intDef{x_0}{x}{e^{A(s)} \, b(s)}{s}.
             \]
             Uso il teorema fondamentale del calcolo integrale per il lato sinistro:
             \[
-                y(x) \, e^{A(x)} \underbrace{- y(x_0) \, e^{A(x_0)}}_{- \mathrm{c}} = \underbrace{\int_{x_0}^x \! e^{A(s)} \, b(s) \; \mathrm{d}s}_{B(x)}.
+                y(x) \, e^{A(x)} \underbrace{- y(x_0) \, e^{A(x_0)}}_{- \mathrm{c}} = \underbrace{\intDef{x_0}{x}{e^{A(s)} \, b(s)}{s}}_{B(x)}.
             \]
             Per ottenere la formula è sufficiente moltiplicare questa equazione per \(e^{-A(x)}\).
         \end{proof}

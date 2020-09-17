@@ -36,3 +36,15 @@
 
 % Definizione di un comando veloce per scrivere i reali
 \newcommand{\R}{\mathbb{R}}
+
+% Parametri:
+%   1: estremo inferiore
+%   2: estremo superiore
+%   3: corpo dell'integrale
+%   4: variabile di integrazione
+\newcommand{\intDef}[4]{\int_{#1}^{#2} \! #3 \, \mathrm{d}#4}
+
+% Parametri:
+%   1: corpo dell'integrale
+%   2: variabile di integrazione
+\newcommand{\intIn}[2]{\int \! #1 \, \mathrm{d}#2}
