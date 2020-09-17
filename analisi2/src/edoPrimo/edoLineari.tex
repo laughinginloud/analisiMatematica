@@ -42,5 +42,28 @@
                 \item \(B(x)\) è una qualunque primitiva di \(e^{A(x)} \, b(x)\): \(A = \int \! e^{\int \! a} \, b\).
             \end{itemize}
         \end{teorema}
+        \begin{proof}
+            Moltiplichiamo tutto per \(a^A\)
+            \[
+                \underbrace{y' \, e^A + a \, y \, e^A}_{\left(y \, e^A\right)'} = b \, e^A,
+            \]
+            infatti
+            \[
+                \left(y \, e^A\right)' = y' \, e^A + y \, \left(e^A\right)' = y' \, e^A + y \, e^A \, A' = y' \, e^A + y \, e^A \, a.
+            \]
+            Quindi la nostra equazione è uguale a
+            \[
+                \left(y(x) \, e^{A(x)}\right)' = e^{A(x)} \, b(x).
+            \]
+            Ora integriamo tra \(x_0\) e \(x\):
+            \[
+                \int_{x_0}^x \! \left(y(s) \, e^{A(s)}\right)' \; \mathrm{d}s = \int_{x_0}^{x} \! e^{A(s)} \, b(s) \; \mathrm{d}s.
+            \]
+            Uso il teorema fondamentale del calcolo integrale per il lato sinistro:
+            \[
+                y(x) \, e^{A(x)} \underbrace{- y(x_0) \, e^{A(x_0)}}_{- \mathrm{c}} = \underbrace{\int_{x_0}^x \! e^{A(s)} \, b(s) \; \mathrm{d}s}_{B(x)}.
+            \]
+            Per ottenere la formula è sufficiente moltiplicare questa equazione per \(e^{-A(x)}\).
+        \end{proof}
             
 \end{document}
