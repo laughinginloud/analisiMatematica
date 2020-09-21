@@ -1,0 +1,127 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Equazioni differenziali non lineari del primo ordine risolvibili esplicitamente}
+
+        Non tutte le equazione diferenziali non lineari del primo ordine sono risolvibili esplicitamente. Quelle che possono essere
+        risolte sono:
+
+        \begin{enumerate}
+            \item EDO a variabili separabili,
+            \item EDO non lineari omogenee,
+            \item Equazioni di Bernoulli.
+        \end{enumerate}
+
+        Le equazioni a variabili separabili sono già state trattate nel \hyperref[cap:edoSeparabili]{\textbf{relativo capitolo}}.
+        Discutiamo dunque delle EDO non lineari omogenee.
+
+        \section{Equazioni differenziali ordinarie non lineari omogenee}
+
+            Partiamo dalla definizione.
+
+            \begin{definizione}[EDO non lineari omogenee]
+                Una EDO non lineare omogenea è della forma
+                \[
+                    y'(x) = \frac{P(x, \, y(x))}{Q(x, \, y(x))},
+                \]
+                con \(P\) e \(Q\) polinomi omogenei, ovvero composti solamente da monomi di uno stesso grado \(n\).
+            \end{definizione}
+
+            Delineiamo quindi una strategia di risoluzione:
+            \begin{enumerate}
+                \item Dividiamo ciascun monomio per \(x^n\).
+                \item Eseguiamo il cambio di variabile con
+                    \[
+                        z(x) = \frac{y(x)}{x}.  
+                    \]
+                \item Otteniamo dunque un'equazione a variabili separabili che possiamo facilmente risolvere.
+                \item Infine torniamo alla variabile iniziale \(y\), tenendo a mente che \(y(x) = x \, z(x)\), in base al cambio di
+                    variabile precedentemente fatto.
+            \end{enumerate}
+
+        \section{Equazioni di Bernoulli}
+
+            L'ultima categoria è quella delle equazioni di Bernoulli. Partiamo anche in questo caso dalla definizione.
+
+            \begin{definizione}[Equazione di Bernoulli]
+                Chiamiamo equazione di Bernoulli una EDO non lineare del tipo
+                \[
+                    y'(x) = f(x) \, y(x) + g(x) \, y(x)^\alpha,
+                \]
+                con \(f, \, g : \mathrm{I} \subseteq \R \to \R\) continue e \(\alpha \in \R\), con \(\alpha \notin \{0, \, 1\}\).
+            \end{definizione}
+
+            Le condizioni su \(\alpha\) sono state imposte in quanto:
+            \begin{itemize}
+                \item Per \(\alpha = 0\), l'equazione diventa \(y'(x) = f(x) \, y(x) + g(x)\), la quale è lineare;
+                \item Per \(\alpha = 1\), l'equazione diventa \(y'(x) = \left(f(x) + g(x)\right) \, y(x)\), la quale è lineare a variabili
+                    separabili.
+            \end{itemize}
+
+            Delineiamo ora la strategia di risoluzione:
+            \begin{enumerate}
+                \item Cerchiamo le soluzioni costanti:
+                    \begin{itemize}
+                        \item Se \(\alpha > 1\) poniamo
+                            \[
+                                f(x) \, y + g(x) \, y^\alpha = 0,
+                            \]
+                            che possiamo riscrivere come
+                            \[
+                                y \left(f(x) + g(x) \, y^{\alpha - 1})\right) = 0,
+                            \]
+                            che implica
+                            \[
+                                y(x) = 0 \quad \forall\,  x.
+                            \]
+                        \item Se \(0 < \alpha < 1\) poniamo
+                            \[
+                                f(x) \, y + g(x) \, y^\alpha = 0,
+                            \]
+                            che possiamo riscrivere come
+                            \[
+                                y^\alpha \left(f(x) \, y^{1 - \alpha} + g(x)\right) = 0,
+                            \]
+                            che implica
+                            \[
+                                y(x) = 0 \quad \forall\,  x.
+                            \]
+                        \item Se \(f\) e \(g\) sono delle costanti in \(\R\), troviamo un'ulteriore soluzione costante come
+                            \[
+                                y(x) = \left(-\frac{f}{g}\right)^{\frac{1}{\alpha - 1}} \quad \forall \, x.
+                            \]
+                    \end{itemize}
+                \item Per cercare le soluzioni non costanti, dividiamo l'equazione per \(y^\alpha (x)\), ottenendo
+                    \[
+                        \frac{y'(x)}{y^\alpha (x)} = \frac{f'(x)}{y^{\alpha - 1} (x)} + g(x).
+                    \]
+                    Dunque l'equazione diventa
+                    \[
+                        \frac{1}{1 - \alpha} \left(\frac{1}{y^{\alpha - 1} (x)}\right)' = \frac{1}{y^{\alpha - 1} (x)} + g(x).
+                    \]
+                \item Effetuiamo il cambio di variabili con
+                    \[
+                        z(x) = \frac{1}{y^{\alpha - 1} (x)}.
+                    \]
+                    Sostituendo si ottiene
+                    \[
+                        \frac{1}{1 - \alpha} z'(x) = f(x) \, z(x) + g(x),
+                    \]
+                    o, più esplicitamente,
+                    \[
+                        z'(x) - (1 - \alpha) \, f(x) \, z(x) = (1 - \alpha) \, f(x),
+                    \]
+                    la quale è una EDO lineare con
+                    \begin{itemize}
+                        \item \(a(x) = - (1 - \alpha) \, g(x)\),
+                        \item \(b(x) = (1 - \alpha) \, g(x)\).
+                    \end{itemize}
+                \item Si risolve l'equazione lineare in \(z\) e poi si torna alla variabile \(y(x)\).
+            \end{enumerate}
+            
+\end{document}
