@@ -1,0 +1,42 @@
+%! TEX root = ../../../analisi2.tex
+
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line = bottom,
+        axis y line = left,
+        ylabel = {$\mathrm{c} \, e^{k \, x}$},
+        ticks = none
+    ]
+        \addplot[
+            domain = 0:4,
+            samples = 100,
+            color = cyan,
+            thick
+        ]
+        {0};
+
+        \addplot[
+            domain = 0:4,
+            samples = 100,
+            color = green,
+            thick
+        ]
+        {e^x};
+
+        \addplot[
+            domain = 0:4,
+            samples = 100,
+            color = purple,
+            thick
+        ]
+        {2 * e^x};
+
+        \addplot[
+            domain = 0:4,
+            samples = 100,
+            color = orange,
+            thick
+        ]
+        {3 * e^x};
+    \end{axis}
+\end{tikzpicture}
