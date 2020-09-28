@@ -1,0 +1,101 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Serie di potenze in \texorpdfstring{\(\R\)}{R}}
+
+        Introduciamo il concetto di serie di potenze.
+
+        \begin{definizione}[Serie di potenze]
+            Una serie di potenze reale è una serie di funzioni nella forma
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n = a_0 + a_1 \, (x - x_0) + a_2 \, (x - x_0)^2 + \ldots + a_n \, (x - x_0)^n +
+                \ldots,
+            \]
+            con \(a_n \in \R\) \textbf{coefficienti} della serie e \(x_0 \in \R\) \textbf{centro} della serie.
+        \end{definizione}
+        \begin{osservazione}
+            Stiamo adottando la convenzione che, nel caso \(x = x_0\) e \(n = 0\), si ha
+            \[
+                a_0 \, (x_0 - x_0)^0 = a_0 \times 1 = a_0.
+            \]
+            Si tratta di una convenzione, in quanto la scrittura \(0^0\) in realtà non è determinata.
+
+            In particolare, nel caso \(x = x_0\) e \(n\) generico si ha
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (x_0 - x_0)^n = a_0 + a_1 \times 0 + a_2 \times 0 + \ldots = a_0,
+            \]
+            dunque tutte le serie di potenze convergono in \(x = x_0\).
+        \end{osservazione}
+
+        L'insieme di convergenza di una serie di potenze è sempre un intervallo centrato in \(x_0\). Questo ci porta al nostro
+        prossimo teorema.
+
+        \begin{teorema}[Raggio di convergenza di una serie di potenze reale]
+            Data una serie di potenze reale \(\sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n\), si verifica sempre una tra tre condizioni:
+            \begin{enumerate}
+                \item la serie converge solo per \(x 0 x_0\), dunque si ha un raggio di convergenza nullo;
+                \item la serie converge assolutamete su tutto \(\R\), dunque si ha un raggio di convergenza infinito;
+                \item esiste un numero reale \(\R > 0\) tale che:
+                    \begin{itemize}
+                        \item la serie converge assolutamente per ogni \(x\) con \(|x - x_0|  < R\),
+                        \item la serie non converge per \(|x - x_0| > R\),
+                    \end{itemize}
+                    dunque si ha un raggio di convergenza \(R\).
+            \end{enumerate}
+        \end{teorema}
+        \begin{osservazione}
+            Per quanto riguarda il caso numero tre, nulla è detto riguardo ai punti \(x = x_0 \pm R\), perciò vanno analizzati caso
+            per caso.
+        \end{osservazione}
+        \begin{proof}
+            Dobbiamo dimostrare due cose:
+            \begin{enumerate}
+                \item l'insieme di convergenza semplice è un intervallo ``privo di buchi'' centrato in \(x_0\);
+                \item nell'intervallo di convergenza, la convergenza è assoluta.
+            \end{enumerate}
+
+            Partiamo dal punto primo. Chiamiamo \(E\) l'insieme di convergenza puntuale della serie di potenze data. È sufficiente
+            dimostrare l'implicazione
+            \begin{equation}
+                x \in \mathrm{E} \implies \forall \, y \; | \; |y - x_0| < |x - x_0|, \, y \in \mathrm{E}. \tag{*}\label{eq:pot*}
+            \end{equation}
+            Data \(y\) che soddisfa l'implicazione, devo dimostrare che
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (y - x_0)^n
+            \]
+            converge.
+
+            Per prima cosa osserviamo che \(x \in \mathrm{E}\) implica
+            \begin{equation}
+                \lim_{n \to +\infty} |a_n \, (x - x_0)| = 0, \tag{**}\label{eq:pot**}
+            \end{equation}
+            in quanto, poiché la serie numerica \(\sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n\) converge, il suo termine generale tende a
+            zero. Poi calcoliamo
+            \[
+                \left|a_n \, (y - x_0)^n\right| = \underbrace{\left|a_n \, (x - x_0)^n\right|}_{\leqslant 1 \text{ per } n \text{ grande
+                grazie a \hyperref[eq:pot**]{(**)}}} \times \left|\frac{(y - x_0)^n}{(x - x_0)^n}\right|.
+            \]
+            Quindi,
+            \[
+                \left|a_n \, (y - x_0)^n\right| \leqslant \left|\frac{y - x_0}{x - x_0}\right|^n
+            \]
+            per \(n\) grande.
+
+            Grazie a \hyperref[eq:pot*]{(*)}, la serie
+            \[
+                \sum_{n = 0}^{+\infty} \left|\frac{y - x_0}{x - x_0}\right|^n
+            \]
+            è convergente, in quanto è una geometrica con ragione \(q < 1\). Quindi, per il teorema del confronto, la serie
+            \[
+                \sum_{n = 0}^{+\infty} \left|a_n \, (y - x_0)^n\right|
+            \]
+            è convergente, cioè \(y \in \mathrm{E}\). Abbiamo dunque dimostrato il punto primo. Il punto secondo è stato anch'esso
+            dimostrato, in quanto sono stati usati i valori assoluti.
+        \end{proof}
+
+\end{document}
