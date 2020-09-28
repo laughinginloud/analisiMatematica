@@ -1,0 +1,85 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Serie di funzioni}
+
+        Introduciamo il concetto di serie di funzione.
+
+        \begin{definizione}[Serie di funzioni]
+            Dato un intervallo \(\mathrm{J} \subseteq \R\), siano, \(\forall \, n \in \mathbb{N}\), \(f_n : \mathrm{J} \to \R\) delle
+            funzioni. La serie di funzioni di termine generale \(f_n(x)\) è la successione delle somme parziali:
+            \begin{align*}
+                S_0 (x) &= f_0 (x),\\
+                S_1 (x) &= f_0 (x) + f_1 (x),\\
+                &\dots\\
+                S_k (x) &= \sum_{n = 0}^k f_n (x).
+            \end{align*}
+        \end{definizione}
+        \begin{osservazione}
+            Fissato un punto \(\overline{x} \in \mathrm{J}\), si ha che la serie di termine generale \(f_n (\overline{x})\) è una serie
+            numerica. Abbiamo quindi infinite serie numeriche, una per ogni \(x \in \mathrm{J}\).
+        \end{osservazione}
+
+        Parliamo dunque della convergenza.
+        
+        \begin{definizione}[Convergenza puntuale di una serie di funzioni]
+            Diciamo che la serie di funzioni di termine generale \(f_n (x)\), \(x \in \mathrm{J}\), \textbf{converge puntualmente} o
+            semplicemente nel punto \(\overline{x} \in \mathrm{J}\) se la serie numerica di termine generale \(f_n (\overline{x})\) è
+            convergente, ovvero se esiste finito il limite
+            \[
+                \lim_{k \to +\infty} S_k(\overline{x}) = \lim_{k \to +\infty} \sum_{n = 0}^k f_n (\overline{x}).
+            \]
+        \end{definizione}
+        \begin{osservazione}
+            Una serie di funzioni può essere convergente per alcuni \(x \in \mathrm{J}\), divergente od indeterminata per altri
+            \(x \in \mathrm{J}\).
+        \end{osservazione}
+
+        Da questa ultima osservazione deriva la prossima definizione.
+        
+        \begin{definizione}[Insieme di convergenza puntuale e somma della serie]
+            L'insieme \(\mathrm{E} \subseteq \mathrm{J}\) dei punti \(x\) in cui la serie converge è detto \textbf{insieme di
+            convergenza puntuale} della serie. Nell'insieme \(\mathrm{E}\) risulta definita la \textbf{somma della serie}:
+            \[
+                f(x) = \sum_{n = 0}^{+\infty} f_n(x) = \lim_{k \to +\infty} S_k (x), \quad \text{con } x \in \mathrm{E}.
+            \]
+        \end{definizione}
+
+        Un altro tipo di convergenza, simile a quella puntuale, è quella assoluta: per ogni fissato \(\overline{x} \in \mathrm{J}\)
+        guardiamo la convergenza della serie numerica \(\left|f_n(\overline{x})\right|\).
+        
+        \begin{definizione}[Convergenza assoluta di una serie di funzioni]
+            Diciamo che la serie di funzioni di termine generale \(f_n(x)\), con \(x \in \mathrm{J}\), \textbf{converge assolutamente}
+            nel punto \(\overline{x} \in \mathrm{J}\) se la serie numerica di termine generale \(\left|f_n(\overline{x})\right|\) è
+            convergente.
+        \end{definizione}
+        \begin{osservazione}
+            La convergenza assoluta implica quella semplice, ovvero, se una serie converge assolutamente in \(\overline{x}\) allora
+            \(\overline{x}\) appartiene al suo insieme di convergenza puntuale.
+        \end{osservazione}
+
+        Esiste un altro tipo di convergenza, che prende in considerazione un intervallo.
+        
+        \begin{definizione}[Convergenza totale di una serie]
+            La serie di termine generale \(f_n(x)\), con \(x \in \mathrm{J}\), \textbf{converge totalmente} in
+            \(\mathrm{I} \subseteq \mathrm{J}\) se:
+            \begin{enumerate}
+                \item si ha \(\left|f_n(x)\right| \leqslant a_n, \, \forall \, x \in \mathrm{I}, n \in \N\),
+                \item la serie numerica di termine generale \(a_n\) è convergente.
+            \end{enumerate}
+        \end{definizione}
+        \begin{osservazione}
+            La convergenza totale in \(\mathrm{I}\) implica la convergenza assoluta in ogni \(\overline{x} \in \mathrm{I}\), che a
+            sua volta implica quella puntuale. Questa implicazione non si applica però all'inverso.
+        \end{osservazione}
+        \begin{osservazione}
+            Se le \(f_n\) sono continue e la serie converge totalmente, allora la funzione somma è continua ed integrabile termine
+            a termine.
+        \end{osservazione}
+
+\end{document}
