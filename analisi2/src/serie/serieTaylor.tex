@@ -1,0 +1,56 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Serie di Taylor}
+
+        Prendiamo ora una funzione derivabile infinite volte \(f\) e chiediamoci: esiste una serie di potenze la cui somma
+        sia proprio \(f\)?
+
+        Spezziamo questa domanda in tre sotto-domande:
+        \begin{enumerate}
+            \item Qual è la serie candidata?
+            \item Qual è il raggio di convergenza della serie candidata?
+            \item La serie candidata converge a \(f\) ovunque dentro il raggio di convergenza?
+        \end{enumerate}
+
+        Partiamo dalla prima. Ricordiamo che, data \(f : \mathrm{I} \subseteq \R \to \R\) derivabile infinite volte, il suo
+        polinomio di Taylor centrato in \(x_0 \in \mathrm{I}\) di ordine \(m\) è
+        \[
+            \mathrm{T}_m (x) = \sum_{n = 0}^{m} \frac{f^{(n) (x_0)}}{n!} (x - x_0)^n = f(x_0) + f'(x_0) \, (x - x_0) + \frac{f''(x_0)}{2} (x - x_0)^2 + \ldots + \frac{f^{(m)} (x_0)}{m!} (x - x_0)^m.
+        \]
+        
+        Come già visto nel corso di Analisi Matematica I, se \(f\) è derivabile infinite volte, vale lo sviluppo di Taylor
+        all'ordine \(m\), \(\forall \, m\),
+        \[
+            f(x) = \mathrm{T}_m (x) + o(|x - x_0|^m),
+        \]
+        dove \(o(|x - x_0|^m)\) è tale che
+        \[
+            \lim_{x \to x_0} \frac{o(|x - x_0|^m)}{|x - x_0|^m} = 0.
+        \]
+
+        \begin{definizione}[Serie di Taylor]
+            Sia \(f : \mathrm{I} \subseteq \R \to R\) derivabile inifinite volte in \(x_0 \in \mathrm{I}\). Si chiama
+            \textbf{serie di Taylor con centro \(x_0\) della funzione \(f\)} la serie di potenze
+            \[
+                \sum_{n = 0}^{+\infty} \frac{f^{(n)} (x_0)}{n!} (x - x_0)^n.
+            \]
+
+            I numeri \(\frac{f^{(n)} (x_0)}{n!}\) sono detti \textbf{coefficienti di Taylor} e se \(x_0 = 0\) la serie è anche
+            detta \textbf{serie di McLaurin}.
+        \end{definizione}
+
+        Passiamo ora alla seconda domanda. Come per tutte le serie di potenze, il raggio di convergenza può essere:
+        \begin{itemize}
+            \item \(R = 0\), dunque la serie converge solo in \(x_0\) e dunque non proseguiamo,
+            \item \(R > 0\), compreso il caso \(R = +\infty\), e dunque possiamo proseguire.
+        \end{itemize}
+
+        Passiamo dunque alla terza domanda.
+
+\end{document}
