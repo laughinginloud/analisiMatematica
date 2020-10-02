@@ -36,9 +36,13 @@
         prossimo teorema.
 
         \begin{teorema}[Raggio di convergenza di una serie di potenze reale]
-            Data una serie di potenze reale \(\sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n\), si verifica sempre una tra tre condizioni:
+            Data una serie di potenze reale
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n,
+            \]
+            si verifica sempre una tra tre condizioni:
             \begin{enumerate}
-                \item la serie converge solo per \(x 0 x_0\), dunque si ha un raggio di convergenza nullo;
+                \item la serie converge solo per \(x = x_0\), dunque si ha un raggio di convergenza nullo;
                 \item la serie converge assolutamete su tutto \(\R\), dunque si ha un raggio di convergenza infinito;
                 \item esiste un numero reale \(\R > 0\) tale che:
                     \begin{itemize}
@@ -97,5 +101,102 @@
             è convergente, cioè \(y \in \mathrm{E}\). Abbiamo dunque dimostrato il punto primo. Il punto secondo è stato anch'esso
             dimostrato, in quanto sono stati usati i valori assoluti.
         \end{proof}
+
+        Introduciamo ora il teorema che sancisce come calcolare questo raggio di convergenza.
+
+        \begin{teorema}[Calcolo del raggio di convergenza di una serie di potenze reale]
+            Data la serie di potenze 
+            \[
+                \sum_{x = 0}^{+\infty} a_n \, (x - x_0)^n,
+            \]
+            possiamo calcolare il raggio di convergenza \(R\) come
+            \[
+                R = \lim_{n \to +\infty} \left|\frac{a_n}{a_{n+1}}\right|
+            \]
+            o, alternativamente, come
+            \[
+                R = \lim_{n \to +\infty} \frac{1}{\sqrt[\leftroot{-1}n]{|a_n|}},
+            \]
+            dove \(R\) esiste ed appartiene all'insieme \([0, \, +\infty]\).
+        \end{teorema}
+        \begin{osservazione}
+            Il criterio del rapporto ed il criterio della radice per le serie numeriche forniscono \(\frac{1}{R}\).
+        \end{osservazione}
+
+        A questo punto, definiamo un paio di serie importanti.
+
+        \begin{definizione}[Serie esponenziale]
+            La serie di potenze
+            \[
+                \sum_{n = 0}^{+\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \ldots,
+            \]
+            avente \(x_0 = 0\) e \(a_n = \frac{1}{n!}\), è detta \textbf{serie esponenziale}.
+
+            Il suo raggio di convergenza è dato da
+            \[
+                R = \lim_{n \to +\infty} \frac{a_n}{a_{n+1}} = \lim_{n \to +\infty} \frac{1}{n!} (n + 1)! = \lim_{n \to +\infty} (n + 1) = +\infty.
+            \]
+            La serie esponenziale converge dunque assolutamente \(\forall \, x \in \R\).
+        \end{definizione}
+
+        \begin{definizione}[Serie logaritmica]
+            La serie di potenze
+            \[
+                \sum_{n = 1}^{+\infty} \frac{x^n}{n} = x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \ldots,
+            \]
+            avente \(x_0 = 0\) e \(a_n = \frac{1}{n}\), con \(n \geqslant 1\), è detta \textbf{serie logaritmica}.
+
+            Il suo raggio di convergenza è dato da
+            \[
+                R = \lim_{n \to +\infty} \frac{1}{\left|\sqrt[\leftroot{-1}n]{a_n}\right|} = \lim_{n \to +\infty} \frac{1}{\sqrt[\leftroot{-1}n]{\frac{1}{n}}} = \lim_{n \to +\infty} \sqrt[\leftroot{-1}n]{n} = 1.
+            \]
+            La serie logaritmica converge dunque assolutamente per \(|x| < 1\) e non converge per \(|x| > 1\). Per quanto riguarda
+            il caso \(|x| = 1\), se \(x = 1\) la serie è una serie armonica divergente, mentre con \(x = -1\) la serie converge
+            per il criterio di Leibniz.
+
+            In conclusione, la serie logaritmica ha insieme di convergenza semplice \([-1, \, 1)\) ed insieme di convergenza
+            assoluta \((-1, \, 1)\).
+        \end{definizione}
+
+        Terminiamo il capitolo introducendo gli ultimi teoremi.
+
+        \begin{teorema}[Convergenza totale per una serie di potenze reale]
+            Data una generica serie di potenze
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n,
+            \]
+            avente raggio di convergenza \(0 < R \leqslant +\infty\), si ha:
+            \begin{itemize}
+                \item Se \(R = +\infty\), la serie converge totalmente in ogni intervallo chiuso \([a, \, b]\),
+                    \(\forall \, a, \, b \in \R\), con \(a < b\).
+                \item Se \(0 < R < +\infty\), la serie converge totalmente in ogni intervallo chiuso \([a, \, b] \subset (x_0 - R, \, x_0 + R)\).
+            \end{itemize}
+        \end{teorema}
+
+        \begin{teorema}[Integrabilità e derivabilità termine a termine per una serie di potenze reale]
+            Sia data una generica serie di potenze reale
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n,
+            \]
+            avente raggio di convergenza \(0 < R \leqslant +\infty\) e somma \(f(x)\), con \(x \in (x_0 - R, \, x_0 + R)\). Allora:
+            \begin{enumerate}
+                \item Per ogni \(x \in (x_0 - R, \, x_0 + R)\) si ha
+                    \[
+                        \intDef{x_0}{x}{f(s)}{s} \coloneqq \intDef{x_0}{x}{\sum_{n = 0}^{+\infty} a_n \, (s - x_0)^n}{s} = \sum_{n = 0}^{+\infty} a_n \, \intDef{x_0}{x}{(s - x_0)^n}{s}
+                    \]
+                    ed il raggio di convergenza della serie integrata è anch'esso \(R\).
+                \item \(f(x)\) è derivabile, dunque in particolare anche continua, in \((x_0 - R, \, x_0 + R)\). Inoltre,
+                    \[
+                        f'(x) \coloneqq \left(\sum_{n = 0}^{+\infty} a_n \, (x - x_0)^n\right)' = \sum_{n = 0}^{+\infty} \left(a_n \, (x - x_0)^n\right)'
+                    \]
+                    ed il raggio di convergenza della serie derivata è anch'esso \(R\).
+            \end{enumerate}
+        \end{teorema}
+        \begin{osservazione}
+            La serie di potenze è in realtà derivabile ad ogni ordine, mantenendo il raggio di convergenza.
+        \end{osservazione}
+        \begin{osservazione}
+            Il comportamento della serie in \(x = x_0 \pm R\) può variare, dunque va studiato separatamente.
+        \end{osservazione}
 
 \end{document}
