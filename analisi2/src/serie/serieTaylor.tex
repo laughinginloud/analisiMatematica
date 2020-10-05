@@ -47,10 +47,22 @@
 
         Passiamo ora alla seconda domanda. Come per tutte le serie di potenze, il raggio di convergenza può essere:
         \begin{itemize}
-            \item \(R = 0\), dunque la serie converge solo in \(x_0\) e dunque non proseguiamo,
-            \item \(R > 0\), compreso il caso \(R = +\infty\), e dunque possiamo proseguire.
+            \item \(R = 0\), dunque la serie converge solo in \(x_0\), perciò non proseguiamo con l'analisi,
+            \item \(R > 0\), compreso il caso \(R = +\infty\), che ci obbliga a proseguire proseguire.
         \end{itemize}
 
-        Passiamo dunque alla terza domanda.
+        Passiamo dunque alla terza domanda. Sappiamo dal passo precedente che la serie converge in \((x_0 - R, \, x_0 + R)\), ma non
+        sappiamo se \(\forall \, x \in (x_0 - R, \, x_0) \cup (x_0, \, x_0 + R)\) questa converge in \(f(x)\) oppure in qualcosa di
+        diverso. Definiamo perciò questo concetto.
+
+        \begin{definizione}[Serie analitica]
+            Sia \(f : \I \subseteq \R \to \R\) derivabile infinite volte in \(x_0 \in \I\). \(f\) è detta \textbf{analitica in \(x_0\)},
+            o sviluppabile in serie di Taylor centrata in \(x_0\), se la sua serie di Taylor con centro \(x_0\) ha raggio di convergenza
+            \(R > 0\), eventualmente anche \(R = +\infty\), e inoltre
+            \[
+                f(x) = \sum_{n = 0}^{+\infty} \frac{f^{(n)} (x_0)}{n!} (x - x_0)^n
+            \]
+            \(\forall \, x \in (x_0 - R_1, \, x_0 + R_1)\) e con \(0 < R_1 \leqslant R\).
+        \end{definizione}
 
 \end{document}
