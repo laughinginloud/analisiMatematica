@@ -1,0 +1,72 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Serie di Fourier}
+
+        Partiamo parlando di polinomi trigonometrici ed armoniche \(n\)-esime.
+
+        \begin{definizione}[Funzione periodica]
+            Una funzione \(f : \R \to \R\) è periodica di periodo \(T\) se
+            \[
+                f(x + T) = f(x), \quad \forall \, x \in \R.
+            \]
+        \end{definizione}
+
+        \begin{definizione}[Polinomio trigonometrico]
+            Un \textbf{polinomio trigonometrico di ordine \(m\)}, con \(m \in \N\), è una funzione periodica di periodo \(2 \pi\) del
+            tipo
+            \[
+                \mathrm{P}_m (x) = a_0 + \sum_{n = 1}^m \left(a_n \cos nx + b_n \sin nx\right),
+            \]
+            con \(a_0, \, a_n, \, b_n \in \R\), detti coefficienti del polinomio, e \(x \in \R\). Le funzioni \(\cos nx\) e \(\sin nx\)
+            sono dette \textbf{armoniche \(n\)-esime}.
+        \end{definizione}
+
+        Proprietà:
+        \begin{enumerate}
+            \item Ogni armonica \(n\)-esima è periodica di periodo \(\frac{2 \pi}{n}\), quindi, in particolare, ogni armonica \(n\)-esima
+                è anche periodica di periodo \(2\pi\). Dunque, anche ogni polinomio trigonometrico è periodico di periodo \(2\pi\).
+            \item La somma, la differenza ed il prodotto di due polinomi trigonometrici è ancora un polinomio trigonometrico.
+            \item Formule di ortogonalità delle armoniche \(n\)-esime:
+                \begin{align*}
+                    \intDef{-\pi}{\pi}{\cos nx \, \cos kx}{x} &=
+                        \begin{cases}
+                            0 & \text{se } n \neq k\\
+                            \pi & \text{se } n = k \neq 0
+                        \end{cases}\\
+                    \intDef{-\pi}{\pi}{\sin nx \, \sin kx}{x} &=
+                        \begin{cases}
+                            0 & \text{se } n \neq k\\
+                            \pi & \text{se } n = k \neq 0
+                        \end{cases}\\
+                    \intDef{-\pi}{\pi}{\sin nx \, \cos kx}{x} &= 0, \quad \forall \, n, \, k \in \N.
+                \end{align*}
+                \begin{osservazione}
+                    Si tratta di formule di ortogonalità, ma non specifichiamo qual è il prodotto scalare e qual è lo spazio.
+                \end{osservazione}
+        \end{enumerate}
+
+        Parliamo dunque delle serie di Fourier di funzioni periodiche. Sappiamo da Analisi Matematica I che una funzione derivabile
+        infinite volte è approssimata dal suo polinomio di Taylor. Abbiamo inoltre visto che una funzione analitica coincide con la sua
+        serie di Taylor.
+
+        Adesso vogliamo occuparci di approssimare una funzione periodica con un polinomio trigonometrico e stabilire in quale caso la
+        funzione coincide con la sua serie di Fourier.
+
+        Data \(f : \R \to \R\) periodica di periodo \(2\pi\), esiste una serie trigonometrica la cui somma sia proprio \(f\)? Cioè
+        esistono \(a_0, \, a_, \, b_n\) tali che
+        \[
+            f(x) = a_0 + \sum_{n = 1}^{+\infty} \left(a_n \cos nx + b_n \sin nx\right)?
+        \]
+
+        \begin{osservazione}
+            Adesso \(f\) è periodica, il che è molto meno regolare che derivabile infinite volte. Infatti, la funzione può anche essere
+            discontinua.
+        \end{osservazione}
+
+\end{document}
