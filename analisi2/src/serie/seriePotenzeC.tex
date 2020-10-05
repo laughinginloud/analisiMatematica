@@ -1,0 +1,91 @@
+% Imposto la radice del documento, utile per Visual Studio Code ed altri editor
+%! TEX root = ../../analisi2.tex
+
+% Imposto il file come sottofile del documento principale
+\documentclass[../../analisi2]{subfiles}
+
+\begin{document}
+
+    \chapter{Serie di potenze in \texorpdfstring{\(\Cmplx\)}{C}}
+
+        Estendiamo dunque il concetto di serie di potenze all'insieme dei numeri complessi.
+
+        \begin{definizione}[Serie di potenze in \(\Cmplx\)]
+            Una \textbf{serie di potenze in \(\Cmplx\)} è una serie di funzioni nella forma
+            \[
+                \sum_{n = 0}^{+\infty} a_n \, (z - z_0)^n = a_0 + a_1 \, (z - z_0) + a_2 \, (z - z_0)^2 + \ldots,
+            \]
+            con:
+            \begin{itemize}
+                \item \(a_n \in \Cmplx\) coefficienti,
+                \item \(z_0 \in \Cmplx\) centro,
+                \item \(z \in \Cmplx\) variabile.
+            \end{itemize}
+        \end{definizione}
+
+        Parliamo dunque del raggio di convergenza di una serie complessa.
+
+        \begin{teorema}[Raggio di convergenza di una serie di potenze complessa]
+            Data la serie di potenze \(\sum a_n \, (z - z_0)^n\) con \(a_n, \, z_0, \, z \in \Cmplx\) si verifica sempre una delle
+            tre:
+            \begin{enumerate}
+                \item la serie converge solo per \(z = z_0\), dunque si ha un raggio di convergenza nullo;
+                \item la serie converge assolutamente \(\forall \, z \in \Cmplx\), dunque si ha un raggio di convergenza infinito;
+                \item esiste un numero reale \(R > 0\) tale che:
+                    \begin{itemize}
+                        \item la serie converge assolutamente \(\forall \, z \in \Cmplx\), con \(| z - z_0 | < R\),
+                        \item la serie non converge per \(| z - z_0 | > R\),
+                    \end{itemize}
+                    dunque si ha un raggio di convergenza \(R\).
+            \end{enumerate}
+        \end{teorema}
+
+        \begin{osservazione}
+            Così come nel caso reale dobbiamo studiare a parte i punti \(x_0 \pm R\), nel caso complesso dobbiamo studiare a parte la
+            circonferenza \(|z - z_0| = R\).
+        \end{osservazione}
+        \begin{osservazione}
+            Per calcolare il raggio di circonferenza di una serie di potenze complessa, resta valido il teorema del
+            \hyperref[thr:calcoloRaggioConvergenzaR]{\textbf{calcolo del raggio di convergenza}} visto per il caso reale.
+        \end{osservazione}
+
+        \newpage
+
+        \begin{definizione}[Esponenziale complesso e formula di Eulero]
+            La serie esponenziale complessa
+            \[
+                \sum_{n = 0}^{+\infty} \frac{z^n}{n!}
+            \]
+            ha raggio di covergenza infinito, come già visto nel \hyperref[def:serieEsponenziale]{\textbf{caso reale}}, ed inoltre
+            \[
+                e^z = \sum_{n = 0}^{+\infty} \frac{z^n}{n!},
+            \]
+            \(\forall \, z \in \Cmplx\). Per ricavare la formula di Eulero, sostituiamo \(z\) con \(ix\), con \(x \in \R\):
+            \begin{align*}
+                e^{ix} &= \sum_{n = 0}^{+\infty} \frac{(ix)^n}{n!}\\
+                &= 1 + ix + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \frac{(ix)^5}{5!} + \frac{(ix)^6}{6!} + \ldots\\
+                &= 1 + ix - \frac{x^2}{x} - i \frac{x^3}{3!} + \frac{x^4}{4!} + i \frac{x^5}{5!} - \frac{x^6}{6!} + \ldots\\
+                &= \left(1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots\right) + i \left(x - \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots\right)\\
+                &= \cos x + i \sin x.
+            \end{align*}
+
+            Dunque, abbiamo ricavato la \textbf{formula di Eulero}:
+            \[
+                e^{ix} = \cos x + i \sin x,
+            \]
+            \(\forall \, x \in \R\). In particolare, per \(x = \pi\), otteniamo \textbf{l'identità di Eulero}:
+            \[
+                e^{i \pi} + 1 = 0.
+            \]
+            Inoltre,
+            \[
+                \left|e^{ix}\right| = \sqrt{\cos^2 x + \sin^2 x} = 1.
+            \]
+            Essendo poi \(e^{-ix} = \cos x - i \sin x\), si deduce
+            \begin{align*}
+                \cos x &= \frac{e^{ix} + e^{-ix}}{2},\\
+                \sin x &= \frac{e^{ix} - e^{-ix}}{2}.
+            \end{align*}
+        \end{definizione}
+
+\end{document}
