@@ -69,4 +69,39 @@
             discontinua.
         \end{osservazione}
 
+        Vediamo ora come calcolare i coefficienti di una serie di Fourier.
+        
+        \begin{teorema}[Calcolo dei coefficienti di una serie di Fourier]
+            Data \(f : \R \to \R\) periodica di periodo \(2\pi\), la serie trigonometrica candidata è
+            \[
+                a_0 + \sum_{n = 1}^{+\infty} \left(a_n \cos nx + b_n \sin nx\right),
+            \]
+            dove \(n = 1, \, 2, \, 3, \, \ldots\) e
+            \begin{align*}
+                a_0 &= \frac{1}{2\pi} \intDef{-\pi}{\pi}{f(x)}{x},\\
+                a_n &= \frac{1}{\pi} \intDef{-\pi}{\pi}{f(x) \cos nx}{x},\\
+                b_n &= \frac{1}{\pi} \intDef{-\pi}{\pi}{f(x) \sin nx}{x},
+            \end{align*}
+            i quali si ottengono usando le formule di ortogonalità.
+
+            Per calcolare \(a_0\), integriamo la serie candidata tra \(-\pi\) e \(\pi\):
+            \begin{align*}
+                \intDef{-\pi}{\pi}{f(x)}{x} &= \intDef{-\pi}{\pi}{\left(a_0 + \sum_{n = 1}^{+\infty}\left(a_n \cos nx + b_n \sin nx\right)\right)}{x}\\
+                &= \intDef{-\pi}{\pi}{a_0}{x} + \cancelto{0}{\sum_{n = 1}^{+\infty} a_n \intDef{-\pi}{\pi}{\cos nx}{x}} + \cancelto{0}{\sum_{n = 1}^{+\infty} b_n \intDef{-\pi}{\pi}{\sin nx}{x}} \qquad \text{per simmetria}\\
+                &= 2 \pi a_0.
+            \end{align*}
+
+            Per determinare \(a_k\) moltiplico la serie candidata per \(\cos nx\) ed integro tra \(-\pi\) e \(\pi\):
+            \begin{align*}
+                \intDef{-\pi}{\pi}{f(x) \cos kx}{x} &= \intDef{-\pi}{\pi}{\left(a_0 + \sum_{n = 1}^{+\infty} \left(a_n \cos nx + b_n \sin nx\right)\right) \cos kx}{x}\\
+                &= \cancelto{0}{a_0 \intDef{-\pi}{\pi}{\cos kx}{x}} \; + \underbrace{\sum_{n = 1}^{+\infty} a_n \intDef{-\pi}{\pi}{\cos nx \cos kx}{x}}_{\text{non nullo solo per } n = k} + \cancelto{0}{\sum_{n = 1}^{+\infty} b_n \intDef{-\pi}{\pi}{\sin nx \cos kx}{x}}\\
+                &= a_k \intDef{-\pi}{\pi}{\cos^2 kx}{x}\\
+                &= \pi a_k.
+            \end{align*}
+            Analogamente, per ottenere \(b_k\) si moltiplica per \(\sin kx\).
+        \end{teorema}
+        \begin{osservazione}
+            Abbiamo supposto di poter scambiare il simbolo di serie ed il simbolo di integrale.
+        \end{osservazione}
+
 \end{document}
