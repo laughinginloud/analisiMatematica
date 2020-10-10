@@ -103,5 +103,87 @@
         \begin{osservazione}
             Abbiamo supposto di poter scambiare il simbolo di serie ed il simbolo di integrale.
         \end{osservazione}
+        \begin{osservazione}
+            Ricordando che una funzione \(f : \R \to \R\) è detta pari se
+            \[
+                f(x) = f(-x) \qquad \forall \, x \in \R
+            \]
+            ed è detta dispari se
+            \[
+                f(x) = -f(x) \qquad \forall \, x \in \R
+            \]
+            e che una funzione può essere, pari, dispari o nessuna delle due, si ha che
+            \begin{alignat*}{2}
+                f \text{ pari} &\implies& b_n &= 0 \quad \forall \, n \text{ (solo coseni)},\\
+                f \text{ dispari} &\implies& a_n &= 0 \quad \forall \, n \text{ (solo seni)}.
+            \end{alignat*}
+        \end{osservazione}
+
+        Introduciamo dunque il polinomio di Fourier.
+
+        \begin{definizione}[Polinomio di Fourier]
+            Data \(f : \R \to \R\) periodica di periodo \(2\pi\), chiamiamo il \textbf{polinomio di Fourier di ordine \(m\) associato a
+            \(f\)}
+            \[
+                \mathrm{F}_m (x) = a_0 + \sum_{n = 1}^{+\infty} \left(a_n \cos nx + b_n \sin nx\right),
+            \]
+            con
+            \begin{align*}
+                a_0 &= \frac{1}{2\pi} \intDef{-\pi}{\pi}{f(x)}{x},\\
+                a_n &= \frac{1}{\pi} \intDef{-\pi}{\pi}{f(x) \cos nx}{x},\\
+                b_n &= \frac{1}{\pi} \intDef{-\pi}{\pi}{f(x) \sin nx}{x}.
+            \end{align*}
+
+            La serie di Fourier candidata è
+            \[
+                \lim_{m \to +\infty} \mathrm{F}_m (x).
+            \]
+        \end{definizione}
+
+        Occupiamoci ora della convergenza di questa serie.
+
+        \begin{definizione}[Regolarità a tratti]
+            Sia \(f : \R \to \R\). Diciamo che \(f\) è \textbf{regolare a tratti in \([a, \, b]\)} se esiste un numero finito di punti
+            \(a = x_1 < x_2 < \ldots < x_n = b\) tali che:
+            \begin{enumerate}
+                \item \(f\) è continua in \(x_i, \, x_{i + 1}, \, \forall \, i = 1, \, \ldots, \, n - 1\) ed esistono finiti i limiti
+                    \begin{align*}
+                        &\lim_{x \to x_i^+} f(x) \quad \forall \, i = 1, \, \ldots, \, n - 1,\\
+                        &\lim_{x \to x_i^-} f(x) \quad \forall \, i = 2, \, \ldots, \, n.
+                    \end{align*}
+                \item \(f\) è derivabile in \(x_i, \, x_{i + 1}, \, \forall \, i = 1, \, \ldots, \, n - 1\) ed esistono finiti i limiti
+                    \begin{align*}
+                        &\lim_{x \to x_i^+} f'(x) \quad \forall \, i = 1, \, \ldots, \, n - 1,\\
+                        &\lim_{x \to x_i^-} f'(x) \quad \forall \, i = 2, \, \ldots, \, n.
+                    \end{align*}
+            \end{enumerate}
+        \end{definizione}
+
+        \begin{teorema}[Convergenza puntuale della serie di Fourier]
+            Sia \(f : \R \to \R\) periodica di periodo \(2\pi\) e regolare a tratti in \([-\pi, \, \pi]\). Allora la serie di Fourier di
+            \(f\) converge puntualmente in tutto \(\R\).
+
+            Detto \(\mathrm{F}_m (x)\) il polinomio di Fourier di ordine \(m\) associato a \(f\), si ha:
+            \begin{enumerate}
+                \item Se \(f\) è continua in \(x\) allora
+                    \[
+                        \lim_{m \to +\infty} \mathrm{F}_m (x) = f(x),
+                    \]
+                    cioè la serie di Fourier converge proprio a \(f(x)\).
+                \item Se \(f\) è discontinua in \(x\) allora
+                    \[
+                        \lim_{m \to +\infty} \mathrm{F}_m (x) = \frac{1}{2} \left(\lim_{x \to x^+} f(x) + \lim_{x \to x^-} f(x)\right),
+                    \]
+                    cioè la serie di Fourier converge alla media tra \(f(x^+)\) e \(f(x^-)\).
+            \end{enumerate}
+        \end{teorema}
+        \begin{osservazione}
+            In particolare, se \(f\) è
+            \begin{itemize}
+                \item regolare a tratti in \([-\pi, \, \pi]\),
+                \item continua in \(\R\),
+            \end{itemize}
+            la serie di Fourier converge puntualmente a \(f(x)\) in \(\R\).
+        \end{osservazione}
 
 \end{document}
