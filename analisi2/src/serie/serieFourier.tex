@@ -215,7 +215,7 @@
 
         \begin{teorema}[Convergenza in norma quadratica della serie di Fourier]
             Sia \(f : \R \to \R\) periodica di periodo \(2\pi\) e regolare a tratti nell'intervallo \([-\pi, \, \pi]\). Indicando con
-            \(\mathrm{F}_m (x)\) il polinomio di Fourier di ordine \(m\) associato a \(\f\), si ha:
+            \(\mathrm{F}_m (x)\) il polinomio di Fourier di ordine \(m\) associato a \(f\), si ha:
             \[
                 \lim_{m \to +\infty} \intDef{-\pi}{\pi}{\left|f(x) - \mathrm{F}_m (x)\right|^2}{x} = 0.
             \]
@@ -249,7 +249,7 @@
 
             D'altro canto
             \[
-                \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} = \intDef{-\pi}{\pi}{f(x) \, \mathrm{F}_m (x)}{x} = \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right).\tag(**)\label{eq:fou**}
+                \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} = \intDef{-\pi}{\pi}{f(x) \, \mathrm{F}_m (x)}{x} = \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right).\tag{**}\label{eq:fou**}
             \]
 
             Sostituisco nell'identità iniziale \hyperref[eq:fou*]{\textbf{(*)}}:
@@ -257,7 +257,7 @@
                 \intDef{-\pi}{\pi}{\left|f(x) - \mathrm{F}_m (x)\right|^2}{x} &= \intDef{-\pi}{\pi}{\left(f^2(x) - 2 f(x) \, \mathrm{F}_m (x) + \mathrm{F}_m^2 (x)\right)}{x}\\
                 &= \intDef{-\pi}{\pi}{f^2 (x)}{x} - 2\intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} + \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} \qquad \text{per \hyperref[eq:fou**]{\textbf{(**)}}}\\
                 &= \intDef{-\pi}{\pi}{f^2 (x)}{x} - \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x}\\
-                &= \intDef{-\pi}{\pi}{f^2(x)}{x} - \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right).
+                &= \intDef{-\pi}{\pi}{f^2(x)}{x} - \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right). \qquad \text{per \hyperref[eq:fou**]{\textbf{(**)}}}
             \end{align*}
 
             Quindi la disuguaglianza
@@ -274,6 +274,8 @@
                 \frac{1}{\pi} \intDef{-\pi}{\pi}{\left|f(x)\right|^2}{x} = 2 a_0^2 + \sum_{n = 1}^{+\infty} \left(a_n^2 + b_n^2\right).
             \]
         \end{teorema}
+
+        \newpage
 
         Terminiamo il capitolo introducendo la forma esponenziale.
 
