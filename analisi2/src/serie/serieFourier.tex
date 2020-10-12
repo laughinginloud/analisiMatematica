@@ -21,7 +21,7 @@
             Un \textbf{polinomio trigonometrico di ordine \(m\)}, con \(m \in \N\), è una funzione periodica di periodo \(2 \pi\) del
             tipo
             \[
-                \mathrm{P}_m (x) = a_0 + \sum_{n = 1}^m \left(a_n \cos nx + b_n \sin nx\right),
+                \mathrm{P}_m (x) = a_0 + \sum_{n = 1}^m (a_n \cos nx + b_n \sin nx),
             \]
             con \(a_0, \, a_n, \, b_n \in \R\), detti coefficienti del polinomio, e \(x \in \R\). Le funzioni \(\cos nx\) e \(\sin nx\)
             sono dette \textbf{armoniche \(n\)-esime}.
@@ -185,5 +185,117 @@
             \end{itemize}
             la serie di Fourier converge puntualmente a \(f(x)\) in \(\R\).
         \end{osservazione}
+
+        Introduciamo ora gli ultimi teoremi.
+
+        \begin{teorema}[Regolarità della somma di una serie di Fourier] % Integrabilità e derivabilità termine a termine? Poi è troppo lungo...
+            Data la serie di Fourier
+            \[
+                a_0 + \sum_{n = 1}^{+\infty} (a_n \cos nx + b_n \sin nx):
+            \]
+            \begin{enumerate}
+                \item Se la serie numerica di termine generale \(|a_n| + |b_n|\) è convergente, allora la serie di Fourier converge
+                    totalmente per ogni \(x \in \R\). Inoltre, la funzione somma è continua ed è possibile integrare termine a termine:
+                    \[
+                        \intDef{-\pi}{\pi}{\left(a_0 + \sum_{n = 1}^{+\infty} \left(a_n \cos nx + b_n \sin nx\right)\right) }{x} =
+                        a_0 \left(x - x_0\right) + \sum_{n = 1}^{+\infty} \left(a_n \intDef{-\pi}{\pi}{\cos nx}{x} + b_n \intDef{-\pi}{\pi}{\sin nx}{x}\right).
+                    \]
+                \item Se la serie numerica di termine generale \(n \, (|a_n| + |b_n|)\) è convergente, allora la funzione somma è
+                    derivabile ed è possibile derivare termine a termine:
+                    \[
+                        \left(a_0 + \sum_{n = 1}^{+\infty} (a_n \cos nx + b_n \sin nx)\right)' = \sum_{n = 1}^{+\infty} n \, (-a_n \sin nx + b_n \cos nx).
+                    \]
+                \item Se la serie numerica di termine generale \(n^i \, (|a_n| + |b_n|)\) è convergente, allora la funzione somma è
+                    derivabile \(i\) volte ed è possibile derivare \(i\) volte termine a termine.
+            \end{enumerate}
+        \end{teorema}
+        \begin{osservazione}
+            Notare la differenza rispetto alle serie di potenze, le quali erano tutte derivabili infinite volte senza bisogno di ipotesi.
+        \end{osservazione}
+
+        \begin{teorema}[Convergenza in norma quadratica della serie di Fourier]
+            Sia \(f : \R \to \R\) periodica di periodo \(2\pi\) e regolare a tratti nell'intervallo \([-\pi, \, \pi]\). Indicando con
+            \(\mathrm{F}_m (x)\) il polinomio di Fourier di ordine \(m\) associato a \(\f\), si ha:
+            \[
+                \lim_{m \to +\infty} \intDef{-\pi}{\pi}{\left|f(x) - \mathrm{F}_m (x)\right|^2}{x} = 0.
+            \]
+        \end{teorema}
+        \begin{osservazione}
+            La convergenza in norma quadratica si ha per ogni funzione regolare a tratti, anche per quelle non continue.
+        \end{osservazione}
+
+        Nella dimostrazione del teorema è utilizzata la seguente disuguaglianza.
+
+        \begin{teorema}[Disuguaglianza di Bessel]
+            Sia \(f : \R \to \R\) periodica di periodo \(2\pi\) e regolare a tratti in \([-\pi, \, \pi]\). Indicando con
+            \(a_0, \, a_n, \, b_n\) i suoi coefficienti di Fourier, con \(n \geqslant 1\), si ha:
+            \[
+                \frac{1}{\pi} \intDef{-\pi}{\pi}{\left|f(x)\right|^2}{x} \geqslant 2 a_0^2 + \sum_{n = 1}^{+\infty} \left(a_n^2 + b_n^2\right).
+            \]
+        \end{teorema}
+        \begin{proof}
+            Chiamiamo \(\mathrm{F}_m (x)\) il polinomio di Fourier di ordine \(m\) associato a \(f\). Vale:
+            \[
+                \intDef{-\pi}{\pi}{\left|f(x) - \mathrm{F}_m (x)\right|^2}{x} = \intDef{-\pi}{\pi}{\left(f^2(x) - 2 f(x) \, \mathrm{F}_m (x) + \mathrm{F}_m^2 (x)\right)}{x}.\tag{*}\label{eq:fou*}
+            \]
+            Calcoliamo
+            \begin{align*}
+                \intDef{-\pi}{\pi}{f(x) \, \mathrm{F}_m (x)}{x} &= \intDef{-\pi}{\pi}{\left(a_0 + \sum_{n = 1}^{+\infty} (a_n \cos nx + b_n \sin nx)\right)
+                    \left(a_0 + \sum_{n = 1}^{m} (a_n \cos nx + b_n \sin nx)\right)}{x}\\
+                &= \intDef{-\pi}{\pi}{\left(a_0^2 + \sum_{n = 1}^m \left(a_n^2 \cos^2 nx + b_n^2 \sin^2 nx\right)\right)}{x}\\
+                &= 2\pi a_0^2 + \sum_{n = 1}^m \left(a_n^2 \underbrace{\intDef{-\pi}{\pi}{\cos^2 nx}{x}}_{\pi} + b_n^2 \underbrace{\intDef{-\pi}{\pi}{\sin^2 nx}{x}}_{\pi}\right)\\
+                &= \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right).
+            \end{align*}
+
+            D'altro canto
+            \[
+                \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} = \intDef{-\pi}{\pi}{f(x) \, \mathrm{F}_m (x)}{x} = \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right).\tag(**)\label{eq:fou**}
+            \]
+
+            Sostituisco nell'identità iniziale \hyperref[eq:fou*]{\textbf{(*)}}:
+            \begin{align*}
+                \intDef{-\pi}{\pi}{\left|f(x) - \mathrm{F}_m (x)\right|^2}{x} &= \intDef{-\pi}{\pi}{\left(f^2(x) - 2 f(x) \, \mathrm{F}_m (x) + \mathrm{F}_m^2 (x)\right)}{x}\\
+                &= \intDef{-\pi}{\pi}{f^2 (x)}{x} - 2\intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} + \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x} \qquad \text{per \hyperref[eq:fou**]{\textbf{(**)}}}\\
+                &= \intDef{-\pi}{\pi}{f^2 (x)}{x} - \intDef{-\pi}{\pi}{\mathrm{F}_m^2 (x)}{x}\\
+                &= \intDef{-\pi}{\pi}{f^2(x)}{x} - \pi \left(2 a_0^2 + \sum_{n = 1}^m \left(a_n^2 + b_n^2\right)\right).
+            \end{align*}
+
+            Quindi la disuguaglianza
+            \[
+                \frac{1}{\pi} \intDef{-\pi}{\pi}{\left|f(x)\right|^2}{x} \geqslant 2 a_0^2 + \sum_{n = 1}^{+\infty} \left(a_n^2 + b_n^2\right)
+            \]
+            vale per ogni \(m \in \N\). Lasciando \(m \to +\infty\) si ottiene la tesi.
+        \end{proof}
+
+        \begin{teorema}[Identità di Parseval]
+            Sia \(f : \R \to \R\) periodica di periodo \(2\pi\) e regolare a tratti in \([-\pi, \, \pi]\). Indicando con
+            \(a_0, \, a_n, \, b_n\) i suoi coefficienti di Fourier, con \(n \geqslant 1\), si ha:
+            \[
+                \frac{1}{\pi} \intDef{-\pi}{\pi}{\left|f(x)\right|^2}{x} = 2 a_0^2 + \sum_{n = 1}^{+\infty} \left(a_n^2 + b_n^2\right).
+            \]
+        \end{teorema}
+
+        Terminiamo il capitolo introducendo la forma esponenziale.
+
+        \begin{definizione}[Forma esponenziale di una serie di Fourier]
+            Ricordando che dalla formula di Eulero si ricavano
+            \begin{align*}
+                \cos x &= \frac{e^{ix} + e^{-ix}}{2},\\
+                \sin x &= \frac{e^{ix} - e^{-ix}}{2i},
+            \end{align*}
+            possiamo ottenere, sotituendo \(x\) con \(nx\),
+            \begin{align*}
+                \cos nx &= \frac{e^{inx} + e^{-inx}}{2},\\
+                \sin nx &= \frac{e^{inx} - e^{-inx}}{2i}.
+            \end{align*}
+            Di conseguenza, le serie di Fourier possono essere scritte equivalentemente in forma esponenziale
+            \[
+                \sum_{n = -\infty}^{+\infty} c_n \, e^{inx},
+            \]
+            con \(n \in \mathbb{Z}\) e
+            \[
+                c_n = \frac{1}{2\pi} \intDef{-\pi}{\pi}{f(x) \, e^{-inx}}{x}.
+            \]
+        \end{definizione}
 
 \end{document}
